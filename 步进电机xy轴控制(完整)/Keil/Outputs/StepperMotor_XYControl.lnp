@@ -1,0 +1,5 @@
+"..\Outputs\main.obj",
+"..\Outputs\sm.obj",
+"..\Outputs\timer.obj" 
+TO "..\Outputs\StepperMotor_XYControl" 
+PRINT(".\StepperMotor_XYControl.m51")

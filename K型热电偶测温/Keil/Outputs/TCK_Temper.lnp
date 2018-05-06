@@ -1,0 +1,5 @@
+"..\Outputs\main.obj",
+"..\Outputs\tck_max6675.obj",
+"..\Outputs\uart.obj" 
+TO "..\Outputs\TCK_Temper" 
+PRINT(".\TCK_Temper.m51")

@@ -1,0 +1,952 @@
+<html>
+<body>
+<pre>
+<h1>礦ision Build Log</h1>
+<h2>Project:</h2>
+E:\毕业设计相关\ADC测电压\Keil\Project\MeasureVol.uvproj
+Project File Date:  03/18/2018
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling uart.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?UART_INIT?UART
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_UART_SEND?UART
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\uart.obj (UART)
+    ADDRESS: 004BH
+Program Size: data=8.0 xdata=0 code=96
+creating hex file from "..\MeasureVol"...
+"..\MeasureVol" - 0 Error(s), 4 Warning(s).
+Build target 'Target 1'
+compiling uart.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?UART_INIT?UART
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_UART_SEND?UART
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\uart.obj (UART)
+    ADDRESS: 004BH
+Program Size: data=8.0 xdata=0 code=96
+creating hex file from "..\MeasureVol"...
+"..\MeasureVol" - 0 Error(s), 4 Warning(s).
+Build target 'Target 1'
+compiling uart.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?UART_INIT?UART
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_UART_SEND?UART
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\uart.obj (UART)
+    ADDRESS: 004BH
+Program Size: data=8.0 xdata=0 code=96
+creating hex file from "..\MeasureVol"...
+"..\MeasureVol" - 0 Error(s), 4 Warning(s).
+Build target 'Target 1'
+compiling uart.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?UART_INIT?UART
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_UART_SEND?UART
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\uart.obj (UART)
+    ADDRESS: 004BH
+Program Size: data=8.0 xdata=0 code=96
+creating hex file from "..\MeasureVol"...
+"..\MeasureVol" - 0 Error(s), 4 Warning(s).
+Build target 'Target 1'
+compiling uart.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?UART_INIT?UART
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_UART_SEND?UART
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 004BH
+Program Size: data=8.0 xdata=0 code=96
+creating hex file from "..\Outputs\MeasureVol"...
+"..\Outputs\MeasureVol" - 0 Error(s), 4 Warning(s).
+Build target 'Target 1'
+compiling uart.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?UART_INIT?UART
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_UART_SEND?UART
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 004BH
+Program Size: data=8.0 xdata=0 code=96
+creating hex file from "..\Outputs\MeasureVol"...
+"..\Outputs\MeasureVol" - 0 Error(s), 4 Warning(s).
+Build target 'Target 1'
+compiling uart.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?UART_INIT?UART
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_UART_SEND?UART
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 004BH
+Program Size: data=8.0 xdata=0 code=96
+creating hex file from "..\Outputs\MeasureVol"...
+"..\Outputs\MeasureVol" - 0 Error(s), 4 Warning(s).
+Build target 'Target 1'
+Target has no object modules
+Target not created
+Build target 'Target 1'
+Target has no object modules
+Target not created
+Build target 'Target 1'
+compiling main.c...
+..\USER\MAIN.C(10): error C136: 'main': 'void' on variable
+..\USER\MAIN.C(10): error C129: missing ';' before '{'
+Target not created
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=9.0 xdata=0 code=38
+creating hex file from "..\Outputs\MeasureVol"...
+"..\Outputs\MeasureVol" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=9.0 xdata=0 code=38
+creating hex file from "..\Outputs\MeasureVol"...
+"..\Outputs\MeasureVol" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=9.0 xdata=0 code=56
+creating hex file from "..\Outputs\MeasureVol"...
+"..\Outputs\MeasureVol" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=9.0 xdata=0 code=54
+creating hex file from "..\Outputs\MeasureVol"...
+"..\Outputs\MeasureVol" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=9.0 xdata=0 code=54
+creating hex file from "..\Outputs\MeasureVol"...
+"..\Outputs\MeasureVol" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=9.0 xdata=0 code=57
+creating hex file from "..\Outputs\MeasureVol"...
+"..\Outputs\MeasureVol" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=9.0 xdata=0 code=54
+creating hex file from "..\Outputs\MeasureVol"...
+"..\Outputs\MeasureVol" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=10.0 xdata=0 code=712
+creating hex file from "..\Outputs\MeasureVol"...
+"..\Outputs\MeasureVol" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=10.0 xdata=0 code=718
+creating hex file from "..\Outputs\MeasureVol"...
+"..\Outputs\MeasureVol" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+..\USER\MAIN.C(11): warning C280: 'temp': unreferenced local variable
+linking...
+Program Size: data=10.0 xdata=0 code=60
+creating hex file from "..\Outputs\MeasureVol"...
+"..\Outputs\MeasureVol" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+..\USER\MAIN.C(10): warning C206: '_nop_': missing function-prototype
+..\USER\MAIN.C(10): error C264: intrinsic '_nop_': declaration/activation error
+compiling adc.c...
+..\HARDWARE\ADC.C(4): error C202: 'P2': undefined identifier
+..\HARDWARE\ADC.C(5): error C202: 'P2': undefined identifier
+..\HARDWARE\ADC.C(6): error C202: 'P2': undefined identifier
+..\HARDWARE\ADC.C(7): error C202: 'P2': undefined identifier
+..\HARDWARE\ADC.C(14): error C202: 'TMOD': undefined identifier
+..\HARDWARE\ADC.C(15): error C202: 'TH0': undefined identifier
+..\HARDWARE\ADC.C(16): error C202: 'TL0': undefined identifier
+..\HARDWARE\ADC.C(17): error C202: 'EA': undefined identifier
+..\HARDWARE\ADC.C(18): error C202: 'ET0': undefined identifier
+..\HARDWARE\ADC.C(19): error C202: 'TR0': undefined identifier
+..\HARDWARE\ADC.C(28): error C202: 'ST': undefined identifier
+..\HARDWARE\ADC.C(29): error C202: 'ST': undefined identifier
+..\HARDWARE\ADC.C(30): error C202: 'ST': undefined identifier
+..\HARDWARE\ADC.C(31): error C202: 'EOC': undefined identifier
+..\HARDWARE\ADC.C(32): error C202: 'OE': undefined identifier
+..\HARDWARE\ADC.C(33): error C202: 'P1': undefined identifier
+..\HARDWARE\ADC.C(34): error C202: 'OE': undefined identifier
+..\HARDWARE\ADC.C(41): error C202: 'TH0': undefined identifier
+..\HARDWARE\ADC.C(42): error C202: 'TL0': undefined identifier
+..\HARDWARE\ADC.C(43): error C202: 'CLK': undefined identifier
+compiling uart.c...
+Target not created
+Build target 'Target 1'
+compiling main.c...
+..\USER\MAIN.C(10): warning C206: '_nop_': missing function-prototype
+..\USER\MAIN.C(10): error C264: intrinsic '_nop_': declaration/activation error
+compiling adc.c...
+compiling uart.c...
+Target not created
+Build target 'Target 1'
+compiling main.c...
+compiling adc.c...
+compiling uart.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DELAY?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?ADC_INIT?ADC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?ADC_TRANSFORM?ADC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?UART_INIT?UART
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_UART_SEND?UART
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 004BH
+Program Size: data=9.0 xdata=0 code=171
+creating hex file from "..\Outputs\MeasureVol"...
+"..\Outputs\MeasureVol" - 0 Error(s), 7 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling adc.c...
+compiling uart.c...
+linking...
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 004BH
+Program Size: data=9.0 xdata=0 code=186
+creating hex file from "..\Outputs\MeasureVol"...
+"..\Outputs\MeasureVol" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling adc.c...
+compiling uart.c...
+linking...
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 0A1EH
+Program Size: data=39.1 xdata=0 code=2760
+creating hex file from "..\Outputs\MeasureVol"...
+"..\Outputs\MeasureVol" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling adc.c...
+compiling uart.c...
+linking...
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 0A65H
+Program Size: data=40.1 xdata=0 code=2789
+creating hex file from "..\Outputs\MeasureVol"...
+"..\Outputs\MeasureVol" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling adc.c...
+compiling uart.c...
+linking...
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 0A65H
+Program Size: data=40.1 xdata=0 code=2791
+creating hex file from "..\Outputs\MeasureVol"...
+"..\Outputs\MeasureVol" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling adc.c...
+compiling uart.c...
+linking...
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 0A67H
+Program Size: data=40.1 xdata=0 code=2793
+creating hex file from "..\Outputs\MeasureVol"...
+"..\Outputs\MeasureVol" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling adc.c...
+compiling uart.c...
+linking...
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 0A6FH
+Program Size: data=40.1 xdata=0 code=2801
+creating hex file from "..\Outputs\MeasureVol"...
+"..\Outputs\MeasureVol" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling adc.c...
+compiling uart.c...
+linking...
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 0A73H
+Program Size: data=40.1 xdata=0 code=2805
+creating hex file from "..\Outputs\MeasureVol"...
+"..\Outputs\MeasureVol" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling adc.c...
+compiling uart.c...
+linking...
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 0A6BH
+Program Size: data=40.1 xdata=0 code=2797
+creating hex file from "..\Outputs\MeasureVol"...
+"..\Outputs\MeasureVol" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling adc.c...
+compiling uart.c...
+linking...
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 0A6BH
+Program Size: data=40.1 xdata=0 code=2798
+creating hex file from "..\Outputs\MeasureVol"...
+"..\Outputs\MeasureVol" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling adc.c...
+compiling uart.c...
+linking...
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 0A6BH
+Program Size: data=40.1 xdata=0 code=2799
+creating hex file from "..\Outputs\MeasureVol"...
+"..\Outputs\MeasureVol" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling adc.c...
+compiling uart.c...
+linking...
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 0A6BH
+Program Size: data=40.1 xdata=0 code=2799
+creating hex file from "..\Outputs\MeasureVol"...
+"..\Outputs\MeasureVol" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling adc.c...
+compiling uart.c...
+linking...
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 0A6BH
+Program Size: data=40.1 xdata=0 code=2806
+creating hex file from "..\Outputs\MeasureVol"...
+"..\Outputs\MeasureVol" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling adc.c...
+compiling uart.c...
+linking...
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 0A6BH
+Program Size: data=40.1 xdata=0 code=2806
+creating hex file from "..\Outputs\MeasureVol"...
+"..\Outputs\MeasureVol" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling adc.c...
+compiling uart.c...
+linking...
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 0A6BH
+Program Size: data=40.1 xdata=0 code=2806
+creating hex file from "..\Outputs\MeasureVol"...
+"..\Outputs\MeasureVol" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling adc.c...
+compiling uart.c...
+linking...
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 0A6BH
+Program Size: data=40.1 xdata=0 code=2806
+creating hex file from "..\Outputs\MeasureVol"...
+"..\Outputs\MeasureVol" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling adc.c...
+compiling uart.c...
+linking...
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 0A6BH
+Program Size: data=40.1 xdata=0 code=2799
+creating hex file from "..\Outputs\MeasureVol"...
+"..\Outputs\MeasureVol" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling adc.c...
+compiling uart.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PUTCHAR?MAIN
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 004BH
+Program Size: data=10.0 xdata=0 code=195
+creating hex file from "..\Outputs\MeasureVol"...
+"..\Outputs\MeasureVol" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling adc.c...
+compiling uart.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PUTCHAR?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?ADC_INIT?ADC
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 004BH
+Program Size: data=10.0 xdata=0 code=192
+creating hex file from "..\Outputs\MeasureVol"...
+"..\Outputs\MeasureVol" - 0 Error(s), 4 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling adc.c...
+compiling uart.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PUTCHAR?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?UART_INIT?UART
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 004BH
+Program Size: data=10.0 xdata=0 code=192
+creating hex file from "..\Outputs\MeasureVol"...
+"..\Outputs\MeasureVol" - 0 Error(s), 4 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling adc.c...
+compiling uart.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PUTCHAR?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?UART_INIT?UART
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 004BH
+Program Size: data=10.0 xdata=0 code=192
+creating hex file from "..\Outputs\MeasureVol"...
+"..\Outputs\MeasureVol" - 0 Error(s), 4 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling adc.c...
+compiling uart.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?UART_INIT?UART
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 0A64H
+Program Size: data=40.1 xdata=0 code=2792
+creating hex file from "..\Outputs\MeasureVol"...
+"..\Outputs\MeasureVol" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling adc.c...
+compiling uart.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?UART_INIT?UART
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 0A64H
+Program Size: data=40.1 xdata=0 code=2792
+creating hex file from "..\Outputs\MeasureVol"...
+"..\Outputs\MeasureVol" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling adc.c...
+compiling uart.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?UART_INIT?UART
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 0A64H
+Program Size: data=40.1 xdata=0 code=2792
+creating hex file from "..\Outputs\MeasureVol"...
+"..\Outputs\MeasureVol" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling adc.c...
+compiling uart.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?UART_INIT?UART
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 0A64H
+Program Size: data=40.1 xdata=0 code=2792
+creating hex file from "..\Outputs\MeasureVol"...
+"..\Outputs\MeasureVol" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling adc.c...
+compiling uart.c...
+linking...
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 0A67H
+Program Size: data=40.1 xdata=0 code=2795
+creating hex file from "..\Outputs\MeasureVol"...
+"..\Outputs\MeasureVol" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling adc.c...
+compiling uart.c...
+linking...
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 0A67H
+Program Size: data=40.1 xdata=0 code=2795
+creating hex file from "..\Outputs\MeasureVol"...
+"..\Outputs\MeasureVol" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling adc.c...
+compiling uart.c...
+linking...
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 0A67H
+Program Size: data=40.1 xdata=0 code=2793
+creating hex file from "..\Outputs\MeasureVol"...
+"..\Outputs\MeasureVol" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling adc.c...
+compiling uart.c...
+linking...
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 0A67H
+Program Size: data=40.1 xdata=0 code=2793
+creating hex file from "..\Outputs\MeasureVol"...
+"..\Outputs\MeasureVol" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling adc.c...
+compiling uart.c...
+linking...
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 0A67H
+Program Size: data=40.1 xdata=0 code=2822
+creating hex file from "..\Outputs\MeasureVol"...
+"..\Outputs\MeasureVol" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling adc.c...
+compiling uart.c...
+linking...
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 0A67H
+Program Size: data=40.1 xdata=0 code=2825
+creating hex file from "..\Outputs\MeasureVol"...
+"..\Outputs\MeasureVol" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling adc.c...
+compiling uart.c...
+linking...
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 0A67H
+Program Size: data=40.1 xdata=0 code=2825
+creating hex file from "..\Outputs\MeasureVol"...
+"..\Outputs\MeasureVol" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+..\USER\MAIN.C(34): error C202: 'EOC': undefined identifier
+..\USER\MAIN.C(36): error C202: 'ST': undefined identifier
+..\USER\MAIN.C(37): error C202: 'ST': undefined identifier
+..\USER\MAIN.C(39): error C202: 'EOC': undefined identifier
+..\USER\MAIN.C(40): error C202: 'ST': undefined identifier
+..\USER\MAIN.C(41): error C202: 'ST': undefined identifier
+compiling adc.c...
+compiling uart.c...
+Target not created
+Build target 'Target 1'
+compiling main.c...
+compiling adc.c...
+compiling uart.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DELAY?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PUTCHAR?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?ADC_INIT?ADC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?ADC_TRANSFORM?ADC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?UART_INIT?UART
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 004BH
+Program Size: data=10.0 xdata=0 code=199
+creating hex file from "..\Outputs\MeasureVol"...
+"..\Outputs\MeasureVol" - 0 Error(s), 7 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling adc.c...
+compiling uart.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DELAY?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PUTCHAR?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?ADC_INIT?ADC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?ADC_TRANSFORM?ADC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?UART_INIT?UART
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 004BH
+Program Size: data=10.0 xdata=0 code=199
+creating hex file from "..\Outputs\MeasureVol"...
+"..\Outputs\MeasureVol" - 0 Error(s), 7 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling adc.c...
+compiling uart.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DELAY?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PUTCHAR?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?ADC_INIT?ADC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?ADC_TRANSFORM?ADC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?UART_INIT?UART
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 004BH
+Program Size: data=10.0 xdata=0 code=199
+creating hex file from "..\Outputs\MeasureVol"...
+"..\Outputs\MeasureVol" - 0 Error(s), 7 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling adc.c...
+compiling uart.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DELAY?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PUTCHAR?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?ADC_INIT?ADC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?ADC_TRANSFORM?ADC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?UART_INIT?UART
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 004BH
+Program Size: data=10.0 xdata=0 code=204
+creating hex file from "..\Outputs\MeasureVol"...
+"..\Outputs\MeasureVol" - 0 Error(s), 7 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling adc.c...
+compiling uart.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DELAY?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PUTCHAR?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?ADC_INIT?ADC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?ADC_TRANSFORM?ADC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?UART_INIT?UART
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 004BH
+Program Size: data=10.0 xdata=0 code=206
+creating hex file from "..\Outputs\MeasureVol"...
+"..\Outputs\MeasureVol" - 0 Error(s), 7 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling adc.c...
+compiling uart.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DELAY?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PUTCHAR?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?ADC_INIT?ADC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?ADC_TRANSFORM?ADC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?UART_INIT?UART
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 004BH
+Program Size: data=10.0 xdata=0 code=206
+creating hex file from "..\Outputs\MeasureVol"...
+"..\Outputs\MeasureVol" - 0 Error(s), 7 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling adc.c...
+compiling uart.c...
+linking...
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 0A67H
+Program Size: data=40.1 xdata=0 code=2795
+creating hex file from "..\Outputs\MeasureVol"...
+"..\Outputs\MeasureVol" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling adc.c...
+compiling uart.c...
+linking...
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 0A67H
+Program Size: data=40.1 xdata=0 code=2795
+creating hex file from "..\Outputs\MeasureVol"...
+"..\Outputs\MeasureVol" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling adc.c...
+compiling uart.c...
+linking...
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 0A67H
+Program Size: data=40.1 xdata=0 code=2795
+creating hex file from "..\Outputs\MeasureVol"...
+"..\Outputs\MeasureVol" - 0 Error(s), 2 Warning(s).

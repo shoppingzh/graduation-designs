@@ -1,0 +1,2205 @@
+<html>
+<body>
+<pre>
+<h1>礦ision Build Log</h1>
+<h2>Project:</h2>
+E:\毕业设计相关\步进电机xy轴控制完整版\Keil\Project\SM_XYControl_Full.uvproj
+Project File Date:  03/13/2018
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling main.c...
+compiling sm.c...
+compiling timer.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SM_Y_START?SM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_START?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+    ADDRESS: 054EH
+Program Size: data=25.0 xdata=0 code=1547
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling sm.c...
+compiling timer.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SM_Y_START?SM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_START?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+    ADDRESS: 054EH
+Program Size: data=25.0 xdata=0 code=1547
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling sm.c...
+compiling timer.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SM_Y_START?SM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_START?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+    ADDRESS: 054EH
+Program Size: data=25.0 xdata=0 code=1547
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling sm.c...
+compiling timer.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SM_Y_START?SM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_START?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+    ADDRESS: 054EH
+Program Size: data=25.0 xdata=0 code=1547
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling sm.c...
+compiling timer.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SM_Y_START?SM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_START?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+    ADDRESS: 054EH
+Program Size: data=25.0 xdata=0 code=1547
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling sm.c...
+compiling timer.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SM_Y_START?SM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_START?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+    ADDRESS: 054EH
+Program Size: data=25.0 xdata=0 code=1547
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling sm.c...
+compiling timer.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SM_Y_START?SM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_START?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+    ADDRESS: 054EH
+Program Size: data=25.0 xdata=0 code=1547
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling sm.c...
+..\HARDWARE\SM.C(119): warning C280: 'time': unreferenced local variable
+compiling timer.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SM_Y_START?SM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SM_X_STOP?SM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SM_Y_STOP?SM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SM_X_RUN?SM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_START?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+    ADDRESS: 054EH
+Program Size: data=28.0 xdata=0 code=1567
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 10 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling sm.c...
+compiling timer.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SM_XY_RUN?SM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_START?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+Program Size: data=37.0 xdata=0 code=1779
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 4 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling sm.c...
+compiling timer.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SM_XY_RUN?SM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+Program Size: data=37.0 xdata=0 code=1782
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+..\USER\MAIN.C(7): error C202: 'SM_DIR_BACK_WARD': undefined identifier
+compiling sm.c...
+compiling timer.c...
+Target not created
+Build target 'Target 1'
+compiling main.c...
+compiling sm.c...
+..\HARDWARE\SM.C(126): warning C235: parameter 5: different types
+compiling timer.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+Program Size: data=37.0 xdata=0 code=1790
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling sm.c...
+compiling timer.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+Program Size: data=39.0 xdata=0 code=1751
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling sm.c...
+compiling timer.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+Program Size: data=39.0 xdata=0 code=1751
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling sm.c...
+compiling timer.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+Program Size: data=39.0 xdata=0 code=1751
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling sm.c...
+compiling timer.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+Program Size: data=39.0 xdata=0 code=1754
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling sm.c...
+compiling timer.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+Program Size: data=39.0 xdata=0 code=1754
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling sm.c...
+compiling timer.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+Program Size: data=43.0 xdata=0 code=1814
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling sm.c...
+compiling timer.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SM_XY_RUN?SM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+Program Size: data=49.0 xdata=0 code=1789
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling sm.c...
+compiling timer.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SM_XY_RUN?SM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+Program Size: data=49.0 xdata=0 code=1795
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling sm.c...
+compiling timer.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+Program Size: data=43.0 xdata=0 code=1820
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling sm.c...
+compiling timer.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+Program Size: data=43.0 xdata=0 code=1820
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling sm.c...
+compiling timer.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+Program Size: data=43.0 xdata=0 code=1811
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling sm.c...
+compiling timer.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+Program Size: data=43.0 xdata=0 code=1809
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling sm.c...
+compiling timer.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+Program Size: data=43.0 xdata=0 code=1811
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling sm.c...
+compiling timer.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+Program Size: data=43.0 xdata=0 code=1814
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling sm.c...
+compiling timer.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+Program Size: data=43.0 xdata=0 code=1817
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling sm.c...
+compiling timer.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+Program Size: data=43.0 xdata=0 code=1814
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling sm.c...
+compiling timer.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+Program Size: data=43.0 xdata=0 code=1812
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling sm.c...
+compiling timer.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+Program Size: data=43.0 xdata=0 code=1812
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+..\USER\MAIN.C(8): warning C206: 'timer_init': missing function-prototype
+..\USER\MAIN.C(9): warning C206: 'timer1_set_time': missing function-prototype
+..\USER\MAIN.C(9): error C267: 'timer1_set_time': requires ANSI-style prototype
+compiling sm.c...
+compiling timer.c...
+Target not created
+Build target 'Target 1'
+compiling main.c...
+compiling sm.c...
+compiling timer.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SM_INIT?SM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SM_XY_RUN?SM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_TIMEOUT?SM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+Program Size: data=51.0 xdata=0 code=1741
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 5 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling sm.c...
+compiling timer.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+Program Size: data=43.0 xdata=0 code=1821
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling sm.c...
+compiling timer.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SM_XY_RUN?SM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+Program Size: data=49.0 xdata=0 code=1796
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling sm.c...
+compiling timer.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SM_XY_RUN?SM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_TIMEOUT?SM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+Program Size: data=49.0 xdata=0 code=1754
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 4 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling sm.c...
+compiling timer.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SM_XY_RUN?SM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+Program Size: data=49.0 xdata=0 code=1796
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling sm.c...
+compiling timer.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SM_XY_RUN?SM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TIMER0_SET_TIME?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_START?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+Program Size: data=51.0 xdata=0 code=1786
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 5 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling sm.c...
+compiling timer.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SM_XY_RUN?SM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+Program Size: data=49.0 xdata=0 code=1800
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling sm.c...
+compiling timer.c...
+linking...
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\sm.obj (SM)
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SM_INIT?SM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SM_XY_RUN?SM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_TIMEOUT?SM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+*** ERROR L118: REFERENCE MADE TO ERRONEOUS EXTERNAL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+    ADDRESS: 061AH
+Program Size: data=51.0 xdata=0 code=1818
+Target not created
+Build target 'Target 1'
+compiling main.c...
+compiling sm.c...
+compiling timer.c...
+linking...
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\sm.obj (SM)
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SM_INIT?SM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SM_XY_RUN?SM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_TIMEOUT?SM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+*** ERROR L118: REFERENCE MADE TO ERRONEOUS EXTERNAL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+    ADDRESS: 061AH
+Program Size: data=51.0 xdata=0 code=1807
+Target not created
+Build target 'Target 1'
+compiling main.c...
+compiling sm.c...
+compiling timer.c...
+linking...
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\sm.obj (SM)
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SM_INIT?SM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SM_XY_RUN?SM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_TIMEOUT?SM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+*** ERROR L118: REFERENCE MADE TO ERRONEOUS EXTERNAL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+    ADDRESS: 061AH
+Program Size: data=51.0 xdata=0 code=1807
+Target not created
+Build target 'Target 1'
+compiling main.c...
+compiling timer.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TIMER0_SET_TIME?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_START?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  TIMER0_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  TIMER0_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+    ADDRESS: 01F2H
+Program Size: data=17.0 xdata=0 code=621
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling timer.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TIMER0_SET_TIME?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_START?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  TIMER0_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  TIMER0_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+    ADDRESS: 01F2H
+Program Size: data=17.0 xdata=0 code=632
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling timer.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TIMER0_SET_TIME?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_START?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  TIMER0_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  TIMER0_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+    ADDRESS: 01F2H
+Program Size: data=17.0 xdata=0 code=624
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling timer.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TIMER0_SET_TIME?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_START?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  TIMER0_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  TIMER0_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+    ADDRESS: 01F2H
+Program Size: data=17.0 xdata=0 code=623
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling timer.c...
+compiling sm.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SM_XY_RUN?SM
+Program Size: data=49.0 xdata=0 code=1796
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling timer.c...
+compiling sm.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SM_XY_RUN?SM
+Program Size: data=49.0 xdata=0 code=1933
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling timer.c...
+compiling sm.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SM_XY_RUN?SM
+Program Size: data=49.0 xdata=0 code=1924
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling timer.c...
+compiling sm.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SM_XY_RUN?SM
+Program Size: data=49.0 xdata=0 code=1704
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling timer.c...
+compiling sm.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SM_XY_RUN?SM
+Program Size: data=49.0 xdata=0 code=1839
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling timer.c...
+compiling sm.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TIMER0_SET_TIME?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_START?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SM_X_STOP?SM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SM_Y_STOP?SM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SM_XY_RUN?SM
+Program Size: data=51.0 xdata=0 code=1813
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 7 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling timer.c...
+compiling sm.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TIMER0_SET_TIME?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_START?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SM_XY_RUN?SM
+Program Size: data=51.0 xdata=0 code=1829
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 5 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling timer.c...
+compiling sm.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_START?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SM_XY_RUN?SM
+Program Size: data=49.0 xdata=0 code=1836
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 4 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling timer.c...
+compiling sm.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SM_XY_RUN?SM
+Program Size: data=49.0 xdata=0 code=1839
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling timer.c...
+compiling sm.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_START?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SM_XY_RUN?SM
+Program Size: data=49.0 xdata=0 code=1836
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 4 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling timer.c...
+compiling sm.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SM_XY_RUN?SM
+Program Size: data=49.0 xdata=0 code=1839
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling timer.c...
+compiling sm.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SM_XY_RUN?SM
+Program Size: data=49.0 xdata=0 code=1839
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling timer.c...
+compiling sm.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SM_XY_RUN?SM
+Program Size: data=49.0 xdata=0 code=1795
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling timer.c...
+compiling sm.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TIMER1_SET_TIME?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_START?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+    ADDRESS: 06FDH
+Program Size: data=45.0 xdata=0 code=1941
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling timer.c...
+compiling sm.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TIMER1_SET_TIME?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_START?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+    ADDRESS: 06FDH
+Program Size: data=45.0 xdata=0 code=1941
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling timer.c...
+compiling sm.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TIMER1_SET_TIME?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_START?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+    ADDRESS: 06F7H
+Program Size: data=45.0 xdata=0 code=1935
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling timer.c...
+compiling sm.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TIMER1_SET_TIME?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_START?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SM_X_STOP?SM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SM_Y_STOP?SM
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+    ADDRESS: 06F7H
+Program Size: data=45.0 xdata=0 code=1929
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 8 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling timer.c...
+compiling sm.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TIMER1_SET_TIME?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_START?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SM_X_STOP?SM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SM_Y_STOP?SM
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+    ADDRESS: 06F9H
+Program Size: data=45.0 xdata=0 code=1931
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 8 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling timer.c...
+compiling sm.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TIMER1_SET_TIME?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_START?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SM_X_STOP?SM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SM_Y_STOP?SM
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+    ADDRESS: 06F8H
+Program Size: data=45.0 xdata=0 code=1930
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 8 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling timer.c...
+compiling sm.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TIMER1_SET_TIME?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_START?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SM_X_STOP?SM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SM_Y_STOP?SM
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+    ADDRESS: 06F8H
+Program Size: data=45.0 xdata=0 code=1930
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 8 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling timer.c...
+compiling sm.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TIMER1_SET_TIME?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_START?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+    ADDRESS: 06FEH
+Program Size: data=45.0 xdata=0 code=1936
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling timer.c...
+compiling sm.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TIMER1_SET_TIME?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_START?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+    ADDRESS: 06FEH
+Program Size: data=45.0 xdata=0 code=1936
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling timer.c...
+compiling sm.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TIMER1_SET_TIME?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_START?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+    ADDRESS: 06FEH
+Program Size: data=45.0 xdata=0 code=1942
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling timer.c...
+compiling sm.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TIMER1_SET_TIME?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_START?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+    ADDRESS: 06FEH
+Program Size: data=45.0 xdata=0 code=1941
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling timer.c...
+compiling sm.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TIMER1_SET_TIME?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_START?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+    ADDRESS: 06FEH
+Program Size: data=45.0 xdata=0 code=1941
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling timer.c...
+compiling sm.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TIMER1_SET_TIME?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_START?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+    ADDRESS: 06FEH
+Program Size: data=45.0 xdata=0 code=1942
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling timer.c...
+compiling sm.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TIMER1_SET_TIME?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_START?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+    ADDRESS: 06FEH
+Program Size: data=45.0 xdata=0 code=1942
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling timer.c...
+compiling sm.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TIMER1_SET_TIME?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_START?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+    ADDRESS: 06FEH
+Program Size: data=45.0 xdata=0 code=1942
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling timer.c...
+compiling sm.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TIMER1_SET_TIME?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_START?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+    ADDRESS: 06FEH
+Program Size: data=45.0 xdata=0 code=1942
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling timer.c...
+compiling sm.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TIMER1_SET_TIME?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_START?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+    ADDRESS: 06FEH
+Program Size: data=45.0 xdata=0 code=1988
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling timer.c...
+compiling sm.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DELAY?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TIMER1_SET_TIME?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_START?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+    ADDRESS: 06FEH
+Program Size: data=45.0 xdata=0 code=1985
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 7 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling timer.c...
+compiling sm.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DELAY?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TIMER1_SET_TIME?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_START?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+    ADDRESS: 06FEH
+Program Size: data=45.0 xdata=0 code=1961
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 7 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling timer.c...
+compiling sm.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TIMER1_SET_TIME?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_START?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+    ADDRESS: 06FEH
+Program Size: data=45.0 xdata=0 code=1964
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling timer.c...
+compiling sm.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TIMER1_SET_TIME?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_START?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+    ADDRESS: 06FEH
+Program Size: data=45.0 xdata=0 code=1964
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling timer.c...
+compiling sm.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TIMER1_SET_TIME?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_START?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+    ADDRESS: 06FEH
+Program Size: data=45.0 xdata=0 code=1964
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling timer.c...
+compiling sm.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TIMER1_SET_TIME?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_START?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+    ADDRESS: 06FEH
+Program Size: data=45.0 xdata=0 code=1942
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling timer.c...
+compiling sm.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TIMER1_SET_TIME?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_START?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+    ADDRESS: 06FEH
+Program Size: data=45.0 xdata=0 code=1943
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling timer.c...
+compiling sm.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TIMER1_SET_TIME?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_START?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+    ADDRESS: 06FEH
+Program Size: data=45.0 xdata=0 code=1943
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling timer.c...
+compiling sm.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TIMER1_SET_TIME?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_START?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+    ADDRESS: 06FCH
+Program Size: data=45.0 xdata=0 code=1941
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling timer.c...
+compiling sm.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TIMER1_SET_TIME?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_START?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+    ADDRESS: 06FCH
+Program Size: data=45.0 xdata=0 code=1941
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling timer.c...
+compiling sm.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TIMER1_SET_TIME?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_START?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+    ADDRESS: 06FCH
+Program Size: data=45.0 xdata=0 code=1941
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling timer.c...
+compiling sm.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TIMER1_SET_TIME?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_START?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SM_XY_RUN?SM
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+    ADDRESS: 06FCH
+Program Size: data=49.0 xdata=0 code=1930
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 7 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling timer.c...
+compiling sm.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TIMER1_SET_TIME?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_START?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SM_XY_RUN?SM
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+    ADDRESS: 06FCH
+Program Size: data=49.0 xdata=0 code=1938
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 7 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling timer.c...
+compiling sm.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TIMER1_SET_TIME?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_START?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SM_XY_RUN?SM
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+    ADDRESS: 06FCH
+Program Size: data=49.0 xdata=0 code=1944
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 7 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling timer.c...
+compiling sm.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TIMER1_SET_TIME?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_START?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SM_XY_RUN?SM
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+    ADDRESS: 06FCH
+Program Size: data=49.0 xdata=0 code=1944
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 7 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling timer.c...
+compiling sm.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TIMER1_SET_TIME?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_START?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+    ADDRESS: 06FCH
+Program Size: data=45.0 xdata=0 code=1955
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling timer.c...
+compiling sm.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TIMER1_SET_TIME?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_START?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+    ADDRESS: 0705H
+Program Size: data=46.0 xdata=0 code=1993
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling timer.c...
+compiling sm.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TIMER1_SET_TIME?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_START?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+    ADDRESS: 0705H
+Program Size: data=46.0 xdata=0 code=1993
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling timer.c...
+compiling sm.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TIMER1_SET_TIME?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_START?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+    ADDRESS: 0705H
+Program Size: data=46.0 xdata=0 code=1993
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling timer.c...
+compiling sm.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TIMER1_SET_TIME?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_START?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+    ADDRESS: 0705H
+Program Size: data=46.0 xdata=0 code=1993
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling timer.c...
+compiling sm.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TIMER1_SET_TIME?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_START?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+    ADDRESS: 0705H
+Program Size: data=46.0 xdata=0 code=1993
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling timer.c...
+compiling sm.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TIMER1_SET_TIME?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_START?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+    ADDRESS: 0705H
+Program Size: data=46.0 xdata=0 code=1993
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling timer.c...
+compiling sm.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TIMER1_SET_TIME?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_START?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+    ADDRESS: 0705H
+Program Size: data=46.0 xdata=0 code=1993
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling timer.c...
+compiling sm.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TIMER1_SET_TIME?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_START?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+    ADDRESS: 0705H
+Program Size: data=46.0 xdata=0 code=1993
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling timer.c...
+compiling sm.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TIMER1_SET_TIME?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_START?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SM_XY_RUN?SM
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+    ADDRESS: 0705H
+Program Size: data=50.0 xdata=0 code=1956
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 7 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling timer.c...
+compiling sm.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TIMER1_SET_TIME?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_START?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SM_XY_RUN?SM
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+    ADDRESS: 0705H
+Program Size: data=50.0 xdata=0 code=1956
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 7 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling timer.c...
+compiling sm.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TIMER1_SET_TIME?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_START?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SM_XY_RUN?SM
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+    ADDRESS: 0705H
+Program Size: data=50.0 xdata=0 code=1956
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 7 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling timer.c...
+compiling sm.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TIMER1_SET_TIME?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_START?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SM_X_RUN?SM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SM_Y_RUN?SM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SM_XY_RUN?SM
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+    ADDRESS: 06EFH
+Program Size: data=66.0 xdata=0 code=2047
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 9 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling timer.c...
+compiling sm.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TIMER1_SET_TIME?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_START?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SM_Y_RUN?SM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SM_XY_RUN?SM
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+    ADDRESS: 06EFH
+Program Size: data=64.0 xdata=0 code=2086
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 8 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling timer.c...
+compiling sm.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TIMER1_SET_TIME?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_START?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SM_Y_RUN?SM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SM_XY_RUN?SM
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+    ADDRESS: 06EFH
+Program Size: data=64.0 xdata=0 code=2084
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 8 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling timer.c...
+compiling sm.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TIMER1_SET_TIME?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_START?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SM_Y_RUN?SM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SM_XY_RUN?SM
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+    ADDRESS: 06EFH
+Program Size: data=64.0 xdata=0 code=2084
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 8 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling timer.c...
+compiling sm.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TIMER1_SET_TIME?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_START?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SM_Y_RUN?SM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SM_XY_RUN?SM
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+    ADDRESS: 06EFH
+Program Size: data=64.0 xdata=0 code=2083
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 8 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling timer.c...
+compiling sm.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TIMER1_SET_TIME?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_START?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SM_Y_RUN?SM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SM_XY_RUN?SM
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+    ADDRESS: 06EFH
+Program Size: data=64.0 xdata=0 code=2083
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 8 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling timer.c...
+compiling sm.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TIMER1_SET_TIME?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_START?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SM_X_RUN?SM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SM_Y_RUN?SM
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+    ADDRESS: 06EFH
+Program Size: data=60.0 xdata=0 code=2097
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 8 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling timer.c...
+compiling sm.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TIMER1_SET_TIME?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_START?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER0_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIMER1_STOP?TIMER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SM_X_RUN?SM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SM_Y_RUN?SM
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  TIMER1_TIMEOUT
+    MODULE:  ..\Outputs\timer.obj (TIMER)
+    ADDRESS: 06EFH
+Program Size: data=60.0 xdata=0 code=2099
+creating hex file from "..\Outputs\SM_XYControl_Full"...
+"..\Outputs\SM_XYControl_Full" - 0 Error(s), 8 Warning(s).

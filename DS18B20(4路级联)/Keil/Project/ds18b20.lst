@@ -1,0 +1,234 @@
+C51 COMPILER V9.01   DS18B20                                                               03/12/2018 11:16:38 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE DS18B20
+OBJECT MODULE PLACED IN ..\Outputs\ds18b20.obj
+COMPILER INVOKED BY: D:\Dev\Keil\C51\BIN\C51.EXE ..\Hardware\ds18b20.c BROWSE INCDIR(..\User;..\Hardware) DEBUG OBJECTEX
+                    -TEND PRINT(.\ds18b20.lst) OBJECT(..\Outputs\ds18b20.obj)
+
+line level    source
+
+   1          #include "ds18b20.h"
+   2          #include "reg51.h"
+   3          #include "intrins.h"
+   4          #include "uart.h"
+   5          
+   6          sbit DQ = P2^0;
+   7          
+   8          /**
+   9          * 短暂延时
+  10          */
+  11          void delay(uchar i){
+  12   1              do{
+  13   2                      _nop_();
+  14   2                      _nop_();
+  15   2                      _nop_();
+  16   2                      i--;
+  17   2              }while(i);
+  18   1      }
+  19          
+  20          /**
+  21          * DS18B20 初始化
+  22          * 返回0，初始化成功；否则， 初始化失败
+  23          */
+  24          uchar ds18b20_init(){
+  25   1              uchar rst = 0;
+  26   1              DQ = 1;           
+  27   1              delay(10);        
+  28   1              DQ = 0;          
+  29   1              delay(120);       
+  30   1              DQ = 1;          
+  31   1              delay(16);       
+  32   1              rst = DQ;               
+  33   1              delay(80);      
+  34   1              DQ = 1;
+  35   1              
+  36   1              return rst;             
+  37   1      }
+  38          
+  39          /*
+  40          * DS18B20 写一位数据
+  41          */
+  42          void ds18b20_write_bit(uchar b){
+  43   1              DQ = 0;
+  44   1              DQ = b&0x01;                    
+  45   1              delay(12);                               
+  46   1              DQ = 1;
+  47   1              delay(5);       
+  48   1      }
+  49          
+  50          /*
+  51          * DS18B20 写一个字节的数据
+  52          */
+  53          void ds18b20_write(uchar byte){
+  54   1              uchar i = 0;
+C51 COMPILER V9.01   DS18B20                                                               03/12/2018 11:16:38 PAGE 2   
+
+  55   1              for(i=8;i>0;i--){
+  56   2                      ds18b20_write_bit(byte & 0x01);
+  57   2                      byte >>= 1;
+  58   2              }       
+  59   1      }
+  60          
+  61          /*
+  62          * DS18B20 读取一位数据
+  63          */
+  64          uchar ds18b20_read_bit(){
+  65   1              uchar bt;
+  66   1              DQ = 0;                         
+  67   1              delay(1);                       
+  68   1              DQ = 1;                                 
+  69   1              if(DQ)                  
+  70   1                      bt = 0x01;              
+  71   1              delay(11);
+  72   1      
+  73   1              return bt;
+  74   1      }
+  75          
+  76          /**
+  77          * DS18B20 读取两位数据
+  78          */
+  79          uchar ds18b20_read_2bits(){
+  80   1              uchar i, b2;
+  81   1              for(i=2;i>0;i--){
+  82   2                      DQ = 0;                 
+  83   2                      delay(1);               
+  84   2                      DQ = 1;                 
+  85   2                      b2 <<= 1;               
+  86   2                      if(DQ)                  
+  87   2                              b2 |= 0x01;             
+  88   2                      delay(10);      
+  89   2              }
+  90   1      
+  91   1              return b2;
+  92   1      }
+  93          
+  94          /**
+  95          * DS18B20 读取一个字节的数据
+  96          */
+  97          uchar ds18b20_read(){
+  98   1              uchar i, byte = 0;
+  99   1              for(i=8;i>0;i--){
+ 100   2                      DQ = 0;                 
+ 101   2                      delay(1);               
+ 102   2                      DQ = 1;                 
+ 103   2                      byte >>= 1;             
+ 104   2                      if(DQ)                  
+ 105   2                              byte |= 0x80;           
+ 106   2                      delay(11);
+ 107   2              }
+ 108   1              return byte;    
+ 109   1      }
+ 110          
+ 111          /**
+ 112          * DS18B20 当总线上挂载1个DS18B20时，读取这个DS18B20的温度值
+ 113          */
+ 114          uchar ds18b20_read_temp1(){
+ 115   1              uchar templ, temph, tt;
+ 116   1              uint t;
+C51 COMPILER V9.01   DS18B20                                                               03/12/2018 11:16:38 PAGE 3   
+
+ 117   1              ds18b20_init();            
+ 118   1              ds18b20_write(0xcc);       
+ 119   1              ds18b20_write(0x44);
+ 120   1      
+ 121   1              ds18b20_init();          
+ 122   1              ds18b20_write(0xcc);      
+ 123   1              ds18b20_write(0xbe);
+ 124   1                       
+ 125   1              templ=ds18b20_read();    
+ 126   1              temph=ds18b20_read();     
+ 127   1              t = temph;
+ 128   1              t <<= 8;
+ 129   1              t = t | templ;
+ 130   1              tt = t * 0.0625;
+ 131   1                                
+ 132   1              return tt;                         
+ 133   1      }
+ 134          
+ 135          /**
+ 136          * DS18B20 当总线上挂载1个DS18B20时，读取这个DS18B20的64位ROM
+ 137          */
+ 138          uchar* ds18b20_read_rom(){
+ 139   1              uchar i, rom[8];
+ 140   1              ds18b20_init();
+ 141   1              ds18b20_write(0x33);
+ 142   1      
+ 143   1              for(i=0;i<8;i++){
+ 144   2                      rom[i] = ds18b20_read();
+ 145   2              }
+ 146   1      
+ 147   1              return rom;
+ 148   1      }
+ 149          
+ 150          /**
+ 151          * DS18B20 当总线上挂载多个DS18B20时，搜索这些DS18B20的ROM并存储
+ 152          * @param ids 所有DS18B20的ROM存储数组
+ 153          * @param num DS18B20的个数
+ 154          */
+ 155          void ds18b20_search_rom(uchar (*ids)[8], uchar* num){
+ 156   1              uchar i, j;
+ 157   1              uchar k;
+ 158   1              uchar ss[64];
+ 159   1      
+ 160   1              uchar cfl;
+ 161   1              uchar stack[MAX_NUM - 1];
+ 162   1              uchar p = 0;
+ 163   1      
+ 164   1              do{
+ 165   2                      ds18b20_init();
+ 166   2                      ds18b20_write(0xf0);
+ 167   2      
+ 168   2                      for(i=0;i<8;i++){
+ 169   3                              uchar s = 0;
+ 170   3                              for(j=0;j<8;j++){
+ 171   4                                      k = ds18b20_read_2bits();
+ 172   4                                      k &= 0x03;
+ 173   4                                      s >>= 1;
+ 174   4                                      if(k == 0x01){
+ 175   5                                              ds18b20_write_bit(0);
+ 176   5                                              ss[i*8+j] = 0;
+ 177   5                                      }else if(k == 0x02){
+ 178   5                                              s |= 0x80;
+C51 COMPILER V9.01   DS18B20                                                               03/12/2018 11:16:38 PAGE 4   
+
+ 179   5                                              ds18b20_write_bit(1);
+ 180   5                                              ss[i*8+j] = 1;          
+ 181   5                                      }else if(k == 0x00){
+ 182   5                                              cfl = i * 8 + j + 1;
+ 183   5                                              if(cfl > stack[p]){
+ 184   6                                                      ds18b20_write_bit(0);
+ 185   6                                                      ss[i*8+j] = 0;
+ 186   6                                                      stack[++p] = cfl;
+ 187   6                                              }else if(cfl < stack[p]){
+ 188   6                                                      s |= ((ss[8*i+j] & 0x01) << 7);
+ 189   6                                                      ds18b20_write_bit(ss[i*8+j]);           
+ 190   6                                              }else if(cfl == stack[p]){
+ 191   6                                                      s |= 0x80;
+ 192   6                                                      ds18b20_write_bit(1);
+ 193   6                                                      ss[8*i+j] = 1;
+ 194   6                                                      p -= 1;                                         
+ 195   6                                              }       
+ 196   5                                      }else{
+ 197   5                                              //do nothing
+ 198   5                                      }
+ 199   4                              }
+ 200   3                              ids[*num][i] = s;                       
+ 201   3                      }
+ 202   2                      (*num)++;
+ 203   2              }while((stack[p] != 0));
+ 204   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    527    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----      84
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

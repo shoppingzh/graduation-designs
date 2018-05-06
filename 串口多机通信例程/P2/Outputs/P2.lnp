@@ -1,0 +1,4 @@
+"..\Outputs\main.obj",
+"..\Outputs\uart.obj" 
+TO "..\Outputs\P2" 
+PRINT(".\P2.m51")

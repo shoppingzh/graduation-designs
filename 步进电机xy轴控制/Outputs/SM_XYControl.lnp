@@ -1,0 +1,5 @@
+"..\Outputs\main.obj",
+"..\Outputs\sm.obj",
+"..\Outputs\timer.obj" 
+TO "..\Outputs\SM_XYControl" 
+PRINT(".\SM_XYControl.m51")

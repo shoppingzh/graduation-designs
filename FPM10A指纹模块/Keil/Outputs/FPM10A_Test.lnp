@@ -1,0 +1,6 @@
+"..\Outputs\main.obj",
+"..\Outputs\lcd1602.obj",
+"..\Outputs\uart_syn.obj",
+"..\Outputs\fpm10a.obj" 
+TO "..\Outputs\FPM10A_Test" 
+PRINT(".\FPM10A_Test.m51")

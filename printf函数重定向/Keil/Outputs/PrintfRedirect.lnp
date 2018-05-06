@@ -1,0 +1,5 @@
+"..\Outputs\main.obj",
+"..\Outputs\printer.obj",
+"..\Outputs\uart.obj" 
+TO "..\Outputs\PrintfRedirect" 
+PRINT(".\PrintfRedirect.m51")

@@ -1,0 +1,66 @@
+C51 COMPILER V9.01   MAIN                                                                  03/21/2018 09:13:54 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN ..\Outputs\main.obj
+COMPILER INVOKED BY: D:\Dev\Keil\C51\BIN\C51.EXE ..\User\main.c BROWSE INCDIR(..\Hardware;..\User) DEBUG OBJECTEXTEND PR
+                    -INT(.\main.lst) OBJECT(..\Outputs\main.obj)
+
+line level    source
+
+   1          #include "reg51.h"
+   2          #include "writer.h"
+   3          #include "uart.h"
+   4          
+   5          code uchar A[] = {50, 10, 1, 30, 90, 2, 50, 10, 1, 70, 90, 2, 40, 50, 1, 60, 50, 2};
+   6          code uchar BB[] = {1, 2, 3};
+   7          code uchar *arr[52] = {A, BB};
+   8          code uchar lens[] = {18};
+   9          
+  10          bit writing = 0;                //是否书写标志位
+  11          uchar curr = 0;
+  12          
+  13          void main(){
+  14   1      
+  15   1              IP = 0x10;
+  16   1              writer_init();          
+  17   1       
+  18   1              while(1){
+  19   2      
+  20   2                      if(writing){
+  21   3                              writer_write(arr[curr], lens[curr]);
+  22   3                              writing = 0;
+  23   3                      }               
+  24   2      
+  25   2              }
+  26   1      }
+  27          
+  28          /**
+  29          * 接收到上位机通过蓝牙发送来的数据
+  30          * @param cmd    回调参数，为蓝牙发送来的数据
+  31          */
+  32          void uart_received(uchar cmd){
+  33   1              if(cmd >= 'A' && cmd <= 'Z'){
+  34   2                      curr = cmd - 'A';
+  35   2                      writing = 1;                    
+  36   2              }else if(cmd >= 'a' && cmd <= 'z'){
+  37   2                      curr = cmd - 'a';
+  38   2                      writing = 1;
+  39   2              }
+  40   1      }
+  41          
+  42          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     88    ----
+   CONSTANT SIZE    =    178    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      1    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =      1    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,5 @@
+".\uart.obj",
+".\uart_support.obj",
+".\main.obj" 
+TO "uart_packet_analyse" 
+RAMSIZE(256) 

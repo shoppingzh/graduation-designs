@@ -1,0 +1,78 @@
+C51 COMPILER V9.01   MAIN                                                                  04/02/2018 15:08:28 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN ..\Outputs\main.obj
+COMPILER INVOKED BY: D:\Dev\Keil\C51\BIN\C51.EXE ..\User\main.c BROWSE INCDIR(..\Hardware;..\User) DEBUG OBJECTEXTEND PR
+                    -INT(.\main.lst) OBJECT(..\Outputs\main.obj)
+
+line level    source
+
+   1          #include "reg51.h"
+   2          #include "signal_generator.h"
+   3          #include "uart.h"
+   4          #include "lcd12864.h"
+   5          
+   6          #define uchar unsigned char
+   7          code uchar tips[] = "等候上位机指令";
+   8          code uchar str_squ[] = "当前波形：方波";
+   9          code uchar str_tra[] = "当前波形：叁角波";
+  10          code uchar str_sin[] = "当前波形：余弦波";
+  11          code uchar str_saw[] = "当前波形：锯齿波";
+  12          
+  13          code uchar rob[] = {0x08,0x10,0x08,0x10,0x08,0x10,0x7F,0xFE,0x20,0x04,0x12,0x48,0x08,0x10,0x05,0xA0,0x02,0
+             -x40,0x01,0x80,0x01,0x80,0x07,0xE0,0x09,0x90,0x11,0x88,0x11,0x88,0x11,0x88}; 
+  14          
+  15          void main(){
+  16   1              uart_init();
+  17   1      
+  18   1              signal_generator_init();
+  19   1              lcd_display_string(4, 1, tips);
+  20   1              while(1){
+  21   2              }
+  22   1      }
+  23          
+  24          void display(uchar w){
+  25   1              if(w == 1){
+  26   2                      lcd_display_string(4, 1, str_squ);      
+  27   2              }else if(w == 2){
+  28   2                      lcd_display_string(4, 1, str_tra);
+  29   2              }else if(w == 3){
+  30   2                      lcd_display_string(4, 1, str_sin);
+  31   2              }else if(w == 4){
+  32   2                      lcd_display_string(4, 1, str_saw);
+  33   2              }       
+  34   1      }
+  35          
+  36          void uart_received(uchar cmd){
+  37   1              uchar wave = cmd >> 4;
+  38   1              uchar freq = cmd & 0x0f;
+  39   1              uart_send(wave);
+  40   1              if(wave == 1){
+  41   2                      signal_generator_quare(freq);   
+  42   2              }else if(wave == 2){
+  43   2                      signal_generator_traingle(freq);
+  44   2              }else if(wave == 3){
+  45   2                      signal_generator_sin(freq);
+  46   2              }else if(wave == 4){
+  47   2                      signal_generator_sawtooth(freq);
+  48   2              }
+  49   1              display(wave);  
+  50   1      }
+  51          
+
+
+C51 COMPILER V9.01   MAIN                                                                  04/02/2018 15:08:28 PAGE 2   
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    156    ----
+   CONSTANT SIZE    =    113    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       3
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

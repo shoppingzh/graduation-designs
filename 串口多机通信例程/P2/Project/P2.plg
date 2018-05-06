@@ -1,0 +1,16 @@
+<html>
+<body>
+<pre>
+<h1>礦ision Build Log</h1>
+<h2>Project:</h2>
+E:\毕业设计相关\串口多机通信例程\P2\Project\P2.uvproj
+Project File Date:  03/20/2018
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling main.c...
+compiling uart.c...
+linking...
+Program Size: data=9.0 xdata=0 code=119
+creating hex file from "..\Outputs\P2"...
+"..\Outputs\P2" - 0 Error(s), 0 Warning(s).

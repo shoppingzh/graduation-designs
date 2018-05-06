@@ -1,0 +1,106 @@
+<html>
+<body>
+<pre>
+<h1>礦ision Build Log</h1>
+<h2>Project:</h2>
+E:\毕业设计相关\DS18B20测温\KEIL\Project\temper.uvproj
+Project File Date:  03/10/2018
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling main.c...
+..\User\main.c(3): warning C318: can't open file 'ds18b20.h'
+..\USER\MAIN.C(9): warning C280: 'a': unreferenced local variable
+..\USER\MAIN.C(9): warning C280: 'b': unreferenced local variable
+..\USER\MAIN.C(9): warning C280: 'c': unreferenced local variable
+compiling ds18b20.c...
+..\HARDWARE\DS18B20.C(12): error C231: 'ds18b20_init': redefinition
+..\HARDWARE\DS18B20.C(23): error C231: 'ds18b20_init': redefinition
+Target not created
+Build target 'Target 1'
+compiling main.c...
+..\User\main.c(3): warning C318: can't open file 'ds18b20.h'
+..\USER\MAIN.C(94): warning C280: 'a': unreferenced local variable
+..\USER\MAIN.C(94): warning C280: 'b': unreferenced local variable
+..\USER\MAIN.C(94): warning C280: 'c': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DS18B20_READTEMP?MAIN
+Program Size: data=12.0 xdata=0 code=687
+"temper" - 0 Error(s), 5 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+..\User\main.c(3): warning C318: can't open file 'ds18b20.h'
+..\USER\MAIN.C(11): warning C280: 'a': unreferenced local variable
+..\USER\MAIN.C(11): warning C280: 'b': unreferenced local variable
+..\USER\MAIN.C(11): warning C280: 'c': unreferenced local variable
+linking...
+Program Size: data=12.0 xdata=0 code=17
+"temper" - 0 Error(s), 4 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+..\User\main.c(3): warning C318: can't open file 'ds18b20.h'
+..\USER\MAIN.C(11): warning C280: 'a': unreferenced local variable
+..\USER\MAIN.C(11): warning C280: 'b': unreferenced local variable
+..\USER\MAIN.C(11): warning C280: 'c': unreferenced local variable
+linking...
+Program Size: data=12.0 xdata=0 code=17
+"temper" - 0 Error(s), 4 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+..\User\main.c(3): warning C318: can't open file 'ds18b20.h'
+..\USER\MAIN.C(14): warning C206: 'ds18b20_readtemp': missing function-prototype
+linking...
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  DS18B20_READTEMP
+    MODULE:  .\main.obj (MAIN)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  DS18B20_READTEMP
+    MODULE:  .\main.obj (MAIN)
+    ADDRESS: 0004H
+Program Size: data=9.0 xdata=0 code=35
+"temper" - 0 Error(s), 4 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  DS18B20_READTEMP
+    MODULE:  .\main.obj (MAIN)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  DS18B20_READTEMP
+    MODULE:  .\main.obj (MAIN)
+    ADDRESS: 0004H
+Program Size: data=9.0 xdata=0 code=35
+"temper" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  DS18B20_READTEMP
+    MODULE:  ..\Outputs\main.obj (MAIN)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  DS18B20_READTEMP
+    MODULE:  ..\Outputs\main.obj (MAIN)
+    ADDRESS: 0004H
+Program Size: data=9.0 xdata=0 code=35
+creating hex file from "..\Outputs\temper"...
+"..\Outputs\temper" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  DS18B20_READTEMP
+    MODULE:  ..\Outputs\main.obj (MAIN)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  DS18B20_READTEMP
+    MODULE:  ..\Outputs\main.obj (MAIN)
+    ADDRESS: 0004H
+Program Size: data=9.0 xdata=0 code=35
+creating hex file from "..\Outputs\temper"...
+"..\Outputs\temper" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling ds18b20.c...
+..\HARDWARE\DS18B20.C(13): error C231: 'ds18b20_init': redefinition
+..\HARDWARE\DS18B20.C(24): error C231: 'ds18b20_init': redefinition
+Target not created

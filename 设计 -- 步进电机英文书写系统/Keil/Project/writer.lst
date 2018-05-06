@@ -1,0 +1,109 @@
+C51 COMPILER V9.01   WRITER                                                                03/21/2018 09:13:54 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE WRITER
+OBJECT MODULE PLACED IN ..\Outputs\writer.obj
+COMPILER INVOKED BY: D:\Dev\Keil\C51\BIN\C51.EXE ..\Hardware\writer.c BROWSE INCDIR(..\Hardware;..\User) DEBUG OBJECTEXT
+                    -END PRINT(.\writer.lst) OBJECT(..\Outputs\writer.obj)
+
+line level    source
+
+   1          #include "writer.h"
+   2          #include "sm.h"
+   3          #include "math.h"
+   4          #include "reg51.h"
+   5          #include "uart.h"
+   6          #include "stdio.h"
+   7          
+   8          /**
+   9          * 书写系统初始化
+  10          */
+  11          void writer_init(){
+  12   1              sm_init();
+  13   1              uart_init();
+  14   1      }
+  15          
+  16          /**
+  17          * 书写
+  18          * @param x1             书写的起始点x坐标
+  19          * @param y1     书写的起始点y坐标
+  20          * @param x2             书写的终止点x坐标
+  21          * @param y2             书写的终止点y坐标
+  22          * @param flag   是否提笔的标志位
+  23          */
+  24          static void writer_write_line(int x1, int y1, int x2, int y2, uchar flag){
+  25   1              int w = x2 - x1;                                                                //X轴书写距离(mm)
+  26   1              int h = y2 - y1;                                                                //Y轴书写距离(mm)
+  27   1              float s = sqrt(w * w + h * h);                                  //书写总距离(mm)
+  28   1              uint t = (ulong)(s * 1000.0f) / WRITE_SPEED;    //书写总时长(ms)
+  29   1              float vx = abs(w) * 1000.0 / t;                                 //X轴的书写速度(mm/s)
+  30   1              float vy = abs(h) * 1000.0 / t;                                 //Y轴的书写速度(mm/s)   
+  31   1              uint rpmx = vx * 60.0 / MM_PER_REV;                             //X轴的书写速度(转/分钟)
+  32   1              uint rpmy = vy * 60.0 / MM_PER_REV;                             //Y轴的书写速度(转/分钟)
+  33   1      
+  34   1              //打印调试信息
+  35   1              if(DEBUG){
+  36   2                      printf("------------------------START------------------------\n");
+  37   2                      printf("Run: (%d, %d) -> (%d, %d) \n", x1, y1, x2, y2);
+  38   2                      printf("Pen Status: %s\n", (flag == 0 ? "No Action" : (flag == 1 ? "Down Action" : "Up Action")));
+  39   2                      printf("X Distance: %dmm \n", (int)w);
+  40   2                      printf("Y Distance: %dmm \n", (int)h);
+  41   2                      printf("Total Distance: %.3fmm \n", s);
+  42   2                      printf("Total Time: %dms \n", (int)t);
+  43   2                      printf("X Speed: %.3fmm/s \n", vx);
+  44   2                      printf("Y Speed: %.3fmm/s \n", vy);
+  45   2                      printf("X RPM: %dr/min \n", (int)rpmx);
+  46   2                      printf("Y RPM: %dr/min \n", (int)rpmy);
+  47   2                      printf("X RPM(ajusted): %dr/min \n", (int)(rpmx * K_RPM));
+  48   2                      printf("Y RPM(ajusted): %dr/min \n", (int)(rpmy * K_RPM));
+  49   2                      printf("-------------------------END------------------------\n\n");
+  50   2              }
+  51   1              
+  52   1              //是否提笔或下笔
+  53   1              if(flag != 0){
+  54   2                      ET0 = 0;
+C51 COMPILER V9.01   WRITER                                                                03/21/2018 09:13:54 PAGE 2   
+
+  55   2                      uart_send(CMD_CHANGE_FLAG);
+  56   2                      ET0 = 1;
+  57   2              }
+  58   1      
+  59   1              //电机工作
+  60   1              sm_xy_run(rpmx * K_RPM, (w > 0 ? SM_DIR_BACKWARD : SM_DIR_FORWARD),
+  61   1                                rpmy * K_RPM, (h > 0 ? SM_DIR_BACKWARD : SM_DIR_FORWARD),
+  62   1                                t * K_TIME);
+  63   1      }
+  64          
+  65          /*
+  66          * 书写一个字符
+  67          * @param coor           字符的编码信息，存储格式[x坐标, y坐标, 笔的动作(提笔/下笔/无动作), ... ]
+  68          * @param len            字符编码数组的长度 
+  69          */
+  70          void writer_write(uchar coor[], uint len){
+  71   1              uint i;
+  72   1              writer_write_line(0, 0, coor[0], coor[1], 0);           //第一笔：(0, 0)到起始点，悬空移动
+  73   1              for(i=0;i<len - 4;i+=3){
+  74   2                      writer_write_line(coor[i], coor[i+1], coor[i+3], coor[i+4], coor[i+2]); 
+  75   2              }
+  76   1              writer_write_line(coor[len-3], coor[len-2], 0, 0, coor[len-1]);
+  77   1      }
+  78          
+  79          //重定向printf函数
+  80          char putchar(char c){
+  81   1              uart_send(c);
+  82   1              return c;
+  83   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    742    ----
+   CONSTANT SIZE    =    394    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----      39
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

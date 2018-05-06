@@ -1,0 +1,42 @@
+C51 COMPILER V9.01   PRINTER                                                               03/14/2018 12:00:43 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE PRINTER
+OBJECT MODULE PLACED IN ..\Outputs\printer.obj
+COMPILER INVOKED BY: D:\Dev\Keil\C51\BIN\C51.EXE ..\System\printer.c BROWSE INCDIR(..\Hardware;..\User;..\System) DEBUG 
+                    -OBJECTEXTEND PRINT(.\printer.lst) OBJECT(..\Outputs\printer.obj)
+
+line level    source
+
+   1          #include "printer.h"
+   2          #include "uart.h"
+   3          #include "stdio.h"
+   4          
+   5          /**
+   6          * 初始化
+   7          */
+   8          void printer_init(){
+   9   1              uart_init();
+  10   1      }
+  11          
+  12          /**
+  13          * 重定向c库函数printf到串口
+  14          */
+  15          char putchar(char c){
+  16   1              uart_send(c);
+  17   1              return c;       
+  18   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     11    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       1
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

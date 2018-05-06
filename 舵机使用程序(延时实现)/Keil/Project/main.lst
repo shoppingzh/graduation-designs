@@ -1,0 +1,121 @@
+C51 COMPILER V9.01   MAIN                                                                  03/19/2018 20:25:06 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN ..\Outpus\main.obj
+COMPILER INVOKED BY: D:\Dev\Keil\C51\BIN\C51.EXE ..\User\main.c BROWSE INCDIR(..\User) DEBUG OBJECTEXTEND PRINT(.\main.l
+                    -st) OBJECT(..\Outpus\main.obj)
+
+line level    source
+
+   1          #include <REGX51.H>
+   2          #include "intrins.h"
+   3          #define uchar unsigned char
+   4          
+   5          sbit pwm = P2^0;
+   6          sbit key = P3^5;
+   7          bit flag;
+   8          
+   9          
+  10          //Ë³Ê±Õë90
+  11          void delay2ms(void)   //Îó²î -0.217013888889us
+  12          {
+  13   1          unsigned char a,b,c;
+  14   1          for(c=2;c>0;c--)
+  15   1              for(b=4;b>0;b--)
+  16   1                  for(a=113;a>0;a--);
+  17   1      }
+  18          
+  19          void delay18ms(void)   //Îó²î -0.868055555558us
+  20          {
+  21   1          unsigned char a,b;
+  22   1          for(b=161;b>0;b--)
+  23   1              for(a=50;a>0;a--);
+  24   1      }
+  25          
+  26          //ÄæÊ±Õë90
+  27          void delay19ms(void)   //Îó²î -0.43402777778us
+  28          {
+  29   1          unsigned char a,b;
+  30   1          for(b=45;b>0;b--)
+  31   1              for(a=193;a>0;a--);
+  32   1      }
+  33          void delay1ms(void)   //Îó²î -0.651041666667us
+  34          {
+  35   1          unsigned char a,b;
+  36   1          for(b=4;b>0;b--)
+  37   1              for(a=113;a>0;a--);
+  38   1      }
+  39          
+  40          void se_up(){
+  41   1              uchar i;
+  42   1              for(i=0;i<50;i++){
+  43   2                      pwm = 1;
+  44   2                      delay1ms();
+  45   2                      pwm = 0;
+  46   2                      delay19ms();
+  47   2              }       
+  48   1      }
+  49          
+  50          void se_down(){
+  51   1              uchar i;
+  52   1              for(i=0;i<50;i++){
+  53   2                      pwm = 1;
+  54   2                      delay2ms();
+C51 COMPILER V9.01   MAIN                                                                  03/19/2018 20:25:06 PAGE 2   
+
+  55   2                      pwm = 0;
+  56   2                      delay18ms();
+  57   2              }
+  58   1              
+  59   1      }
+  60          
+  61          void delay200ms(void)   //Îó²î -0.000000000058us
+  62          {
+  63   1          unsigned char a,b,c;
+  64   1          for(c=193;c>0;c--)
+  65   1              for(b=136;b>0;b--)
+  66   1                  for(a=2;a>0;a--);
+  67   1      }
+  68          
+  69          
+  70          
+  71          
+  72          
+  73          
+  74          void main(){
+  75   1              
+  76   1              while(1){
+  77   2                      //delay200ms();
+  78   2                      se_up();
+  79   2                      //delay200ms();
+  80   2                      se_down();
+  81   2                      
+  82   2                      /*if(!key){
+  83   2                              flag = !flag;                   
+  84   2                              while(!key);
+  85   2                      }
+  86   2                      if(flag){
+  87   2                              se_up();
+  88   2                      }else{
+  89   2                              se_down();
+  90   2                      }*/
+  91   2      
+  92   2              }
+  93   1      }
+  94          
+  95          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     95    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =      1    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,249 @@
+C51 COMPILER V9.01   MAIN                                                                  03/31/2018 13:58:06 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN ..\Outputs\main.obj
+COMPILER INVOKED BY: D:\Dev\Keil\C51\BIN\C51.EXE ..\User\main.c BROWSE INCDIR(..\Uesr,..\Hardware) DEBUG OBJECTEXTEND PR
+                    -INT(.\main.lst) OBJECT(..\Outputs\main.obj)
+
+line level    source
+
+   1          #include "reg51.h"
+   2          #include "adc.h"
+   3          #include "lcd1602.h"
+   4          #include "stdio.h"
+   5          #include "intrins.h"
+   6          
+   7          #define MAX_DISTANCE 40
+   8          #define MAX_VALID_PEOPLE 50
+   9          #define cal(ad) ((1.0f / (ad * 0.0005f + 0.00158f)) - 7)                //AD --> 距离转换公式
+  10          #define trigger(distance) (distance < MAX_DISTANCE)
+  11          
+  12          void delay(uint t);
+  13          void get_distance();
+  14          void analyse();
+  15          void display_inside();
+  16          void display_max();
+  17          
+  18          sbit ADDA = P2^7;
+  19          sbit key_set = P3^0;
+  20          sbit key_up = P3^1;
+  21          sbit key_down = P3^2;
+  22          sbit warning = P3^3;
+  23          sbit control = P3^4;
+  24          
+  25          float d1, d2;                                   //d1/d2：第一（二）个传感器采集到的距离
+  26          int people = 0;                                 //车上人数
+  27          uchar flag_in, flag_out;                //进出过程标志
+  28          bit inout = 0;                                  //进或出的标志位（为0时为进，为1时为出）
+  29          int max_people = 0;                             //限载人数
+  30          bit setting = 1;                                //是否处于设置状态
+  31          
+  32          
+  33          void main(){
+  34   1              lcd_simple_init();
+  35   1              lcd_display_string(1, 1, "Init Setting: ");
+  36   1              ADDA = 0;
+  37   1              control = 0;
+  38   1      
+  39   1              while(1){
+  40   2      
+  41   2                      //进入/退出设置
+  42   2                      if(!key_set){
+  43   3                              setting = ~setting;
+  44   3                              if(setting){
+  45   4                                      char str[16];
+  46   4                                      sprintf(str, "Max Overload:%d", max_people);
+  47   4                                      lcd_clear();
+  48   4                                      lcd_display_string(1, 1, "Setting..");
+  49   4                                      lcd_display_string(2, 1, str);
+  50   4      
+  51   4                              }else{
+  52   4                                      display_inside();
+  53   4                              }
+  54   3                              while(!key_set);        
+C51 COMPILER V9.01   MAIN                                                                  03/31/2018 13:58:06 PAGE 2   
+
+  55   3                      }
+  56   2      
+  57   2                      //增加/减少最大限载人数
+  58   2                      if(setting){
+  59   3                              if(!(!key_up && !key_down)){
+  60   4                                      if(!key_up){
+  61   5                                              delay(100);
+  62   5                                              if(!key_up){
+  63   6                                                      if(max_people < MAX_VALID_PEOPLE){
+  64   7                                                              max_people++;
+  65   7                                                              display_max();
+  66   7                                                      }               
+  67   6                                              }
+  68   5                                      }
+  69   4                                      if(!key_down){
+  70   5                                              delay(100);
+  71   5                                              if(!key_down){
+  72   6                                                      if(max_people > 1){
+  73   7                                                              max_people--;
+  74   7                                                              display_max();
+  75   7                                                      }               
+  76   6                                              }
+  77   5                                      }
+  78   4                              }               
+  79   3                      }else{
+  80   3                              //运行状态
+  81   3                              get_distance();
+  82   3                              analyse();
+  83   3                              if(people > max_people){
+  84   4                                      warning = 0;
+  85   4                                      control = 1;                    
+  86   4                              }else{
+  87   4                                      warning = 1;
+  88   4                                      control = 0;
+  89   4                              }
+  90   3                      }
+  91   2              }
+  92   1      }
+  93          
+  94          void display_max(){
+  95   1              uchar str[16];
+  96   1              lcd_display_string(1, 1, "Max Overload: ");
+  97   1              sprintf(str, "%16d", max_people);
+  98   1              lcd_display_string(2, 1, str);
+  99   1      }
+ 100          
+ 101          /**
+ 102          * 传感器采集切换延时
+ 103          */
+ 104          void delay(uint t){
+ 105   1          uint a,b;
+ 106   1          for(a=0;a<t;a++)
+ 107   1                      for(b=0;b<110;b++);
+ 108   1      }
+ 109          
+ 110          /**
+ 111          * 获取两个传感器采集到的距离
+ 112          */
+ 113          void get_distance(){
+ 114   1              uchar i;
+ 115   1              ADDA = 0;
+ 116   1              delay(1);
+C51 COMPILER V9.01   MAIN                                                                  03/31/2018 13:58:06 PAGE 3   
+
+ 117   1              for(i=0;i<3;i++){
+ 118   2                 d1 = cal(adc_transform());
+ 119   2              }
+ 120   1      
+ 121   1              ADDA = 1;
+ 122   1              delay(1);
+ 123   1              for(i=0;i<3;i++){
+ 124   2                 d2 = cal(adc_transform());
+ 125   2              }
+ 126   1      }
+ 127          
+ 128          /**
+ 129          * 显示当前车上人数
+ 130          */
+ 131          void display_inside(){
+ 132   1              uchar str[16];
+ 133   1              sprintf(str, "Inside: %d", (int)people);
+ 134   1              lcd_clear();
+ 135   1              lcd_display_string(1, 1, str);
+ 136   1      }
+ 137          
+ 138          /**
+ 139          * 根据传感器的触发顺序分析上下车情况
+ 140          */
+ 141          void analyse(){
+ 142   1              bit update = 0;
+ 143   1              if(d1 == 0 || d2 == 0)
+ 144   1                      return;
+ 145   1      
+ 146   1              //传感器1的触发
+ 147   1              if(trigger(d1)){
+ 148   2                      if(flag_in == 0 && flag_out == 0){
+ 149   3                              inout = 0;
+ 150   3                      }
+ 151   2                      if(inout == 0){
+ 152   3                              //从外面到触碰第一个传感器，开始进门
+ 153   3                              if(flag_in == 0){
+ 154   4                                      flag_in = 1;    
+ 155   4                              }
+ 156   3                      }else{
+ 157   3                              //从中间触碰到第一个传感器，即将出门
+ 158   3                              if(flag_out == 2){
+ 159   4                                      flag_out = 3;
+ 160   4                              }
+ 161   3                      }                                       
+ 162   2              }else{
+ 163   2                      if(inout == 0){
+ 164   3                              //穿过第一个传感器，进到两个传感器中间
+ 165   3                              if(flag_in == 1){
+ 166   4                                      flag_in = 2;
+ 167   4                              } 
+ 168   3                      }else{
+ 169   3                              //离开第一个传感器，走出门外，人数减1
+ 170   3                              if(flag_out == 3){
+ 171   4                                      flag_out = 0;
+ 172   4                                      if(people > 0){
+ 173   5                                              people--;
+ 174   5                                              update = 1;
+ 175   5                                      }       
+ 176   4                              }       
+ 177   3                      }       
+ 178   2              }
+C51 COMPILER V9.01   MAIN                                                                  03/31/2018 13:58:06 PAGE 4   
+
+ 179   1      
+ 180   1              //传感器2的触发
+ 181   1              if(trigger(d2)){
+ 182   2                      if(flag_in == 0 && flag_out == 0){
+ 183   3                              inout = 1;                      
+ 184   3                      }
+ 185   2                      if(inout == 0){
+ 186   3                              //从中间触碰到第二个传感器，即将进门
+ 187   3                              if(flag_in == 2){
+ 188   4                                      flag_in = 3;
+ 189   4                              }
+ 190   3                      }else{
+ 191   3                              //从里面触碰到第二个传感器，开始出门
+ 192   3                              if(flag_out == 0){
+ 193   4                                      flag_out = 1;
+ 194   4                              }
+ 195   3                      }                                               
+ 196   2              }else{
+ 197   2                      if(inout == 0){
+ 198   3                              //离开第二个传感器，进入门内，人数加1
+ 199   3                              if(flag_in == 3){
+ 200   4                                      flag_in = 0;
+ 201   4                                      if(people < 255){
+ 202   5                                              people++;
+ 203   5                                              update = 1;
+ 204   5                                      }       
+ 205   4                              }
+ 206   3                      }else{
+ 207   3                              //离开第二个传感器，出到两个传感器中间
+ 208   3                              if(flag_out == 1){
+ 209   4                                      flag_out = 2;
+ 210   4                              }       
+ 211   3                      }       
+ 212   2              }
+ 213   1      
+ 214   1      
+ 215   1              //根据需要显示人数信息
+ 216   1              if(update){
+ 217   2                      display_inside();       
+ 218   2              }
+ 219   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    759    ----
+   CONSTANT SIZE    =     72    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     14      49
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =      2       1
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

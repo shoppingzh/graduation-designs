@@ -1,0 +1,225 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        04/30/2018  17:12:28  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+D:\DEV\KEIL\C51\BIN\BL51.EXE ..\Outputs\main.obj, ..\Outputs\uart.obj, ..\Outputs\adc.obj TO ..\Outputs\MPX4415 PRINT (.
+>> \MPX4415.m51) RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  ..\Outputs\main.obj (MAIN)
+  ..\Outputs\uart.obj (UART)
+  ..\Outputs\adc.obj (ADC)
+  D:\DEV\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  ..\Outputs\MPX4415 (MAIN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0008H     UNIT         ?PR?_UART_SEND?UART
+            CODE    000BH     0003H     ABSOLUTE     
+            CODE    000EH     0013H     UNIT         ?PR?UART_INIT?UART
+                    0021H     0002H                  *** GAP ***
+            CODE    0023H     0003H     ABSOLUTE     
+            CODE    0026H     0042H     UNIT         ?PR?UART_INT?UART
+            CODE    0068H     0010H     UNIT         ?PR?ADC_INIT?ADC
+            CODE    0078H     0010H     UNIT         ?PR?ADC_TRANSFORM?ADC
+            CODE    0088H     000EH     UNIT         ?PR?DELAY1S?MAIN
+            CODE    0096H     000EH     UNIT         ?PR?MAIN?MAIN
+            CODE    00A4H     000CH     UNIT         ?C_C51STARTUP
+            CODE    00B0H     0009H     UNIT         ?PR?TIMER0_INT?ADC
+
+
+
+OVERLAY MAP OF MODULE:   ..\Outputs\MPX4415 (MAIN)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?MAIN
+
+?PR?MAIN?MAIN
+  +--> ?PR?UART_INIT?UART
+  +--> ?PR?ADC_TRANSFORM?ADC
+  +--> ?PR?_UART_SEND?UART
+  +--> ?PR?DELAY1S?MAIN
+
+
+BL51 BANKED LINKER/LOCATER V6.22                                                      04/30/2018  17:12:28  PAGE 2
+
+
+
+UNRESOLVED EXTERNAL SYMBOLS:
+   _UART_RECEIVED
+
+
+
+SYMBOL TABLE OF MODULE:  ..\Outputs\MPX4415 (MAIN)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        MAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00B0H         PUBLIC        P3
+  D:00A8H         PUBLIC        IE
+  D:00B8H         PUBLIC        IP
+  C:0096H         PUBLIC        main
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  C:0088H         PUBLIC        delay1s
+  D:00C8H         PUBLIC        T2CON
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          DELAY1S
+  -------         DO            
+  D:0005H         SYMBOL        a
+  D:0006H         SYMBOL        b
+  D:0007H         SYMBOL        c
+  -------         ENDDO         
+  C:0088H         LINE#         6
+  C:0088H         LINE#         7
+  C:0088H         LINE#         9
+  C:008AH         LINE#         10
+  C:008CH         LINE#         11
+  C:0094H         LINE#         12
+  C:0095H         LINE#         13
+  -------         ENDPROC       DELAY1S
+  -------         PROC          MAIN
+  C:0096H         LINE#         16
+  C:0096H         LINE#         18
+  C:0099H         LINE#         20
+  C:0099H         LINE#         21
+  C:009FH         LINE#         22
+  C:00A2H         LINE#         23
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        MAIN
+
+  -------         MODULE        UART
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  B:00A8H.7       PUBLIC        EA
+  B:00A8H.4       PUBLIC        ES
+  B:0098H.0       PUBLIC        RI
+  B:0098H.1       PUBLIC        TI
+  D:0099H         PUBLIC        SBUF
+  D:0098H         PUBLIC        SCON
+  D:0089H         PUBLIC        TMOD
+  C:0003H         PUBLIC        _uart_send
+BL51 BANKED LINKER/LOCATER V6.22                                                      04/30/2018  17:12:28  PAGE 3
+
+
+  D:008DH         PUBLIC        TH1
+  D:008BH         PUBLIC        TL1
+  C:000EH         PUBLIC        uart_init
+  B:0088H.6       PUBLIC        TR1
+  C:0026H         PUBLIC        uart_int
+  -------         PROC          UART_INIT
+  C:000EH         LINE#         7
+  C:000EH         LINE#         8
+  C:0011H         LINE#         9
+  C:0014H         LINE#         10
+  C:0017H         LINE#         11
+  C:001AH         LINE#         12
+  C:001CH         LINE#         13
+  C:001EH         LINE#         14
+  C:0020H         LINE#         15
+  -------         ENDPROC       UART_INIT
+  -------         PROC          _UART_SEND
+  D:0007H         SYMBOL        dat
+  C:0003H         LINE#         20
+  C:0003H         LINE#         21
+  C:0005H         LINE#         22
+  C:0008H         LINE#         23
+  C:000AH         LINE#         24
+  -------         ENDPROC       _UART_SEND
+  -------         PROC          UART_INT
+  C:0026H         LINE#         29
+  C:0043H         LINE#         30
+  C:0046H         LINE#         31
+  C:0048H         LINE#         32
+  C:004DH         LINE#         33
+  -------         ENDPROC       UART_INT
+  -------         ENDMOD        UART
+
+  -------         MODULE        ADC
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  C:00B0H         PUBLIC        timer0_int
+  D:00A0H         PUBLIC        P2
+  B:00A8H.7       PUBLIC        EA
+  B:00A0H.3       PUBLIC        OE
+  B:00A0H.1       PUBLIC        ST
+  D:0089H         PUBLIC        TMOD
+  C:0068H         PUBLIC        adc_init
+  B:00A8H.1       PUBLIC        ET0
+  D:008CH         PUBLIC        TH0
+  D:008AH         PUBLIC        TL0
+  B:0088H.4       PUBLIC        TR0
+  B:00A0H.2       PUBLIC        EOC
+  B:00A0H.0       PUBLIC        CLK
+  C:0078H         PUBLIC        adc_transform
+  -------         PROC          ADC_INIT
+  C:0068H         LINE#         15
+  C:0068H         LINE#         16
+  C:006BH         LINE#         17
+  C:006EH         LINE#         18
+  C:0071H         LINE#         19
+  C:0073H         LINE#         20
+BL51 BANKED LINKER/LOCATER V6.22                                                      04/30/2018  17:12:28  PAGE 4
+
+
+  C:0075H         LINE#         21
+  C:0077H         LINE#         22
+  -------         ENDPROC       ADC_INIT
+  -------         PROC          ADC_TRANSFORM
+  -------         DO            
+  D:0007H         SYMBOL        temp
+  -------         ENDDO         
+  C:0078H         LINE#         28
+  C:0078H         LINE#         30
+  C:007AH         LINE#         31
+  C:007CH         LINE#         32
+  C:007EH         LINE#         33
+  C:0081H         LINE#         34
+  C:0083H         LINE#         35
+  C:0085H         LINE#         36
+  C:0087H         LINE#         38
+  C:0087H         LINE#         39
+  -------         ENDPROC       ADC_TRANSFORM
+  -------         PROC          TIMER0_INT
+  C:00B0H         LINE#         42
+  C:00B0H         LINE#         43
+  C:00B3H         LINE#         44
+  C:00B6H         LINE#         45
+  C:00B8H         LINE#         46
+  -------         ENDPROC       TIMER0_INT
+  -------         ENDMOD        ADC
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?ADC_INIT?ADC
+
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 004BH
+
+Program Size: data=9.0 xdata=0 code=183
+LINK/LOCATE RUN COMPLETE.  3 WARNING(S),  0 ERROR(S)

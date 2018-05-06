@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "E:\\Study\\Android\\AndroidWorkspace\\workspace-graduationproject\\BabyTemp\\AmoBleTool\\build\\intermediates\\res\\merged\\debug\\menu\\main.xml",
+        "source": "E:\\Study\\Android\\AndroidWorkspace\\workspace-graduationproject\\BabyTemp\\AmoBleTool\\src\\main\\res\\menu\\main.xml"
+    },
+    {
+        "merged": "E:\\Study\\Android\\AndroidWorkspace\\workspace-graduationproject\\BabyTemp\\AmoBleTool\\build\\intermediates\\res\\merged\\debug\\menu\\gatt_services.xml",
+        "source": "E:\\Study\\Android\\AndroidWorkspace\\workspace-graduationproject\\BabyTemp\\AmoBleTool\\src\\main\\res\\menu\\gatt_services.xml"
+    }
+]

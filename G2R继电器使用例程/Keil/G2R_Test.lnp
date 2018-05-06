@@ -1,0 +1,3 @@
+"..\main.obj" 
+TO "..\G2R_Test" 
+PRINT(".\G2R_Test.m51")

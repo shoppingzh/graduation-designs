@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "E:\\Study\\Android\\AndroidWorkspace\\workspace-graduationproject\\BabyTemp\\AmoBleTool\\build\\intermediates\\res\\merged\\debug\\layout\\about.xml",
+        "source": "E:\\Study\\Android\\AndroidWorkspace\\workspace-graduationproject\\BabyTemp\\AmoBleTool\\src\\main\\res\\layout\\about.xml"
+    },
+    {
+        "merged": "E:\\Study\\Android\\AndroidWorkspace\\workspace-graduationproject\\BabyTemp\\AmoBleTool\\build\\intermediates\\res\\merged\\debug\\layout\\listitem_device.xml",
+        "source": "E:\\Study\\Android\\AndroidWorkspace\\workspace-graduationproject\\BabyTemp\\AmoBleTool\\src\\main\\res\\layout\\listitem_device.xml"
+    },
+    {
+        "merged": "E:\\Study\\Android\\AndroidWorkspace\\workspace-graduationproject\\BabyTemp\\AmoBleTool\\build\\intermediates\\res\\merged\\debug\\layout\\detail.xml",
+        "source": "E:\\Study\\Android\\AndroidWorkspace\\workspace-graduationproject\\BabyTemp\\AmoBleTool\\src\\main\\res\\layout\\detail.xml"
+    },
+    {
+        "merged": "E:\\Study\\Android\\AndroidWorkspace\\workspace-graduationproject\\BabyTemp\\AmoBleTool\\build\\intermediates\\res\\merged\\debug\\layout\\gatt_services_characteristics.xml",
+        "source": "E:\\Study\\Android\\AndroidWorkspace\\workspace-graduationproject\\BabyTemp\\AmoBleTool\\src\\main\\res\\layout\\gatt_services_characteristics.xml"
+    },
+    {
+        "merged": "E:\\Study\\Android\\AndroidWorkspace\\workspace-graduationproject\\BabyTemp\\AmoBleTool\\build\\intermediates\\res\\merged\\debug\\layout\\other.xml",
+        "source": "E:\\Study\\Android\\AndroidWorkspace\\workspace-graduationproject\\BabyTemp\\AmoBleTool\\src\\main\\res\\layout\\other.xml"
+    },
+    {
+        "merged": "E:\\Study\\Android\\AndroidWorkspace\\workspace-graduationproject\\BabyTemp\\AmoBleTool\\build\\intermediates\\res\\merged\\debug\\layout\\actionbar_indeterminate_progress.xml",
+        "source": "E:\\Study\\Android\\AndroidWorkspace\\workspace-graduationproject\\BabyTemp\\AmoBleTool\\src\\main\\res\\layout\\actionbar_indeterminate_progress.xml"
+    }
+]

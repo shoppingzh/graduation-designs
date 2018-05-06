@@ -1,0 +1,3 @@
+"main.obj" 
+TO "ble_uart" 
+RAMSIZE(256) 

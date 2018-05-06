@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp">
+
+    <LinearLayout
+        android:id="@+id/layout_tips_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="  正在扫描中"
+            android:layout_gravity="center_vertical"/>
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/lv_ble_device"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></ListView>
+
+    <LinearLayout
+        android:id="@+id/layout_send_window"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_marginTop="30dp">
+
+        <EditText
+            android:id="@+id/et_hex_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="16进制数，以空格隔开"/>
+
+        <Button
+            android:id="@+id/btn_send"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:text="发送"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="接收显示："/>
+
+    <ListView
+        android:id="@+id/lv_receive_contents"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></ListView>
+
+</LinearLayout>

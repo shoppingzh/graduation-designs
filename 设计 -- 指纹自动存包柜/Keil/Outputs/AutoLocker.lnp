@@ -1,0 +1,6 @@
+"..\Outputs\main.obj",
+"..\Outputs\fpm10a.obj",
+"..\Outputs\lcd12864.obj",
+"..\Outputs\uart_syn.obj" 
+TO "..\Outputs\AutoLocker" 
+PRINT(".\AutoLocker.m51") RAMSIZE(256) 

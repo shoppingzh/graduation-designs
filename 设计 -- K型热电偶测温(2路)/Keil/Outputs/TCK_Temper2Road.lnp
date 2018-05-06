@@ -1,0 +1,7 @@
+"..\Outputs\main.obj",
+"..\Outputs\tck_max6675.obj",
+"..\Outputs\lcd1602.obj",
+"..\Outputs\timer.obj",
+"..\Outputs\uart.obj" 
+TO "..\Outputs\TCK_Temper2Road" 
+PRINT(".\TCK_Temper2Road.m51")

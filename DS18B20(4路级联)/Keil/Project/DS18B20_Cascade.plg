@@ -1,0 +1,1042 @@
+<html>
+<body>
+<pre>
+<h1>礦ision Build Log</h1>
+<h2>Project:</h2>
+E:\毕业设计相关\DS18B20(4路级联)\KEIL\Project\DS18B20_Cascade.uvproj
+Project File Date:  03/11/2018
+
+<h2>Output:</h2>
+Build target 'DS18B20_CASCADE'
+compiling main.c...
+compiling ds18b20.c...
+..\HARDWARE\DS18B20.C(6): error C129: missing ';' before 'ds18b20_reset'
+Target not created
+Build target 'DS18B20_CASCADE'
+compiling main.c...
+compiling ds18b20.c...
+..\HARDWARE\DS18B20.C(8): error C202: 'DQ': undefined identifier
+Target not created
+Build target 'DS18B20_CASCADE'
+compiling main.c...
+compiling ds18b20.c...
+..\HARDWARE\DS18B20.C(9): error C202: 'DQ': undefined identifier
+Target not created
+Build target 'DS18B20_CASCADE'
+compiling main.c...
+compiling ds18b20.c...
+..\HARDWARE\DS18B20.C(12): warning C206: 'delay': missing function-prototype
+..\HARDWARE\DS18B20.C(12): error C267: 'delay': requires ANSI-style prototype
+Target not created
+Build target 'DS18B20_CASCADE'
+compiling main.c...
+compiling ds18b20.c...
+..\HARDWARE\DS18B20.C(9): error C141: syntax error near 'i', expected ')'
+..\HARDWARE\DS18B20.C(10): error C202: 'i': undefined identifier
+Target not created
+Build target 'DS18B20_CASCADE'
+compiling main.c...
+compiling ds18b20.c...
+linking...
+Program Size: data=9.0 xdata=0 code=71
+creating hex file from "..\DS18B20_Cascade"...
+"..\DS18B20_Cascade" - 0 Error(s), 0 Warning(s).
+Build target 'DS18B20_CASCADE'
+compiling main.c...
+compiling ds18b20.c...
+linking...
+Program Size: data=9.0 xdata=0 code=71
+creating hex file from "..\DS18B20_Cascade"...
+"..\DS18B20_Cascade" - 0 Error(s), 0 Warning(s).
+Build target 'DS18B20_CASCADE'
+compiling main.c...
+compiling ds18b20.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DS18B20_READ_ROM?DS18B20
+Program Size: data=9.0 xdata=0 code=72
+creating hex file from "..\DS18B20_Cascade"...
+"..\DS18B20_Cascade" - 0 Error(s), 1 Warning(s).
+Build target 'DS18B20_CASCADE'
+compiling main.c...
+compiling ds18b20.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DS18B20_WRITE?DS18B20
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DS18B20_READ?DS18B20
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DS18B20_READ_ROM?DS18B20
+Program Size: data=9.0 xdata=0 code=163
+creating hex file from "..\DS18B20_Cascade"...
+"..\DS18B20_Cascade" - 0 Error(s), 3 Warning(s).
+Build target 'DS18B20_CASCADE'
+compiling main.c...
+compiling ds18b20.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DS18B20_READ?DS18B20
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DS18B20_READ_ROM?DS18B20
+Program Size: data=9.0 xdata=0 code=174
+creating hex file from "..\DS18B20_Cascade"...
+"..\DS18B20_Cascade" - 0 Error(s), 2 Warning(s).
+Build target 'DS18B20_CASCADE'
+compiling main.c...
+compiling ds18b20.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DS18B20_READ?DS18B20
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DS18B20_READ_ROM?DS18B20
+Program Size: data=9.0 xdata=0 code=174
+creating hex file from "..\Outputs\DS18B20_Cascade"...
+"..\Outputs\DS18B20_Cascade" - 0 Error(s), 2 Warning(s).
+Build target 'DS18B20_CASCADE'
+compiling main.c...
+compiling ds18b20.c...
+compiling uart.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DS18B20_READ_ROM?DS18B20
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 004BH
+Program Size: data=10.0 xdata=0 code=285
+creating hex file from "..\Outputs\DS18B20_Cascade"...
+"..\Outputs\DS18B20_Cascade" - 0 Error(s), 3 Warning(s).
+Build target 'DS18B20_CASCADE'
+compiling main.c...
+compiling ds18b20.c...
+compiling uart.c...
+linking...
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 004BH
+Program Size: data=10.0 xdata=0 code=290
+creating hex file from "..\Outputs\DS18B20_Cascade"...
+"..\Outputs\DS18B20_Cascade" - 0 Error(s), 2 Warning(s).
+Build target 'DS18B20_CASCADE'
+compiling main.c...
+compiling ds18b20.c...
+compiling uart.c...
+linking...
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 004BH
+Program Size: data=10.0 xdata=0 code=292
+creating hex file from "..\Outputs\DS18B20_Cascade"...
+"..\Outputs\DS18B20_Cascade" - 0 Error(s), 2 Warning(s).
+Build target 'DS18B20_CASCADE'
+compiling main.c...
+compiling ds18b20.c...
+compiling uart.c...
+linking...
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 004BH
+Program Size: data=11.0 xdata=0 code=302
+creating hex file from "..\Outputs\DS18B20_Cascade"...
+"..\Outputs\DS18B20_Cascade" - 0 Error(s), 2 Warning(s).
+Build target 'DS18B20_CASCADE'
+compiling main.c...
+compiling ds18b20.c...
+compiling uart.c...
+linking...
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 004BH
+Program Size: data=11.0 xdata=0 code=302
+creating hex file from "..\Outputs\DS18B20_Cascade"...
+"..\Outputs\DS18B20_Cascade" - 0 Error(s), 2 Warning(s).
+Build target 'DS18B20_CASCADE'
+compiling main.c...
+compiling ds18b20.c...
+compiling uart.c...
+compiling printer.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PRINT?PRINTER
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 004BH
+Program Size: data=14.0 xdata=0 code=353
+creating hex file from "..\Outputs\DS18B20_Cascade"...
+"..\Outputs\DS18B20_Cascade" - 0 Error(s), 3 Warning(s).
+Build target 'DS18B20_CASCADE'
+compiling main.c...
+compiling ds18b20.c...
+compiling uart.c...
+compiling printer.c...
+..\HARDWARE\PRINTER.C(5): warning C206: 'uart_send': missing function-prototype
+..\HARDWARE\PRINTER.C(5): error C267: 'uart_send': requires ANSI-style prototype
+Target not created
+Build target 'DS18B20_CASCADE'
+compiling main.c...
+compiling ds18b20.c...
+compiling uart.c...
+compiling printer.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PRINT?PRINTER
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 004BH
+Program Size: data=14.0 xdata=0 code=362
+creating hex file from "..\Outputs\DS18B20_Cascade"...
+"..\Outputs\DS18B20_Cascade" - 0 Error(s), 3 Warning(s).
+Build target 'DS18B20_CASCADE'
+compiling main.c...
+compiling ds18b20.c...
+compiling uart.c...
+compiling printer.c...
+linking...
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 004BH
+Program Size: data=12.0 xdata=0 code=385
+creating hex file from "..\Outputs\DS18B20_Cascade"...
+"..\Outputs\DS18B20_Cascade" - 0 Error(s), 2 Warning(s).
+Build target 'DS18B20_CASCADE'
+compiling main.c...
+compiling ds18b20.c...
+compiling uart.c...
+compiling printer.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DS18B20_RESET?DS18B20
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DS18B20_READ_ROM?DS18B20
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 004BH
+Program Size: data=14.0 xdata=0 code=379
+creating hex file from "..\Outputs\DS18B20_Cascade"...
+"..\Outputs\DS18B20_Cascade" - 0 Error(s), 4 Warning(s).
+Build target 'DS18B20_CASCADE'
+compiling main.c...
+compiling ds18b20.c...
+compiling uart.c...
+compiling printer.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DS18B20_RESET?DS18B20
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DS18B20_READ_ROM?DS18B20
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?PRINTER_INIT?PRINTER
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 004BH
+Program Size: data=14.0 xdata=0 code=382
+creating hex file from "..\Outputs\DS18B20_Cascade"...
+"..\Outputs\DS18B20_Cascade" - 0 Error(s), 5 Warning(s).
+Build target 'DS18B20_CASCADE'
+compiling main.c...
+compiling ds18b20.c...
+compiling uart.c...
+compiling printer.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DS18B20_RESET?DS18B20
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DS18B20_READ_ROM?DS18B20
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 004BH
+Program Size: data=14.0 xdata=0 code=385
+creating hex file from "..\Outputs\DS18B20_Cascade"...
+"..\Outputs\DS18B20_Cascade" - 0 Error(s), 4 Warning(s).
+Build target 'DS18B20_CASCADE'
+compiling main.c...
+compiling ds18b20.c...
+compiling uart.c...
+compiling printer.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DS18B20_RESET?DS18B20
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DS18B20_READ_ROM?DS18B20
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 004BH
+Program Size: data=14.0 xdata=0 code=383
+creating hex file from "..\Outputs\DS18B20_Cascade"...
+"..\Outputs\DS18B20_Cascade" - 0 Error(s), 4 Warning(s).
+Build target 'DS18B20_CASCADE'
+compiling main.c...
+compiling ds18b20.c...
+compiling uart.c...
+compiling printer.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DS18B20_RESET?DS18B20
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DS18B20_READ_ROM?DS18B20
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 004BH
+Program Size: data=14.0 xdata=0 code=387
+creating hex file from "..\Outputs\DS18B20_Cascade"...
+"..\Outputs\DS18B20_Cascade" - 0 Error(s), 4 Warning(s).
+Build target 'DS18B20_CASCADE'
+compiling main.c...
+compiling ds18b20.c...
+compiling uart.c...
+compiling printer.c...
+linking...
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 004BH
+Program Size: data=12.0 xdata=0 code=422
+creating hex file from "..\Outputs\DS18B20_Cascade"...
+"..\Outputs\DS18B20_Cascade" - 0 Error(s), 2 Warning(s).
+Build target 'DS18B20_CASCADE'
+compiling main.c...
+..\USER\MAIN.C(11): warning C206: 'ds18b20_read_rom': missing function-prototype
+compiling ds18b20.c...
+..\HARDWARE\DS18B20.C(56): error C202: 'val': undefined identifier
+..\HARDWARE\DS18B20.C(59): error C202: 'val': undefined identifier
+..\HARDWARE\DS18B20.C(87): error C141: syntax error near '}', expected 'while'
+compiling uart.c...
+compiling printer.c...
+Target not created
+Build target 'DS18B20_CASCADE'
+compiling main.c...
+..\USER\MAIN.C(11): warning C206: 'ds18b20_read_rom': missing function-prototype
+compiling ds18b20.c...
+..\HARDWARE\DS18B20.C(71): warning C275: expression with possibly no effect
+..\HARDWARE\DS18B20.C(91): error C141: syntax error near '}', expected 'while'
+compiling uart.c...
+compiling printer.c...
+Target not created
+Build target 'DS18B20_CASCADE'
+compiling main.c...
+..\USER\MAIN.C(11): warning C206: 'ds18b20_read_rom': missing function-prototype
+compiling ds18b20.c...
+..\HARDWARE\DS18B20.C(91): error C141: syntax error near '}', expected 'while'
+compiling uart.c...
+compiling printer.c...
+Target not created
+Build target 'DS18B20_CASCADE'
+compiling main.c...
+..\USER\MAIN.C(11): warning C206: 'ds18b20_read_rom': missing function-prototype
+compiling ds18b20.c...
+..\HARDWARE\DS18B20.C(90): error C141: syntax error near ')'
+compiling uart.c...
+compiling printer.c...
+Target not created
+Build target 'DS18B20_CASCADE'
+compiling main.c...
+..\USER\MAIN.C(11): warning C206: 'ds18b20_read_rom': missing function-prototype
+compiling ds18b20.c...
+compiling uart.c...
+compiling printer.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DS18B20_READ?DS18B20
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DS18B20_SEARCH_ROM?DS18B20
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?PRINTER_INIT?PRINTER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PRINT?PRINTER
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  DS18B20_READ_ROM
+    MODULE:  ..\Outputs\main.obj (MAIN)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  DS18B20_READ_ROM
+    MODULE:  ..\Outputs\main.obj (MAIN)
+    ADDRESS: 015CH
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 004BH
+Program Size: data=12.0 xdata=0 code=359
+creating hex file from "..\Outputs\DS18B20_Cascade"...
+"..\Outputs\DS18B20_Cascade" - 0 Error(s), 9 Warning(s).
+Build target 'DS18B20_CASCADE'
+compiling main.c...
+..\USER\MAIN.C(11): warning C206: 'ds18b20_read_rom': missing function-prototype
+compiling ds18b20.c...
+..\HARDWARE\DS18B20.C(111): warning C209: '_ds18b20_write_bit': too few actual parameters
+compiling uart.c...
+compiling printer.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DS18B20_READ?DS18B20
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DS18B20_SEARCH_ROM?DS18B20
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?PRINTER_INIT?PRINTER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PRINT?PRINTER
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  DS18B20_READ_ROM
+    MODULE:  ..\Outputs\main.obj (MAIN)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  DS18B20_READ_ROM
+    MODULE:  ..\Outputs\main.obj (MAIN)
+    ADDRESS: 018AH
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 004BH
+Program Size: data=13.0 xdata=0 code=409
+creating hex file from "..\Outputs\DS18B20_Cascade"...
+"..\Outputs\DS18B20_Cascade" - 0 Error(s), 10 Warning(s).
+Build target 'DS18B20_CASCADE'
+compiling main.c...
+..\USER\MAIN.C(11): warning C206: 'ds18b20_read_rom': missing function-prototype
+compiling ds18b20.c...
+compiling uart.c...
+compiling printer.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DS18B20_READ?DS18B20
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DS18B20_SEARCH_ROM?DS18B20
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?PRINTER_INIT?PRINTER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PRINT?PRINTER
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  DS18B20_READ_ROM
+    MODULE:  ..\Outputs\main.obj (MAIN)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  DS18B20_READ_ROM
+    MODULE:  ..\Outputs\main.obj (MAIN)
+    ADDRESS: 0198H
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 004BH
+Program Size: data=77.0 xdata=0 code=423
+creating hex file from "..\Outputs\DS18B20_Cascade"...
+"..\Outputs\DS18B20_Cascade" - 0 Error(s), 9 Warning(s).
+Build target 'DS18B20_CASCADE'
+compiling main.c...
+..\USER\MAIN.C(11): warning C206: 'ds18b20_read_rom': missing function-prototype
+compiling ds18b20.c...
+..\HARDWARE\DS18B20.C(122): error C202: 'cfl': undefined identifier
+..\HARDWARE\DS18B20.C(123): error C202: 'cfl': undefined identifier
+..\HARDWARE\DS18B20.C(126): error C202: 'cfl': undefined identifier
+..\HARDWARE\DS18B20.C(127): error C202: 'cfl': undefined identifier
+..\HARDWARE\DS18B20.C(130): error C202: 'cfl': undefined identifier
+..\HARDWARE\DS18B20.C(136): error C202: 'num': undefined identifier
+compiling uart.c...
+compiling printer.c...
+Target not created
+Build target 'DS18B20_CASCADE'
+compiling main.c...
+..\USER\MAIN.C(11): warning C206: 'ds18b20_read_rom': missing function-prototype
+compiling ds18b20.c...
+..\HARDWARE\DS18B20.C(124): error C202: 'm': undefined identifier
+..\HARDWARE\DS18B20.C(132): error C202: 'statck': undefined identifier
+..\HARDWARE\DS18B20.C(138): error C202: 'num': undefined identifier
+compiling uart.c...
+compiling printer.c...
+Target not created
+Build target 'DS18B20_CASCADE'
+compiling ds18b20.c...
+..\HARDWARE\DS18B20.C(139): error C174: return-expression on void-function
+Target not created
+Build target 'DS18B20_CASCADE'
+compiling main.c...
+..\USER\MAIN.C(11): warning C206: 'ds18b20_read_rom': missing function-prototype
+compiling ds18b20.c...
+..\HARDWARE\DS18B20.C(139): error C174: return-expression on void-function
+compiling uart.c...
+compiling printer.c...
+Target not created
+Build target 'DS18B20_CASCADE'
+compiling main.c...
+compiling ds18b20.c...
+..\HARDWARE\DS18B20.C(139): error C174: return-expression on void-function
+compiling uart.c...
+compiling printer.c...
+Target not created
+Build target 'DS18B20_CASCADE'
+compiling main.c...
+compiling ds18b20.c...
+..\HARDWARE\DS18B20.C(141): error C174: return-expression on void-function
+compiling uart.c...
+compiling printer.c...
+Target not created
+Build target 'DS18B20_CASCADE'
+compiling main.c...
+compiling ds18b20.c...
+compiling uart.c...
+compiling printer.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DS18B20_READ?DS18B20
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DS18B20_SEARCH_ROM?DS18B20
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?PRINTER_INIT?PRINTER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PRINT?PRINTER
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 01C9H
+Program Size: data=116.0 xdata=0 code=740
+creating hex file from "..\Outputs\DS18B20_Cascade"...
+"..\Outputs\DS18B20_Cascade" - 0 Error(s), 6 Warning(s).
+Build target 'DS18B20_CASCADE'
+compiling main.c...
+compiling ds18b20.c...
+compiling uart.c...
+compiling printer.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DS18B20_READ?DS18B20
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?PRINTER_INIT?PRINTER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PRINT?PRINTER
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 01CCH
+Program Size: data=116.0 xdata=0 code=746
+creating hex file from "..\Outputs\DS18B20_Cascade"...
+"..\Outputs\DS18B20_Cascade" - 0 Error(s), 5 Warning(s).
+Build target 'DS18B20_CASCADE'
+compiling main.c...
+compiling ds18b20.c...
+compiling uart.c...
+compiling printer.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DS18B20_READ?DS18B20
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?PRINTER_INIT?PRINTER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PRINT?PRINTER
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 01CCH
+Program Size: data=116.0 xdata=0 code=746
+creating hex file from "..\Outputs\DS18B20_Cascade"...
+"..\Outputs\DS18B20_Cascade" - 0 Error(s), 5 Warning(s).
+Build target 'DS18B20_CASCADE'
+compiling main.c...
+compiling ds18b20.c...
+compiling uart.c...
+compiling printer.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DS18B20_READ?DS18B20
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SHOW?DS18B20
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 01CCH
+Program Size: data=118.0 xdata=0 code=820
+creating hex file from "..\Outputs\DS18B20_Cascade"...
+"..\Outputs\DS18B20_Cascade" - 0 Error(s), 4 Warning(s).
+Build target 'DS18B20_CASCADE'
+compiling main.c...
+compiling ds18b20.c...
+..\HARDWARE\DS18B20.C(161): warning C206: 'printer_iit': missing function-prototype
+compiling uart.c...
+compiling printer.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DS18B20_READ?DS18B20
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SHOW?DS18B20
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?PRINTER_INIT?PRINTER
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  PRINTER_IIT
+    MODULE:  ..\Outputs\ds18b20.obj (DS18B20)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  PRINTER_IIT
+    MODULE:  ..\Outputs\ds18b20.obj (DS18B20)
+    ADDRESS: 01EDH
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 01CCH
+Program Size: data=118.0 xdata=0 code=820
+creating hex file from "..\Outputs\DS18B20_Cascade"...
+"..\Outputs\DS18B20_Cascade" - 0 Error(s), 8 Warning(s).
+Build target 'DS18B20_CASCADE'
+compiling main.c...
+compiling ds18b20.c...
+compiling uart.c...
+compiling printer.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DS18B20_READ?DS18B20
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SHOW?DS18B20
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 01CCH
+Program Size: data=118.0 xdata=0 code=820
+creating hex file from "..\Outputs\DS18B20_Cascade"...
+"..\Outputs\DS18B20_Cascade" - 0 Error(s), 4 Warning(s).
+Build target 'DS18B20_CASCADE'
+compiling main.c...
+compiling ds18b20.c...
+compiling uart.c...
+compiling printer.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DS18B20_READ?DS18B20
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 01CCH
+Program Size: data=113.0 xdata=0 code=823
+creating hex file from "..\Outputs\DS18B20_Cascade"...
+"..\Outputs\DS18B20_Cascade" - 0 Error(s), 3 Warning(s).
+Build target 'DS18B20_CASCADE'
+compiling main.c...
+compiling ds18b20.c...
+compiling uart.c...
+compiling printer.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DS18B20_READ?DS18B20
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?PRINTER_INIT?PRINTER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PRINT?PRINTER
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 01CCH
+Program Size: data=116.0 xdata=0 code=795
+creating hex file from "..\Outputs\DS18B20_Cascade"...
+"..\Outputs\DS18B20_Cascade" - 0 Error(s), 5 Warning(s).
+Build target 'DS18B20_CASCADE'
+compiling main.c...
+compiling ds18b20.c...
+..\HARDWARE\DS18B20.C(121): error C141: syntax error near '='
+compiling uart.c...
+compiling printer.c...
+Target not created
+Build target 'DS18B20_CASCADE'
+compiling main.c...
+compiling ds18b20.c...
+compiling uart.c...
+compiling printer.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DS18B20_READ?DS18B20
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?PRINTER_INIT?PRINTER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PRINT?PRINTER
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 01D2H
+Program Size: data=116.0 xdata=0 code=801
+creating hex file from "..\Outputs\DS18B20_Cascade"...
+"..\Outputs\DS18B20_Cascade" - 0 Error(s), 5 Warning(s).
+Build target 'DS18B20_CASCADE'
+compiling main.c...
+compiling ds18b20.c...
+compiling uart.c...
+compiling printer.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DS18B20_READ?DS18B20
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?PRINTER_INIT?PRINTER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PRINT?PRINTER
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 01CFH
+Program Size: data=116.0 xdata=0 code=798
+creating hex file from "..\Outputs\DS18B20_Cascade"...
+"..\Outputs\DS18B20_Cascade" - 0 Error(s), 5 Warning(s).
+Build target 'DS18B20_CASCADE'
+compiling main.c...
+compiling ds18b20.c...
+compiling uart.c...
+compiling printer.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DS18B20_READ?DS18B20
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 01CFH
+Program Size: data=113.0 xdata=0 code=815
+creating hex file from "..\Outputs\DS18B20_Cascade"...
+"..\Outputs\DS18B20_Cascade" - 0 Error(s), 3 Warning(s).
+Build target 'DS18B20_CASCADE'
+compiling main.c...
+compiling ds18b20.c...
+compiling uart.c...
+compiling printer.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DS18B20_READ?DS18B20
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 01CFH
+Program Size: data=113.0 xdata=0 code=816
+creating hex file from "..\Outputs\DS18B20_Cascade"...
+"..\Outputs\DS18B20_Cascade" - 0 Error(s), 3 Warning(s).
+Build target 'DS18B20_CASCADE'
+compiling main.c...
+compiling ds18b20.c...
+compiling uart.c...
+compiling printer.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DS18B20_READ?DS18B20
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?PRINTER_INIT?PRINTER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PRINT?PRINTER
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 01CFH
+Program Size: data=116.0 xdata=0 code=800
+creating hex file from "..\Outputs\DS18B20_Cascade"...
+"..\Outputs\DS18B20_Cascade" - 0 Error(s), 5 Warning(s).
+Build target 'DS18B20_CASCADE'
+compiling main.c...
+..\USER\MAIN.C(10): warning C206: 'ds18b20_reset': missing function-prototype
+..\USER\MAIN.C(12): warning C206: 'show': missing function-prototype
+compiling ds18b20.c...
+..\HARDWARE\DS18B20.C(16): warning C206: '_nop_': missing function-prototype
+..\HARDWARE\DS18B20.C(16): error C264: intrinsic '_nop_': declaration/activation error
+compiling uart.c...
+compiling printer.c...
+Target not created
+Build target 'DS18B20_CASCADE'
+compiling main.c...
+..\USER\MAIN.C(10): warning C206: 'ds18b20_reset': missing function-prototype
+..\USER\MAIN.C(12): warning C206: 'show': missing function-prototype
+compiling ds18b20.c...
+..\HARDWARE\DS18B20.C(43): warning C235: parameter 1: different types
+..\HARDWARE\DS18B20.C(91): warning C280: 'b': unreferenced local variable
+compiling uart.c...
+compiling printer.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DS18B20_READ?DS18B20
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?PRINTER_INIT?PRINTER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PRINT?PRINTER
+*** ERROR L107: ADDRESS SPACE OVERFLOW
+    SPACE:   DATA    
+    SEGMENT: ?DT?DS18B20
+    LENGTH:  0021H
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  DS18B20_RESET
+    MODULE:  ..\Outputs\main.obj (MAIN)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  DS18B20_RESET
+    MODULE:  ..\Outputs\main.obj (MAIN)
+    ADDRESS: 02F0H
+*** ERROR L105: PUBLIC REFERS TO IGNORED SEGMENT
+    SYMBOL:  NUM
+    SEGMENT: ?DT?DS18B20
+*** ERROR L105: PUBLIC REFERS TO IGNORED SEGMENT
+    SYMBOL:  IDS
+    SEGMENT: ?DT?DS18B20
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 01C3H
+Program Size: data=115.1 xdata=0 code=770
+Target not created
+Build target 'DS18B20_CASCADE'
+compiling main.c...
+compiling ds18b20.c...
+..\HARDWARE\DS18B20.C(43): warning C235: parameter 1: different types
+..\HARDWARE\DS18B20.C(91): warning C280: 'b': unreferenced local variable
+compiling uart.c...
+compiling printer.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DS18B20_READ?DS18B20
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?PRINTER_INIT?PRINTER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PRINT?PRINTER
+*** ERROR L107: ADDRESS SPACE OVERFLOW
+    SPACE:   DATA    
+    SEGMENT: ?DT?DS18B20
+    LENGTH:  0021H
+*** ERROR L105: PUBLIC REFERS TO IGNORED SEGMENT
+    SYMBOL:  NUM
+    SEGMENT: ?DT?DS18B20
+*** ERROR L105: PUBLIC REFERS TO IGNORED SEGMENT
+    SYMBOL:  IDS
+    SEGMENT: ?DT?DS18B20
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 01C3H
+Program Size: data=115.1 xdata=0 code=721
+Target not created
+Build target 'DS18B20_CASCADE'
+compiling main.c...
+compiling ds18b20.c...
+..\HARDWARE\DS18B20.C(91): warning C280: 'b': unreferenced local variable
+compiling uart.c...
+compiling printer.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DS18B20_READ?DS18B20
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?PRINTER_INIT?PRINTER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PRINT?PRINTER
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 01BEH
+Program Size: data=115.0 xdata=0 code=719
+creating hex file from "..\Outputs\DS18B20_Cascade"...
+"..\Outputs\DS18B20_Cascade" - 0 Error(s), 6 Warning(s).
+Build target 'DS18B20_CASCADE'
+compiling main.c...
+compiling ds18b20.c...
+..\HARDWARE\DS18B20.C(91): warning C280: 'b': unreferenced local variable
+compiling uart.c...
+compiling printer.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DS18B20_READ?DS18B20
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?PRINTER_INIT?PRINTER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PRINT?PRINTER
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 01BEH
+Program Size: data=115.0 xdata=0 code=719
+creating hex file from "..\Outputs\DS18B20_Cascade"...
+"..\Outputs\DS18B20_Cascade" - 0 Error(s), 6 Warning(s).
+Build target 'DS18B20_CASCADE'
+compiling main.c...
+compiling ds18b20.c...
+..\HARDWARE\DS18B20.C(91): warning C280: 'b': unreferenced local variable
+compiling uart.c...
+compiling printer.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DS18B20_READ?DS18B20
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?PRINTER_INIT?PRINTER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PRINT?PRINTER
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 01BEH
+Program Size: data=115.0 xdata=0 code=719
+creating hex file from "..\Outputs\DS18B20_Cascade"...
+"..\Outputs\DS18B20_Cascade" - 0 Error(s), 6 Warning(s).
+Build target 'DS18B20_CASCADE'
+compiling main.c...
+compiling ds18b20.c...
+..\HARDWARE\DS18B20.C(91): warning C280: 'b': unreferenced local variable
+compiling uart.c...
+compiling printer.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DS18B20_READ?DS18B20
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?PRINTER_INIT?PRINTER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PRINT?PRINTER
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 01C1H
+Program Size: data=115.0 xdata=0 code=722
+creating hex file from "..\Outputs\DS18B20_Cascade"...
+"..\Outputs\DS18B20_Cascade" - 0 Error(s), 6 Warning(s).
+Build target 'DS18B20_CASCADE'
+compiling main.c...
+compiling ds18b20.c...
+..\HARDWARE\DS18B20.C(91): warning C280: 'b': unreferenced local variable
+compiling uart.c...
+compiling printer.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DS18B20_READ?DS18B20
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?PRINTER_INIT?PRINTER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PRINT?PRINTER
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 01C1H
+Program Size: data=115.0 xdata=0 code=725
+creating hex file from "..\Outputs\DS18B20_Cascade"...
+"..\Outputs\DS18B20_Cascade" - 0 Error(s), 6 Warning(s).
+Build target 'DS18B20_CASCADE'
+compiling main.c...
+compiling ds18b20.c...
+..\HARDWARE\DS18B20.C(91): warning C280: 'b': unreferenced local variable
+compiling uart.c...
+compiling printer.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DS18B20_READ?DS18B20
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DS18B20_SEARCH_ROM?DS18B20
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?PRINTER_INIT?PRINTER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PRINT?PRINTER
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 01C1H
+Program Size: data=115.0 xdata=0 code=722
+creating hex file from "..\Outputs\DS18B20_Cascade"...
+"..\Outputs\DS18B20_Cascade" - 0 Error(s), 7 Warning(s).

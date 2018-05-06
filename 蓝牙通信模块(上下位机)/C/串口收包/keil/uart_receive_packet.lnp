@@ -1,0 +1,5 @@
+"main.obj",
+"uart.obj",
+"uart_support.obj" 
+TO "uart_receive_packet" 
+RAMSIZE(256) 

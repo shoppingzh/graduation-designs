@@ -1,0 +1,7 @@
+"..\Outputs\main.obj",
+"..\Outputs\timer.obj",
+"..\Outputs\writer.obj",
+"..\Outputs\uart.obj",
+"..\Outputs\sm.obj" 
+TO "..\Outputs\SM_EnglishWriter" 
+PRINT(".\SM_EnglishWriter.m51")

@@ -1,0 +1,77 @@
+LED_0	EQU 	30H
+LED_1 	EQU 	31H
+LED_2 	EQU 	32H			   	;存放段码
+ADC		EQU		35H
+CLOCK	BIT		P2.4			;定义ADC0808时钟位
+ST 		BIT 	P2.5
+EOC 	BIT 	P2.6
+OE 		BIT 	P2.7
+
+		ORG 	00H
+		SJMP	START
+		ORG		0BH
+		LJMP	INT_T0
+
+START:	MOV		LED_0,#00H
+		MOV		LED_1,#00H
+		MOV		LED_2,#00H
+		MOV		DPTR,#TABLE		;段码表首地址
+		MOV		TMOD,#02H
+		MOV		TH0,#245
+		MOV		TL0,#00H
+		MOV		IE,#82H
+		SETB	TR0
+
+WAIT: 	CLR 	ST
+		SETB 	ST
+		CLR 	ST				;启动AD转换
+ 		JNB 	EOC,$			;等待转换结束
+		SETB 	OE
+		MOV 	ADC,P1			;读取AD转换结果
+		CLR 	OE
+		MOV 	A,ADC
+		MOV 	B,#100			;AD转换结果转换成BCD码
+		DIV 	AB
+		MOV 	LED_2,A
+		MOV 	A,B
+		MOV 	B,#10
+		DIV 	AB
+		MOV 	LED_1,A
+		MOV 	LED_0,B
+		LCALL	DISP
+		SJMP 	WAIT
+
+INT_T0:	CPL		CLOCK		 	;提供ADC0808时钟信号
+		RETI
+
+DISP:	MOV		A,LED_0			;显示子程序
+		MOVC	A,@A+DPTR
+		CLR		P2.3
+		MOV		P0,A
+		LCALL	DELAY
+		SETB	P2.3
+
+		MOV		A,LED_1
+		MOVC	A,@A+DPTR
+		CLR		P2.2
+		MOV		P0,A
+		LCALL	DELAY
+		SETB	P2.2
+
+		MOV		A,LED_2
+		MOVC	A,@A+DPTR
+		CLR		P2.1
+		MOV		P0,A
+		LCALL	DELAY
+		SETB	P2.1
+		RET
+
+DELAY:	MOV		R6,#10			;延时5毫秒
+D1:		MOV		R7,#250
+		DJNZ	R7,$
+		DJNZ	R6,D1
+		RET
+
+TABLE: 	DB 		3FH,06H,5BH,4FH,66H
+		DB 		6DH,7DH,07H,7FH,6FH
+		END

@@ -1,0 +1,87 @@
+C51 COMPILER V9.01   MAIN                                                                  05/05/2018 16:09:26 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN ..\Outputs\main.obj
+COMPILER INVOKED BY: D:\Dev\Keil\C51\BIN\C51.EXE ..\User\main.c BROWSE INCDIR(..\User,..\Hardware) DEBUG OBJECTEXTEND PR
+                    -INT(.\main.lst) OBJECT(..\Outputs\main.obj)
+
+line level    source
+
+   1          #include "reg51.h"
+   2          #include "intrins.h"
+   3          #define uchar unsigned char
+   4          
+   5          uchar count = 0;
+   6          char i = 3;
+   7          code uchar t[] = {0xfc, 0xf9, 0xf3, 0xf6};
+   8          
+   9          bit running = 0, dir = 0;
+  10          
+  11          sbit key_run = P3^0;
+  12          sbit key_dir = P3^1;
+  13          
+  14          void main(){
+  15   1      
+  16   1              TMOD = 0x01;
+  17   1              TH0 = 0x3c;
+  18   1              TL0 = 0xb0;
+  19   1              EA = 1;
+  20   1              ET0 = 1;
+  21   1              TR0 = 1;
+  22   1      
+  23   1              while(1){
+  24   2                      if(!key_run){
+  25   3                              i = 0;
+  26   3                              running = ~running;
+  27   3                              while(!key_run);
+  28   3                      }
+  29   2                      if(!key_dir){
+  30   3                              i = 3;
+  31   3                              dir = ~dir;
+  32   3                              while(!key_dir);
+  33   3                      }
+  34   2              }
+  35   1      }
+  36          
+  37          void timer0_int() interrupt 1{
+  38   1              TH0 = 0x3c;
+  39   1              TL0 = 0xb0;
+  40   1      
+  41   1              if(count++ < 1){
+  42   2                      return;
+  43   2              }
+  44   1              count = 0;
+  45   1      
+  46   1              if(running){
+  47   2                      if(dir){
+  48   3                              if(i >= 4){
+  49   4                                      i = 0;
+  50   4                              }
+  51   3                              P2 = t[i++];
+  52   3                              
+  53   3                      }else{
+  54   3                              if(i < 0){
+C51 COMPILER V9.01   MAIN                                                                  05/05/2018 16:09:26 PAGE 2   
+
+  55   4                                      i = 3;
+  56   4                              }
+  57   3                              P2 = t[i--];
+  58   3                      }
+  59   2              }
+  60   1                      
+  61   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    145    ----
+   CONSTANT SIZE    =      4    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      2    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =      2    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

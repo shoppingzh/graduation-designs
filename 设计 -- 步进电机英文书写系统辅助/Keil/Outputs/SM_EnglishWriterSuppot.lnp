@@ -1,0 +1,4 @@
+"..\Outputs\main.obj",
+"..\Outputs\uart.obj" 
+TO "..\Outputs\SM_EnglishWriterSuppot" 
+PRINT(".\SM_EnglishWriterSuppot.m51")

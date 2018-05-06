@@ -1,0 +1,339 @@
+C51 COMPILER V9.01   FPM10A                                                                04/03/2018 20:30:31 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE FPM10A
+OBJECT MODULE PLACED IN ..\Outputs\fpm10a.obj
+COMPILER INVOKED BY: D:\Dev\Keil\C51\BIN\C51.EXE ..\Hardware\fpm10a.c BROWSE INCDIR(..\User,..\Hardware) DEBUG OBJECTEXT
+                    -END PRINT(.\fpm10a.lst) OBJECT(..\Outputs\fpm10a.obj)
+
+line level    source
+
+   1          #include "fpm10a.h"
+   2          #include "uart_syn.h"
+   3          #include "reg51.h"
+   4          
+   5          code uchar packhead[] = {0xef, 0x01, 0xff, 0xff, 0xff, 0xff};
+   6          code uchar cmd_genimg[] = {0x01, 0x00, 0x03, 0x01, 0x00, 0x05};
+   7          code uchar cmd_img2char1[] = {0x01, 0x00, 0x04, 0x02, 0x01, 0x00, 0x08};
+   8          code uchar cmd_img2char2[] = (0x01, 0x00, 0x04, 0x02, 0x02, 0x00, 0x08);
+   9          code uchar cmd_regmodel[] = {0x01, 0x00, 0x03, 0x05, 0x00, 0x09};
+  10          code uchar cmd_template_num[] = {0x01, 0x00, 0x03, 0x1d, 0x00, 0x21};
+  11          code uchar cmd_clear_lib[] = {0x01, 0x00, 0x03, 0x0d, 0x00, 0x11};
+  12          code uchar cmd_open_light[] = {0x01, 0x00, 0x03, 0x50, 0x00, 0x54};
+  13          code uchar cmd_close_light[] = {0x01, 0x00, 0x03, 0x51, 0x00, 0x55};
+  14          code uchar cmd_echo[] = {0x01, 0x00, 0x03, 0x53, 0x00, 0x57};
+  15          
+  16          /*************************************** STATIC FUNCTIONS ***************************************/
+  17          
+  18          /**
+  19          * 延时N毫秒
+  20          */
+  21          static void delayms(uint t){
+  22   1              uint i, j;
+  23   1              for(i=0;i<t;i++)
+  24   1                      for(j=0;j<110;j++);     
+  25   1      }
+  26          
+  27          /**
+  28          * 校验长度为12、包长度为3、1字节确认码的普通回包数据
+  29          */
+  30          static bit validate_common(uchar pack[]){
+  31   1              uchar i;
+  32   1              uint sum, temp;
+  33   1              for(i=0;i<PACK_HEAD_LENGTH;i++){
+  34   2                      if(pack[i] != packhead[i]){
+  35   3                              return 0;
+  36   3                      }       
+  37   2              }
+  38   1              sum = pack[6] + pack[7] + pack[8] + pack[9];
+  39   1              temp = pack[10];
+  40   1              temp <<= 8;
+  41   1              temp |= pack[11];
+  42   1              if(sum != temp){
+  43   2                      return 0;
+  44   2              }
+  45   1      
+  46   1              return 1;                       
+  47   1      }
+  48          
+  49          /**
+  50          * 发送包头数据
+  51          */
+  52          static void send_packhead(){
+  53   1              uchar i;
+  54   1              for(i=0;i<6;i++){
+C51 COMPILER V9.01   FPM10A                                                                04/03/2018 20:30:31 PAGE 2   
+
+  55   2                      uart_send(packhead[i]);
+  56   2              }
+  57   1      }
+  58          
+  59          /**
+  60          * 发送数据包
+  61          * @param pack   要发送的数据包
+  62          * @param length 发送数据包的长度
+  63          */
+  64          static void send_pack(uchar pack[], uchar length){
+  65   1              uchar i;
+  66   1              for(i=0;i<length;i++){
+  67   2                      uart_send(pack[i]);
+  68   2              }       
+  69   1      }
+  70          
+  71          /**
+  72          * 接收数据包
+  73          * @param pack   要接收的数据包
+  74          * @param length 接收数据包的长度
+  75          */
+  76          static void recv_pack(uchar pack[], uchar length){
+  77   1              uchar i;
+  78   1              for(i=0;i<length;i++){
+  79   2                      pack[i] = uart_receive();
+  80   2              }
+  81   1      }
+  82          
+  83          /**
+  84          * 接收一个命令回包
+  85          * @return 确认码，返回0则表示指令执行成功，其它值请参见具体命令确认码
+  86          */
+  87          static uchar recv_cmd_pack(){
+  88   1              uchar recv[12];
+  89   1              //接收回包
+  90   1              recv_pack(recv, 12);
+  91   1              //校验回包，如果错误则返回0
+  92   1              if(VALIDATOR && !validate_common(recv)){
+  93   2                      return RECEIVE_ERROR;
+  94   2              }
+  95   1              //DELETE
+  96   1              P2 = recv[9];
+  97   1              return recv[9];
+  98   1      }
+  99          
+ 100          /**
+ 101          * 删除指纹库中任意模板（从index开始删除num个模板）
+ 102          * @param index  开始位置
+ 103          * @param num    删除的个数
+ 104          * @return 确认码：0x00删除成功，0x01收包有误，0x10删除失败
+ 105          */
+ 106          static uchar _fpm_delete_templates(uint index, uint num){
+ 107   1              uchar cmd[] = {0x01, 0x00, 0x07, 0x0c, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
+ 108   1              uint sum;       
+ 109   1              //page
+ 110   1              cmd[4] = index >> 8;
+ 111   1              cmd[5] = index;
+ 112   1              //num
+ 113   1              cmd[6] = num >> 8;
+ 114   1              cmd[7] = num;
+ 115   1              //sum
+ 116   1              sum = 0x01 + 0x07 + 0x0c + index + num;
+C51 COMPILER V9.01   FPM10A                                                                04/03/2018 20:30:31 PAGE 3   
+
+ 117   1              cmd[8] = sum >> 8;
+ 118   1              cmd[9] = sum;
+ 119   1      
+ 120   1              send_packhead();
+ 121   1              send_pack(cmd, 10);
+ 122   1              
+ 123   1              return recv_cmd_pack();
+ 124   1      }
+ 125          
+ 126          /*************************************** API ***************************************/
+ 127          
+ 128          /**
+ 129          * 初始化
+ 130          */
+ 131          void fpm_init(){
+ 132   1              uart_init();
+ 133   1              delayms(500);
+ 134   1              //等待握手成功
+ 135   1              //while(fpm_echo() != 0x55);
+ 136   1              //关闭背景灯
+ 137   1              //fpm_close_light();
+ 138   1      }
+ 139          
+ 140          /**
+ 141          * 录入指纹到ImageBuffer图形缓冲区
+ 142          * @return 确认码：0录入成功，1收包有误，2传感器上无指纹，3录入不成功
+ 143          */
+ 144          uchar fpm_genimg(){
+ 145   1              send_packhead();
+ 146   1              send_pack(cmd_genimg, 6);
+ 147   1              return recv_cmd_pack();                 
+ 148   1      }
+ 149          
+ 150          /**
+ 151          * 将ImageBuffer中的图像生成特征字符
+ 152          * @param which  指定字符缓冲区，1选择字符缓冲区1，2选择字符缓冲区2
+ 153          * @return 确认码：0生成成功，1收包有误，6指纹图像太乱，7特征点太少，15图像缓冲区没有有效图像
+ 154          */
+ 155          uchar fpm_img2char(uchar which){
+ 156   1              switch(which){
+ 157   2                      case 1:
+ 158   2                              send_packhead();
+ 159   2                              send_pack(cmd_img2char1, 7);
+ 160   2                              break;
+ 161   2                      case 2:
+ 162   2                              send_packhead();
+ 163   2                              send_pack(cmd_img2char2, 7);
+ 164   2                              break;
+ 165   2                      default:
+ 166   2                              return RECEIVE_ERROR;
+ 167   2              }       
+ 168   1              return recv_cmd_pack();
+ 169   1      }
+ 170          
+ 171          /**
+ 172          * 将CharBuffer1与CharBuffer2中的特征文件合并成指纹模板，结果存于CharBuffer1与CharBuffer2（两者内容相同）
+ 173          * @return 确认码：0合并成功，1收包有误，0x0a合并失败（两枚指纹不同）
+ 174          */
+ 175          uchar fpm_regmodel(){
+ 176   1              send_packhead();
+ 177   1              send_pack(cmd_regmodel, 6);     
+ 178   1              return recv_cmd_pack();
+C51 COMPILER V9.01   FPM10A                                                                04/03/2018 20:30:31 PAGE 4   
+
+ 179   1      }
+ 180          
+ 181          /**
+ 182          * 添加一个指纹到指纹库，包含过程：采集图像 + 生成特征 + 特征合成模板 + 存储模板
+ 183          * @param index  存储位置
+ 184          * @return 确认码
+ 185          */
+ 186          uchar fpm_add_template(uint index){
+ 187   1              uchar cmd[] = {0x01, 0x00, 0x08, 0x54, 0x36, 0x02, 0x00, 0x00, 0x00, 0x00, 0x00};
+ 188   1              uint sum;
+ 189   1              //指定序号
+ 190   1              cmd[6] = index >> 8;
+ 191   1              cmd[7] = index;
+ 192   1              sum =  0x01 + 0x08 + 0x54 + 0x36 + 0x02 + index;
+ 193   1              cmd[9] = sum >> 8;
+ 194   1              cmd[10] = sum;
+ 195   1      
+ 196   1              send_packhead();
+ 197   1              send_pack(cmd, 11);
+ 198   1      
+ 199   1              return recv_cmd_pack();
+ 200   1      }
+ 201          
+ 202          /**
+ 203          * 获取指纹库模板数量
+ 204          * @return 模板数量
+ 205          */
+ 206          uint fpm_template_num(){
+ 207   1              uchar recv[14];
+ 208   1              uint num;
+ 209   1              send_packhead();
+ 210   1              send_pack(cmd_template_num, 6);
+ 211   1              recv_pack(recv, 14);
+ 212   1              if(recv[9] == 0x00){
+ 213   2                      num = recv[10];
+ 214   2                      num <<= 8;
+ 215   2                      num |= recv[11];
+ 216   2                      
+ 217   2                      return num;     
+ 218   2              }       
+ 219   1              return 0;
+ 220   1      }
+ 221          
+ 222          /**
+ 223          * 清空指纹库
+ 224          * @return 确认码：0清空成功，1收包有误，0x11清空失败
+ 225          */
+ 226          uchar fpm_clear_lib(){
+ 227   1              send_packhead();
+ 228   1              send_pack(cmd_clear_lib, 6);    
+ 229   1              return recv_cmd_pack();
+ 230   1      }
+ 231          
+ 232          /**
+ 233          * 删除指纹库中的一个指纹模板
+ 234          * @param index  指定模板的索引位置
+ 235          * @return 确认码：0x00删除成功，0x01收包有误，0x10删除失败
+ 236          */
+ 237          uchar fpm_delete_template(uint index){
+ 238   1              return _fpm_delete_templates(index, 1);
+ 239   1      }
+ 240          
+C51 COMPILER V9.01   FPM10A                                                                04/03/2018 20:30:31 PAGE 5   
+
+ 241          /**
+ 242          * 自动搜索，包含过程：采集指纹 + 图像转特征 + 搜索
+ 243          * @param index  搜索开始索引
+ 244          * @param num    搜索数量
+ 245          * @return 匹配得分
+ 246          */
+ 247          uint fpm_auto_search(uint index, uint num){
+ 248   1              uchar cmd[16] = {0x01, 0x00, 0x08, 0x55, 0x36, /*index*/0x00, 0x00, /*num*/0x00, 0x00, /*sum*/0x00, 0x00,
+             - 0x00, 0x00, 0x00, 0x00};
+ 249   1              uint sum;
+ 250   1              cmd[5] = index >> 8;
+ 251   1              cmd[6] = index;
+ 252   1              cmd[7] = num >> 8;
+ 253   1              cmd[8] = num;
+ 254   1              sum = 0x01 + 0x08 + 0x55 + 0x36 + index + num;
+ 255   1              cmd[9] = sum >> 8;
+ 256   1              cmd[10] = sum;
+ 257   1      
+ 258   1              send_packhead();
+ 259   1              send_pack(cmd, 11);
+ 260   1      
+ 261   1              //复用数组
+ 262   1              recv_pack(cmd, 16);
+ 263   1              if(cmd[9] == 0x00){
+ 264   2                      //sum复用，获取匹配得分
+ 265   2                      sum = 0;
+ 266   2                      sum = cmd[12];
+ 267   2                      sum <<= 8;
+ 268   2                      sum |= cmd[13];
+ 269   2                      
+ 270   2                      return sum;     
+ 271   2              }
+ 272   1      
+ 273   1              return 0;
+ 274   1      }
+ 275          
+ 276          /**
+ 277          * 打开背景灯
+ 278          * @return 确认码：0x00操作成功，其它表失败
+ 279          */
+ 280          uchar fpm_open_light(){
+ 281   1              send_packhead();
+ 282   1              send_pack(cmd_open_light, 6);   
+ 283   1              return recv_cmd_pack();
+ 284   1      }
+ 285          
+ 286          /**
+ 287          * 打开背景灯
+ 288          * @return 确认码：0x00操作成功，其它表失败
+ 289          */
+ 290          uchar fpm_close_light(){
+ 291   1              send_packhead();
+ 292   1              send_pack(cmd_close_light, 6);  
+ 293   1              return recv_cmd_pack();
+ 294   1      }
+ 295          
+ 296          /**
+ 297          * 指纹设备握手
+ 298          * @return 确认码：0x55设备正常，否则设备故障
+ 299          */
+ 300          uchar fpm_echo(){
+ 301   1              send_packhead();
+C51 COMPILER V9.01   FPM10A                                                                04/03/2018 20:30:31 PAGE 6   
+
+ 302   1              send_pack(cmd_echo, 6);
+ 303   1              return recv_cmd_pack(); 
+ 304   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    756    ----
+   CONSTANT SIZE    =     93    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----      91
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

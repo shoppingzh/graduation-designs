@@ -1,0 +1,5 @@
+"..\Outputs\main.obj",
+"..\Outputs\ds18b20.obj",
+"..\Outputs\uart.obj" 
+TO "..\Outputs\DS18B20_Cascade" 
+PRINT(".\DS18B20_Cascade.m51")

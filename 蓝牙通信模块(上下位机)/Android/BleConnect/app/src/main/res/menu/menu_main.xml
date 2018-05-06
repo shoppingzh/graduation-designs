@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/item_ble_start_scan"
+        android:title="开始扫描" />
+
+    <item android:id="@+id/item_ble_stop_scan"
+        android:title="停止扫描" />
+
+    <item android:id="@+id/item_clear_rec_contents"
+        android:title="清除显示区" />
+
+</menu>

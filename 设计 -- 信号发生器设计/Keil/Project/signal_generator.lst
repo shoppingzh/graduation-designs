@@ -1,0 +1,172 @@
+C51 COMPILER V9.01   SIGNAL_GENERATOR                                                      04/02/2018 15:08:29 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE SIGNAL_GENERATOR
+OBJECT MODULE PLACED IN ..\Outputs\signal_generator.obj
+COMPILER INVOKED BY: D:\Dev\Keil\C51\BIN\C51.EXE ..\Hardware\signal_generator.c BROWSE INCDIR(..\Hardware;..\User) DEBUG
+                    - OBJECTEXTEND PRINT(.\signal_generator.lst) OBJECT(..\Outputs\signal_generator.obj)
+
+line level    source
+
+   1          #include "signal_generator.h"
+   2          #include "lcd12864.h"
+   3          
+   4          #define SQU_N 63
+   5          #define TRA_N 63
+   6          #define SIN_N 75
+   7          #define SAW_N 31
+   8          
+   9          
+  10          code uchar square[] = {31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31,
+             - 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 
+  11                                                          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+  12          code uchar tra[] = {31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10
+             -, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0,
+  13                                                  0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27,
+             - 28, 29, 30, 31};
+  14          code uchar sin[] = {16, 15, 14, 13, 12, 11, 10,  9,  8,  7,  6,  5,  4,  3,  3,  2,  1,  1,  0, 
+  15                                                   0,  1,  1,  2,  3,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16,
+  16                                                  17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 30, 31, 32, 32, 33,
+  17                                                  33, 32, 32, 31, 30, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17
+  18                                                  };
+  19          code uchar saw[] = {31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10
+             -, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0};
+  20          
+  21          
+  22          uchar x, idx, n = TRA_N;        //X轴坐标和当前数组索引
+  23          uchar *arr = tra;
+  24          
+  25          void delay(uint t){
+  26   1              uint i, j;
+  27   1              for(i=0;i<t;i++)
+  28   1                      for(j=0;j<110;j++);
+  29   1      }
+  30          
+  31          /**
+  32          * 绘制坐标系
+  33          */
+  34          static void draw_coordinate_system(){
+  35   1              uchar i, j=1;
+  36   1              //绘制x轴
+  37   1              for(i=CO_SYSTEM_ORIGIN_Y;i>=(CO_SYSTEM_ORIGIN_Y - CO_SYSTEM_Y_LENGTH);i--){
+  38   2                      lcd_draw_point(CO_SYSTEM_ORIGIN_X, i);
+  39   2                      //绘制y轴小刻度
+  40   2                      if(j % CO_SYSTEM_Y_SMALL_MARK == 0){
+  41   3                              lcd_draw_point(CO_SYSTEM_ORIGIN_X + 1, i);      
+  42   3                      }
+  43   2                      //绘制y轴大刻度
+  44   2                      if(j++ % CO_SYSTEM_Y_LARGE_MARK == 0){
+  45   3                              lcd_draw_point(CO_SYSTEM_ORIGIN_X + 2, i);      
+  46   3                      }       
+  47   2              }
+  48   1      
+  49   1              //绘制x轴
+  50   1              for(i=CO_SYSTEM_ORIGIN_X;i<(CO_SYSTEM_ORIGIN_X + CO_SYSTEM_X_LENGTH);i++){
+C51 COMPILER V9.01   SIGNAL_GENERATOR                                                      04/02/2018 15:08:29 PAGE 2   
+
+  51   2                      lcd_draw_point(i, CO_SYSTEM_ORIGIN_Y);
+  52   2                      
+  53   2                      //绘制x轴小刻度
+  54   2                      if((i-CO_SYSTEM_ORIGIN_X) % CO_SYSTEM_X_SMALL_MARK == 0){
+  55   3                              lcd_draw_point(i, CO_SYSTEM_ORIGIN_Y - 1);      
+  56   3                      }
+  57   2                      //绘制x轴大刻度
+  58   2                      if((i-CO_SYSTEM_ORIGIN_X) % CO_SYSTEM_X_LARGE_MARK == 0){
+  59   3                              lcd_draw_point(i, CO_SYSTEM_ORIGIN_Y - 2);
+  60   3                      }
+  61   2              }
+  62   1      }
+  63          
+  64          /**
+  65          * 信号发生器初始化
+  66          */
+  67          void signal_generator_init(){
+  68   1              lcd_init();
+  69   1              draw_coordinate_system();
+  70   1      }
+  71          
+  72          /**
+  73          * 绘制普通波形，该函数将显示arr所表示的波形
+  74          * @param fre    频率
+  75          * @param tozero 一个波形绘制完，是否拉到0
+  76          */
+  77          static void signal_generator_wave(uint fre, uchar tozero){
+  78   1              uchar i;
+  79   1              lcd_write_com(0x01);
+  80   1              draw_coordinate_system();
+  81   1      
+  82   1              idx = 0;
+  83   1              x = 0;
+  84   1              while(1){
+  85   2                      //画完一个波形
+  86   2                      if(idx >= n){
+  87   3                              idx = 0;
+  88   3                              if(tozero){
+  89   4                                      for(i=0;i<31;i++){
+  90   5                                              lcd_draw_point(x + 4, i);
+  91   5                                      }                       
+  92   4                              }
+  93   3                      }
+  94   2      
+  95   2                      lcd_draw_point(x + 5, arr[idx += fre]);
+  96   2                      
+  97   2                      //画完一帧
+  98   2                      if(x >= 127 - 5){
+  99   3                              break;
+ 100   3                      }
+ 101   2                      x += 1; 
+ 102   2              }                       
+ 103   1      }
+ 104          
+ 105          /**
+ 106          * 方波
+ 107          */
+ 108          void signal_generator_quare(uint fre){
+ 109   1              arr = square;
+ 110   1              n = SQU_N;
+ 111   1              signal_generator_wave(fre, 0);          
+ 112   1      }
+C51 COMPILER V9.01   SIGNAL_GENERATOR                                                      04/02/2018 15:08:29 PAGE 3   
+
+ 113          
+ 114          /**
+ 115          * 三角波
+ 116          */
+ 117          void signal_generator_traingle(uint fre){
+ 118   1              arr = tra;
+ 119   1              n = TRA_N;
+ 120   1              signal_generator_wave(fre, 0);          
+ 121   1      }
+ 122          
+ 123          /**
+ 124          * 正弦波
+ 125          */
+ 126          void signal_generator_sin(uint fre){
+ 127   1              arr = sin;
+ 128   1              n = SIN_N;
+ 129   1              signal_generator_wave(fre, 0);
+ 130   1      }
+ 131          
+ 132          /**
+ 133          * 锯齿波
+ 134          */
+ 135          void signal_generator_sawtooth(uint fre){
+ 136   1              arr = saw;
+ 137   1              n = SAW_N;
+ 138   1              signal_generator_wave(fre, 0);  
+ 139   1      }
+ 140          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    326    ----
+   CONSTANT SIZE    =    236    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      6       6
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

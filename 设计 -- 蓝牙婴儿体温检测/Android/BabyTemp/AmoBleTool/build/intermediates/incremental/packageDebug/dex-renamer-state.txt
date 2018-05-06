@@ -1,0 +1,7 @@
+#Thu Apr 26 18:20:43 CST 2018
+base.0=E\:\\Study\\Android\\AndroidWorkspace\\workspace-graduationproject\\BabyTemp\\AmoBleTool\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_e40754d473f880ad52073642056f4b3bc75e5402
+renamed.1=classes2.dex
+renamed.0=classes.dex
+file.1=E\:\\Study\\Android\\AndroidWorkspace\\workspace-graduationproject\\BabyTemp\\AmoBleTool\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_9d280e9508df9bc2a51fe61d77e252393f6fd3b0\\classes.dex
+base.1=E\:\\Study\\Android\\AndroidWorkspace\\workspace-graduationproject\\BabyTemp\\AmoBleTool\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_9d280e9508df9bc2a51fe61d77e252393f6fd3b0
+file.0=E\:\\Study\\Android\\AndroidWorkspace\\workspace-graduationproject\\BabyTemp\\AmoBleTool\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_e40754d473f880ad52073642056f4b3bc75e5402\\classes.dex

@@ -1,0 +1,13 @@
+C51 COMPILER V9.01   UART_PACKET                                                           10/01/2017 15:46:11 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE UART_PACKET
+OBJECT MODULE PLACED IN uart_packet.obj
+COMPILER INVOKED BY: D:\Dev\Keil\C51\BIN\C51.EXE HARDWARE\uart_packet.c BROWSE INCDIR(.\USER;.\HARDWARE) DEBUG OBJECTEXT
+                    -END PRINT(.\uart_packet.lst) OBJECT(uart_packet.obj)
+
+line level    source
+
+*** ERROR C318 OF HARDWARE\uart_packet.c: can't open file 'HARDWARE\uart_packet.c'
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  1 ERROR(S)

@@ -1,0 +1,102 @@
+C51 COMPILER V9.01   TIMER0                                                                03/09/2018 16:31:47 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE TIMER0
+OBJECT MODULE PLACED IN timer0.OBJ
+COMPILER INVOKED BY: D:\Dev\Keil\C51\BIN\C51.EXE timer0.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include "timer0.h"
+   2          #include "reg51.h"
+   3          
+   4          static uchar reload, th0, tl0;
+   5          static ulong t_count = 0;
+   6          static ulong max_count;
+   7          
+   8          /**
+   9          * 16位定时器的初始化
+  10          */
+  11          static void bit_16_init(ulong us){
+  12   1              reload = 0;
+  13   1              TMOD = 0x01;
+  14   1              if(us <= 65535){
+  15   2                      max_count = 1;
+  16   2                      th0 = (65536 - us) / 256;
+  17   2                      tl0 = (65536 - us) % 256;
+  18   2                      TH0 = th0;
+  19   2                      TL0 = tl0;
+  20   2              }else{
+  21   2                      max_count = us / MIN_PRECISION;
+  22   2                      th0 = (65536 - MIN_PRECISION) / 256;
+  23   2                      tl0 = (65536 - MIN_PRECISION) % 256;
+  24   2                      TH0 = th0;
+  25   2                      TL0 = tl0;
+  26   2              }
+  27   1      }
+  28          
+  29          /**
+  30          * 定时器0的初始化：可选择方式1和方式2两个工作模式，需要给定一个定时时间（微妙）
+  31          */
+  32          void timer0_init(uchar work_mode, ulong us){
+  33   1              switch(work_mode){
+  34   2                      case BIT_16_WORK_MODE:
+  35   2                              bit_16_init(us);
+  36   2                              break;
+  37   2                      case RELOAD_BIT_8_WORK_MODE:
+  38   2                              //TODO
+  39   2                              break;
+  40   2                      default:
+  41   2                              bit_16_init(us);
+  42   2                              break;
+  43   2              }
+  44   1              
+  45   1              EA = 1;
+  46   1              ET0 = 1;
+  47   1      }
+  48          
+  49          /**
+  50          * 启动定时器
+  51          */
+  52          void timer0_start(){
+  53   1              TR0 = 1;
+  54   1      }
+  55          
+C51 COMPILER V9.01   TIMER0                                                                03/09/2018 16:31:47 PAGE 2   
+
+  56          /**
+  57          * 停止定时器
+  58          */
+  59          void timer0_stop(){
+  60   1              t_count = 0;
+  61   1              TR0 = 0;
+  62   1      }
+  63          
+  64          /**
+  65          * 定时器0中断服务程序
+  66          */
+  67          void timer0_int() interrupt 1{
+  68   1              if(!reload){
+  69   2                      TH0 = th0;
+  70   2                      TL0 = tl0;
+  71   2              }
+  72   1      
+  73   1              if(t_count++ >= max_count){
+  74   2                      t_count = 0;
+  75   2                      on_time_out();
+  76   2              }
+  77   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    256    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     11       9
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

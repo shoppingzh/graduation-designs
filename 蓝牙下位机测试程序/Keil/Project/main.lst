@@ -1,0 +1,46 @@
+C51 COMPILER V9.01   MAIN                                                                  04/20/2018 14:12:46 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN ..\Outputs\main.obj
+COMPILER INVOKED BY: D:\Dev\Keil\C51\BIN\C51.EXE ..\User\main.c BROWSE INCDIR(..\Hardware;..\User) DEBUG OBJECTEXTEND PR
+                    -INT(.\main.lst) OBJECT(..\Outputs\main.obj)
+
+line level    source
+
+   1          #include "reg51.h"
+   2          #include "uart.h"
+   3          
+   4          sbit LED = P1^3;
+   5          char sendflag, c;
+   6          
+   7          void main(){
+   8   1              uart_init();
+   9   1      
+  10   1              while(1){
+  11   2                      if(sendflag){
+  12   3                              uart_send(c);
+  13   3                              sendflag = 0;
+  14   3                      }
+  15   2              }
+  16   1      }
+  17          
+  18          void uart_received(uchar ch){
+  19   1              LED = ~LED;
+  20   1              c = ch;
+  21   1              sendflag = 1;
+  22   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     25    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      2    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

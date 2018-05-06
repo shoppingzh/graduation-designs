@@ -1,0 +1,5 @@
+"..\Outputs\main.obj",
+"..\Outputs\uart.obj",
+"..\Outputs\adc.obj" 
+TO "..\Outputs\MPX4415" 
+PRINT(".\MPX4415.m51") RAMSIZE(256) 

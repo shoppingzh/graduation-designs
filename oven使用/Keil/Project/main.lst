@@ -1,0 +1,44 @@
+C51 COMPILER V9.01   MAIN                                                                  03/17/2018 17:13:47 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN ..\Outputs\main.obj
+COMPILER INVOKED BY: D:\Dev\Keil\C51\BIN\C51.EXE ..\User\main.c BROWSE INCDIR(..\Hardware;..\User) DEBUG OBJECTEXTEND PR
+                    -INT(.\main.lst) OBJECT(..\Outputs\main.obj)
+
+line level    source
+
+   1          #include "reg51.h"
+   2          
+   3          sbit key = P2^0;
+   4          
+   5          void main(){
+   6   1              
+   7   1              key = 0;
+   8   1      
+   9   1              TMOD = 0x01;
+  10   1              TH0 = 0x3c;
+  11   1              TL0 = 0xb0;
+  12   1              EA = 1;
+  13   1              ET0 = 1;
+  14   1              TR0 = 1;
+  15   1              while(1);       
+  16   1      }
+  17          
+  18          void timer_int() interrupt 1{
+  19   1              key = !key;
+  20   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     22    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

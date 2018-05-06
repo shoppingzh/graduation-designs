@@ -1,0 +1,306 @@
+C51 COMPILER V9.01   TEMPER                                                                03/30/2018 14:08:38 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE TEMPER
+OBJECT MODULE PLACED IN ..\Outputs\temper.obj
+COMPILER INVOKED BY: D:\Dev\Keil\C51\BIN\C51.EXE ..\Hardware\temper.c BROWSE INCDIR(..\Hardware;..\User) DEBUG OBJECTEXT
+                    -END PRINT(.\temper.lst) OBJECT(..\Outputs\temper.obj)
+
+line level    source
+
+   1          #include "temper.h"
+   2          #include "reg51.h"
+   3          #include "intrins.h"
+   4          #include "uart.h"
+   5          
+   6          sbit DQ1 = P2^0;
+   7          sbit DQ2 = P2^1;
+   8          sbit DQ3 = P2^2;
+   9          sbit DQ4 = P2^3;
+  10          
+  11          /**
+  12          * 短暂延时
+  13          */
+  14          static void delay(uchar i){
+  15   1              do{
+  16   2                      _nop_();
+  17   2                      _nop_();
+  18   2                      _nop_();
+  19   2                      i--;
+  20   2              }while(i);
+  21   1      }
+  22          
+  23          ///////////////////4路初始化
+  24          
+  25          static void d1_init(){
+  26   1              uchar rst;
+  27   1              DQ1 = 1;                  
+  28   1              delay(10);        
+  29   1              DQ1 = 0;                 
+  30   1              delay(120);       
+  31   1              DQ1 = 1;                 
+  32   1              delay(16);
+  33   1              rst = DQ1;                      
+  34   1              delay(80);      
+  35   1              DQ1 = 1;
+  36   1              P0 = rst;
+  37   1      }
+  38          
+  39          static void d2_init(){
+  40   1              uchar rst = 0;
+  41   1              DQ2 = 1;                  
+  42   1              delay(10);        
+  43   1              DQ2 = 0;                 
+  44   1              delay(120);       
+  45   1              DQ2 = 1;                 
+  46   1              delay(16);
+  47   1              rst = DQ2;                      
+  48   1              delay(80);      
+  49   1              DQ2 = 1;
+  50   1              P0 = rst;
+  51   1      }
+  52          
+  53          static void d3_init(){
+  54   1              uchar rst = 0;
+C51 COMPILER V9.01   TEMPER                                                                03/30/2018 14:08:38 PAGE 2   
+
+  55   1              DQ3 = 1;                  
+  56   1              delay(10);        
+  57   1              DQ3 = 0;                 
+  58   1              delay(120);       
+  59   1              DQ3 = 1;                 
+  60   1              delay(16);
+  61   1              rst = DQ3;                      
+  62   1              delay(80);      
+  63   1              DQ3 = 1;
+  64   1              P0 = rst;
+  65   1      }
+  66          
+  67          static void d4_init(){
+  68   1              uchar rst = 0;
+  69   1              DQ4 = 1;                  
+  70   1              delay(10);        
+  71   1              DQ4 = 0;                 
+  72   1              delay(120);       
+  73   1              DQ4 = 1;                 
+  74   1              delay(16);
+  75   1              rst = DQ4;                      
+  76   1              delay(80);      
+  77   1              DQ4 = 1;
+  78   1              P0 = rst;       
+  79   1      }
+  80          
+  81          
+  82          /////////////////4路写数据
+  83          
+  84          static void d1_write(uchar byte){
+  85   1              uchar i = 0;
+  86   1              for(i=8;i>0;i--){
+  87   2                      DQ1 = 0;
+  88   2                      DQ1 = byte & 0x01;                      
+  89   2                      delay(12);                               
+  90   2                      DQ1 = 1;
+  91   2                      delay(5);
+  92   2                      byte >>= 1;
+  93   2              }       
+  94   1      }
+  95          
+  96          static void d2_write(uchar byte){
+  97   1              uchar i = 0;
+  98   1              for(i=8;i>0;i--){
+  99   2                      DQ2 = 0;
+ 100   2                      DQ2 = byte & 0x01;                      
+ 101   2                      delay(12);                               
+ 102   2                      DQ2 = 1;
+ 103   2                      delay(5);
+ 104   2                      byte >>= 1;
+ 105   2              }
+ 106   1      }
+ 107          
+ 108          static void d3_write(uchar byte){
+ 109   1              uchar i = 0;
+ 110   1              for(i=8;i>0;i--){
+ 111   2                      DQ3 = 0;
+ 112   2                      DQ3 = byte & 0x01;                      
+ 113   2                      delay(12);                               
+ 114   2                      DQ3 = 1;
+ 115   2                      delay(5);
+ 116   2                      byte >>= 1;
+C51 COMPILER V9.01   TEMPER                                                                03/30/2018 14:08:38 PAGE 3   
+
+ 117   2              }
+ 118   1      }
+ 119          
+ 120          static void d4_write(uchar byte){
+ 121   1              uchar i = 0;
+ 122   1              for(i=8;i>0;i--){
+ 123   2                      DQ4 = 0;
+ 124   2                      DQ4 = byte & 0x01;                      
+ 125   2                      delay(12);                               
+ 126   2                      DQ4 = 1;
+ 127   2                      delay(5);
+ 128   2                      byte >>= 1;
+ 129   2              }
+ 130   1      }
+ 131          
+ 132          //////////////4路读数据
+ 133          
+ 134          static uchar d1_read(){
+ 135   1              uchar i, byte = 0;
+ 136   1              for(i=8;i>0;i--){
+ 137   2                      DQ1 = 0;                        
+ 138   2                      delay(1);               
+ 139   2                      DQ1 = 1;                        
+ 140   2                      byte >>= 1;             
+ 141   2                      if(DQ1)                 
+ 142   2                              byte |= 0x80;           
+ 143   2                      delay(11);
+ 144   2              }
+ 145   1              return byte;
+ 146   1      }
+ 147          
+ 148          static uchar d2_read(){
+ 149   1              uchar i, byte = 0;
+ 150   1              for(i=8;i>0;i--){
+ 151   2                      DQ2 = 0;                        
+ 152   2                      delay(1);               
+ 153   2                      DQ2 = 1;                        
+ 154   2                      byte >>= 1;             
+ 155   2                      if(DQ2)                 
+ 156   2                              byte |= 0x80;           
+ 157   2                      delay(11);
+ 158   2              }
+ 159   1              return byte;
+ 160   1      }
+ 161          
+ 162          static uchar d3_read(){
+ 163   1              uchar i, byte = 0;
+ 164   1              for(i=8;i>0;i--){
+ 165   2                      DQ3 = 0;                        
+ 166   2                      delay(1);               
+ 167   2                      DQ3 = 1;                        
+ 168   2                      byte >>= 1;             
+ 169   2                      if(DQ3)                 
+ 170   2                              byte |= 0x80;           
+ 171   2                      delay(11);
+ 172   2              }
+ 173   1              return byte;
+ 174   1      }
+ 175          
+ 176          static uchar d4_read(){
+ 177   1              uchar i, byte = 0;
+ 178   1              for(i=8;i>0;i--){
+C51 COMPILER V9.01   TEMPER                                                                03/30/2018 14:08:38 PAGE 4   
+
+ 179   2                      DQ4 = 0;                        
+ 180   2                      delay(1);               
+ 181   2                      DQ4 = 1;                        
+ 182   2                      byte >>= 1;             
+ 183   2                      if(DQ4)                 
+ 184   2                              byte |= 0x80;           
+ 185   2                      delay(11);
+ 186   2              }
+ 187   1              return byte;
+ 188   1      }
+ 189          
+ 190          /******************************** API *****************************/
+ 191          
+ 192          uchar temper_readtemp1(){
+ 193   1              uchar templ, temph, tt;
+ 194   1              uint t;
+ 195   1              d1_init();                 
+ 196   1              d1_write(0xcc);    
+ 197   1              d1_write(0x44);
+ 198   1      
+ 199   1              d1_init();               
+ 200   1              d1_write(0xcc);   
+ 201   1              d1_write(0xbe);
+ 202   1                       
+ 203   1              templ = d1_read();       
+ 204   1              temph = d1_read();        
+ 205   1              t = temph;
+ 206   1              t <<= 8;
+ 207   1              t = t | templ;
+ 208   1              tt = t * 0.0625;
+ 209   1                                
+ 210   1              return tt;
+ 211   1      }
+ 212          
+ 213          uchar temper_readtemp2(){
+ 214   1              uchar templ, temph, tt;
+ 215   1              uint t;
+ 216   1              d2_init();                 
+ 217   1              d2_write(0xcc);    
+ 218   1              d2_write(0x44);
+ 219   1      
+ 220   1              d2_init();               
+ 221   1              d2_write(0xcc);   
+ 222   1              d2_write(0xbe);
+ 223   1                       
+ 224   1              templ = d2_read();       
+ 225   1              temph = d2_read();        
+ 226   1              t = temph;
+ 227   1              t <<= 8;
+ 228   1              t = t | templ;
+ 229   1              tt = t * 0.0625;
+ 230   1                                
+ 231   1              return tt;
+ 232   1      }
+ 233          
+ 234          uchar temper_readtemp3(){
+ 235   1              uchar templ, temph, tt;
+ 236   1              uint t;
+ 237   1              d3_init();                 
+ 238   1              d3_write(0xcc);    
+ 239   1              d3_write(0x44);
+ 240   1      
+C51 COMPILER V9.01   TEMPER                                                                03/30/2018 14:08:38 PAGE 5   
+
+ 241   1              d3_init();               
+ 242   1              d3_write(0xcc);   
+ 243   1              d3_write(0xbe);
+ 244   1                       
+ 245   1              templ = d3_read();       
+ 246   1              temph = d3_read();        
+ 247   1              t = temph;
+ 248   1              t <<= 8;
+ 249   1              t = t | templ;
+ 250   1              tt = t * 0.0625;
+ 251   1                                
+ 252   1              return tt;
+ 253   1      }
+ 254          
+ 255          uchar temper_readtemp4(){
+ 256   1              uchar templ, temph, tt;
+ 257   1              uint t;
+ 258   1              d4_init();                 
+ 259   1              d4_write(0xcc);    
+ 260   1              d4_write(0x44);
+ 261   1      
+ 262   1              d4_init();               
+ 263   1              d4_write(0xcc);   
+ 264   1              d4_write(0xbe);
+ 265   1                       
+ 266   1              templ = d4_read();       
+ 267   1              temph = d4_read();        
+ 268   1              t = temph;
+ 269   1              t <<= 8;
+ 270   1              t = t | templ;
+ 271   1              tt = t * 0.0625;
+ 272   1                                
+ 273   1              return tt;
+ 274   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    633    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

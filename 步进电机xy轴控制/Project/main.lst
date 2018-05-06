@@ -1,0 +1,40 @@
+C51 COMPILER V9.01   MAIN                                                                  03/12/2018 21:42:21 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN ..\Outputs\main.obj
+COMPILER INVOKED BY: D:\Dev\Keil\C51\BIN\C51.EXE ..\User\main.c BROWSE INCDIR(..\Hardware;..\User) DEBUG OBJECTEXTEND PR
+                    -INT(.\main.lst) OBJECT(..\Outputs\main.obj)
+
+line level    source
+
+   1          #include "sm.h"
+   2          #include "timer.h"
+   3          
+   4          void main(){
+   5   1              sm_init();
+   6   1              sm_dir(SM_X, SM_DIR_FORWARD);
+   7   1              sm_dir(SM_Y, SM_DIR_FORWARD);
+   8   1              //sm_dir(SM_X, SM_DIR_BACKWARD);
+   9   1              //sm_dir(SM_Y, SM_DIR_BACKWARD);
+  10   1              sm_speed(SM_X, 40);
+  11   1              sm_speed(SM_Y, 40);                             
+  12   1              sm_start(SM_X);
+  13   1              sm_start(SM_Y);
+  14   1      
+  15   1              while(1);
+  16   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     46    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

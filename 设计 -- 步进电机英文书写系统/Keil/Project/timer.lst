@@ -1,0 +1,73 @@
+C51 COMPILER V9.01   TIMER                                                                 03/21/2018 09:13:54 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE TIMER
+OBJECT MODULE PLACED IN ..\Outputs\timer.obj
+COMPILER INVOKED BY: D:\Dev\Keil\C51\BIN\C51.EXE ..\Hardware\timer.c BROWSE INCDIR(..\Hardware;..\User) DEBUG OBJECTEXTE
+                    -ND PRINT(.\timer.lst) OBJECT(..\Outputs\timer.obj)
+
+line level    source
+
+   1          #include "timer.h"
+   2          #include "reg51.h"
+   3          
+   4          static uchar th0, tl0;
+   5          
+   6          /**
+   7          * 定时器初始化：使用定时器0进行定时
+   8          */
+   9          void timer_init(){
+  10   1              TMOD |= 0x21;
+  11   1              //暂不赋初值
+  12   1              EA = 1;
+  13   1              ET0 = 1;
+  14   1      }
+  15          
+  16          /**
+  17          * 设置定时器0的定时时间
+  18          */
+  19          void timer0_set_time(uint us){
+  20   1              th0 = (65536 - us) / 256;
+  21   1              tl0 = (65536 - us) % 256;
+  22   1              TH0 = th0;
+  23   1              TL0 = tl0;
+  24   1      }
+  25          
+  26          /**
+  27          * 启动定时器0
+  28          */
+  29          void timer0_start(){
+  30   1              TR0 = 1;
+  31   1      }
+  32          
+  33          /**
+  34          * 停止定时器0
+  35          */
+  36          void timer0_stop(){
+  37   1              TR0 = 0;
+  38   1      }
+  39          
+  40          /**
+  41          * 定时器0的中断服务程序
+  42          */
+  43          void timer0_int() interrupt 1{
+  44   1              TH0 = th0;
+  45   1              TL0 = tl0;
+  46   1              timer0_timeout();
+  47   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    158    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+C51 COMPILER V9.01   TIMER                                                                 03/21/2018 09:13:54 PAGE 2   
+
+   DATA SIZE        =      2       2
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

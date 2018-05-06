@@ -1,0 +1,4 @@
+"..\Outputs\main.obj",
+"..\Outputs\uart.obj" 
+TO "..\Outputs\SerialPort" 
+PRINT(".\SerialPort.m51")

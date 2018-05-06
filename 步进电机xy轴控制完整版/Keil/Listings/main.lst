@@ -1,0 +1,76 @@
+C51 COMPILER V9.01   MAIN                                                                  03/14/2018 12:50:29 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN ..\Outputs\main.obj
+COMPILER INVOKED BY: D:\Dev\Keil\C51\BIN\C51.EXE ..\User\main.c BROWSE INCDIR(..\Hardware;..\User) DEBUG OBJECTEXTEND PR
+                    -INT(..\Listings\main.lst) OBJECT(..\Outputs\main.obj)
+
+line level    source
+
+   1          /*
+   2                  本电机模块已经封装完毕，请勿擅自更改
+   3                  电机API简介：
+   4                          1. 初始化
+   5                          2. 设置X、Y轴电机转速
+   6                          3. 设置X、Y轴电机转向
+   7                          4. 启动X、Y轴电机
+   8                          5. 停止X、Y轴电机
+   9                          6. 命令X、Y轴电机运行一段时间
+  10                          7. 命令X、Y轴电机共同运行一段时间
+  11          */
+  12          #include "reg51.h"
+  13          #include "sm.h"
+  14          
+  15          #define uchar unsigned char
+  16          
+  17          //定时2s，实际用了7s
+  18          
+  19          
+  20          /**
+  21          * MAIN
+  22          * 主程序实现X、Y电机同时运行，运行完毕后按原路返回
+  23          */
+  24          void main(){
+  25   1      
+  26   1              sm_init();
+  27   1              //sm_x_dir(SM_DIR_FORWARD);
+  28   1              //sm_x_speed(600);
+  29   1              //sm_x_start();
+  30   1      
+  31   1              //timer_init();
+  32   1              //timer1_set_time(50000);
+  33   1              //timer1_start();
+  34   1      
+  35   1              //sm_x_dir(SM_DIR_BACKWARD);
+  36   1              //sm_x_speed(600);
+  37   1              //sm_x_start();
+  38   1      
+  39   1              //sm_x_run(300, SM_DIR_FORWARD, 3000);
+  40   1              //sm_x_run(300, SM_DIR_BACKWARD, 3000);
+  41   1      
+  42   1              while(1){
+  43   2      
+  44   2                      sm_xy_run(500, SM_DIR_FORWARD, 300, SM_DIR_BACKWARD,2000);
+  45   2                      sm_xy_run(500, SM_DIR_BACKWARD, 300, SM_DIR_FORWARD, 2000);
+  46   2                      
+  47   2                      //sm_x_run(300, SM_DIR_FORWARD, 8000);
+  48   2                      //sm_x_run(300, SM_DIR_BACKWARD, 8000); 
+  49   2              }
+  50   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     57    ----
+C51 COMPILER V9.01   MAIN                                                                  03/14/2018 12:50:29 PAGE 2   
+
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

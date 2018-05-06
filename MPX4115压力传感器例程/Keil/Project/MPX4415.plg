@@ -1,0 +1,113 @@
+<html>
+<body>
+<pre>
+<h1>礦ision Build Log</h1>
+<h2>Project:</h2>
+E:\毕业设计相关\MPX4415压力传感器例程\Keil\Project\MPX4415.uvproj
+Project File Date:  04/30/2018
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling main.c...
+compiling uart.c...
+compiling adc.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?UART_INIT?UART
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_UART_SEND?UART
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?ADC_INIT?ADC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?ADC_TRANSFORM?ADC
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 004BH
+Program Size: data=9.0 xdata=0 code=156
+creating hex file from "..\Outputs\MPX4415"...
+"..\Outputs\MPX4415" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+..\User\main.c(3): warning C315: unknown #directive 'incldue'
+compiling uart.c...
+compiling adc.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?UART_INIT?UART
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_UART_SEND?UART
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?ADC_INIT?ADC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?ADC_TRANSFORM?ADC
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 004BH
+Program Size: data=9.0 xdata=0 code=157
+creating hex file from "..\Outputs\MPX4415"...
+"..\Outputs\MPX4415" - 0 Error(s), 7 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling uart.c...
+compiling adc.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?UART_INIT?UART
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_UART_SEND?UART
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?ADC_INIT?ADC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?ADC_TRANSFORM?ADC
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 004BH
+Program Size: data=9.0 xdata=0 code=157
+creating hex file from "..\Outputs\MPX4415"...
+"..\Outputs\MPX4415" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling uart.c...
+compiling adc.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?ADC_INIT?ADC
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 004BH
+Program Size: data=9.0 xdata=0 code=166
+creating hex file from "..\Outputs\MPX4415"...
+"..\Outputs\MPX4415" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling uart.c...
+compiling adc.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?ADC_INIT?ADC
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 004BH
+Program Size: data=9.0 xdata=0 code=183
+creating hex file from "..\Outputs\MPX4415"...
+"..\Outputs\MPX4415" - 0 Error(s), 3 Warning(s).

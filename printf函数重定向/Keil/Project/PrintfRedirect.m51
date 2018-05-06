@@ -1,0 +1,212 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        03/14/2018  12:00:44  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+D:\DEV\KEIL\C51\BIN\BL51.EXE ..\Outputs\main.obj, ..\Outputs\printer.obj, ..\Outputs\uart.obj TO ..\Outputs\PrintfRedire
+>> ct PRINT (.\PrintfRedirect.m51)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  ..\Outputs\main.obj (MAIN)
+  ..\Outputs\printer.obj (PRINTER)
+  ..\Outputs\uart.obj (UART)
+  D:\DEV\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+  D:\DEV\KEIL\C51\LIB\C51S.LIB (PRINTF)
+  D:\DEV\KEIL\C51\LIB\C51S.LIB (?C?CLDPTR)
+  D:\DEV\KEIL\C51\LIB\C51S.LIB (?C?CLDOPTR)
+  D:\DEV\KEIL\C51\LIB\C51S.LIB (?C?CSTPTR)
+  D:\DEV\KEIL\C51\LIB\C51S.LIB (?C?PLDIIDATA)
+  D:\DEV\KEIL\C51\LIB\C51S.LIB (?C?CCASE)
+
+
+LINK MAP OF MODULE:  ..\Outputs\PrintfRedirect (MAIN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0015H     UNIT         _DATA_GROUP_
+                    001DH     0003H                  *** GAP ***
+            BIT     0020H.0   0001H.1   UNIT         _BIT_GROUP_
+                    0021H.1   0000H.7                *** GAP ***
+            IDATA   0022H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0013H     UNIT         ?PR?UART_INIT?UART
+            CODE    0016H     000CH     UNIT         ?C_C51STARTUP
+                    0022H     0001H                  *** GAP ***
+            CODE    0023H     0003H     ABSOLUTE     
+            CODE    0026H     035CH     UNIT         ?PR?PRINTF?PRINTF
+            CODE    0382H     008EH     UNIT         ?C?LIB_CODE
+            CODE    0410H     0042H     UNIT         ?PR?UART_INT?UART
+            CODE    0452H     000EH     UNIT         ?PR?MAIN?MAIN
+            CODE    0460H     000EH     UNIT         ?CO?MAIN
+            CODE    046EH     0008H     UNIT         ?PR?_PUTCHAR?PRINTER
+            CODE    0476H     0008H     UNIT         ?PR?_UART_SEND?UART
+            CODE    047EH     0003H     UNIT         ?PR?PRINTER_INIT?PRINTER
+
+
+
+OVERLAY MAP OF MODULE:   ..\Outputs\PrintfRedirect (MAIN)
+
+
+SEGMENT                             BIT_GROUP          DATA_GROUP 
+  +--> CALLED SEGMENT            START    LENGTH     START    LENGTH
+--------------------------------------------------------------------
+BL51 BANKED LINKER/LOCATER V6.22                                                      03/14/2018  12:00:44  PAGE 2
+
+
+?C_C51STARTUP                    -----    -----      -----    -----
+  +--> ?PR?MAIN?MAIN
+
+?PR?MAIN?MAIN                    -----    -----      -----    -----
+  +--> ?PR?PRINTER_INIT?PRINTER
+  +--> ?CO?MAIN
+  +--> ?PR?PRINTF?PRINTF
+
+?PR?PRINTER_INIT?PRINTER         -----    -----      -----    -----
+  +--> ?PR?UART_INIT?UART
+
+?PR?PRINTF?PRINTF                0020H.0  0001H.1    0008H    0014H
+  +--> ?PR?_PUTCHAR?PRINTER
+
+?PR?_PUTCHAR?PRINTER             -----    -----      001CH    0001H
+  +--> ?PR?_UART_SEND?UART
+
+
+
+UNRESOLVED EXTERNAL SYMBOLS:
+   _UART_RECEIVED
+
+
+
+SYMBOL TABLE OF MODULE:  ..\Outputs\PrintfRedirect (MAIN)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        MAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:0452H         PUBLIC        main
+  -------         PROC          MAIN
+  C:0452H         LINE#         4
+  C:0452H         LINE#         5
+  C:0455H         LINE#         6
+  C:045EH         LINE#         8
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        MAIN
+
+  -------         MODULE        PRINTER
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:047EH         PUBLIC        printer_init
+  C:046EH         PUBLIC        _putchar
+  -------         PROC          PRINTER_INIT
+  C:047EH         LINE#         8
+  C:047EH         LINE#         9
+  -------         ENDPROC       PRINTER_INIT
+  -------         PROC          _PUTCHAR
+  D:001CH         SYMBOL        c
+  C:046EH         LINE#         15
+  C:0470H         LINE#         16
+  C:0473H         LINE#         17
+  C:0475H         LINE#         18
+  -------         ENDPROC       _PUTCHAR
+  -------         ENDMOD        PRINTER
+
+BL51 BANKED LINKER/LOCATER V6.22                                                      03/14/2018  12:00:44  PAGE 3
+
+
+  -------         MODULE        UART
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  B:00A8H.7       PUBLIC        EA
+  B:00A8H.4       PUBLIC        ES
+  B:0098H.0       PUBLIC        RI
+  B:0098H.1       PUBLIC        TI
+  D:0099H         PUBLIC        SBUF
+  D:0098H         PUBLIC        SCON
+  D:0089H         PUBLIC        TMOD
+  C:0476H         PUBLIC        _uart_send
+  D:008DH         PUBLIC        TH1
+  D:008BH         PUBLIC        TL1
+  C:0003H         PUBLIC        uart_init
+  B:0088H.6       PUBLIC        TR1
+  C:0410H         PUBLIC        uart_int
+  -------         PROC          UART_INIT
+  C:0003H         LINE#         7
+  C:0003H         LINE#         8
+  C:0006H         LINE#         9
+  C:0009H         LINE#         10
+  C:000CH         LINE#         11
+  C:000FH         LINE#         12
+  C:0011H         LINE#         13
+  C:0013H         LINE#         14
+  C:0015H         LINE#         15
+  -------         ENDPROC       UART_INIT
+  -------         PROC          _UART_SEND
+  D:0007H         SYMBOL        dat
+  C:0476H         LINE#         20
+  C:0476H         LINE#         21
+  C:0478H         LINE#         22
+  C:047BH         LINE#         23
+  C:047DH         LINE#         24
+  -------         ENDPROC       _UART_SEND
+  -------         PROC          UART_INT
+  C:0410H         LINE#         29
+  C:042DH         LINE#         30
+  C:0430H         LINE#         31
+  C:0432H         LINE#         32
+  C:0437H         LINE#         33
+  -------         ENDPROC       UART_INT
+  -------         ENDMOD        UART
+
+  -------         MODULE        PRINTF
+  D:0008H         PUBLIC        ?_PRINTF517?BYTE
+  D:0008H         PUBLIC        ?_PRINTF?BYTE
+  D:0008H         PUBLIC        ?_SPRINTF517?BYTE
+  D:0008H         PUBLIC        ?_SPRINTF?BYTE
+  C:0088H         PUBLIC        _PRINTF
+  C:0088H         PUBLIC        _PRINTF517
+  C:0082H         PUBLIC        _SPRINTF
+  C:0082H         PUBLIC        _SPRINTF517
+  -------         ENDMOD        PRINTF
+
+  -------         MODULE        ?C?CLDPTR
+  C:0382H         PUBLIC        ?C?CLDPTR
+  -------         ENDMOD        ?C?CLDPTR
+BL51 BANKED LINKER/LOCATER V6.22                                                      03/14/2018  12:00:44  PAGE 4
+
+
+
+  -------         MODULE        ?C?CLDOPTR
+  C:039BH         PUBLIC        ?C?CLDOPTR
+  -------         ENDMOD        ?C?CLDOPTR
+
+  -------         MODULE        ?C?CSTPTR
+  C:03C8H         PUBLIC        ?C?CSTPTR
+  -------         ENDMOD        ?C?CSTPTR
+
+  -------         MODULE        ?C?PLDIIDATA
+  C:03DAH         PUBLIC        ?C?PLDIIDATA
+  -------         ENDMOD        ?C?PLDIIDATA
+
+  -------         MODULE        ?C?CCASE
+  C:03EAH         PUBLIC        ?C?CCASE
+  -------         ENDMOD        ?C?CCASE
+
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _UART_RECEIVED
+    MODULE:  ..\Outputs\uart.obj (UART)
+    ADDRESS: 0435H
+
+Program Size: data=31.1 xdata=0 code=1152
+LINK/LOCATE RUN COMPLETE.  2 WARNING(S),  0 ERROR(S)

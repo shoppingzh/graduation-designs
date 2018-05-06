@@ -1,0 +1,514 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        03/12/2018  21:42:21  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+D:\DEV\KEIL\C51\BIN\BL51.EXE ..\Outputs\main.obj, ..\Outputs\sm.obj, ..\Outputs\timer.obj TO ..\Outputs\SM_XYControl PRI
+>> NT (.\SM_XYControl.m51)
+
+
+MEMORY MODEL: SMALL WITH FLOATING POINT ARITHMETIC
+
+
+INPUT MODULES INCLUDED:
+  ..\Outputs\main.obj (MAIN)
+  ..\Outputs\sm.obj (SM)
+  ..\Outputs\timer.obj (TIMER)
+  D:\DEV\KEIL\C51\LIB\C51FPS.LIB (?C?FPMUL)
+  D:\DEV\KEIL\C51\LIB\C51FPS.LIB (?C?FPDIV)
+  D:\DEV\KEIL\C51\LIB\C51FPS.LIB (?C?FCAST)
+  D:\DEV\KEIL\C51\LIB\C51FPS.LIB (?C?CASTF)
+  D:\DEV\KEIL\C51\LIB\C51FPS.LIB (?C?FPGETOPN)
+  D:\DEV\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+  D:\DEV\KEIL\C51\LIB\C51S.LIB (?C?SLDIV)
+  D:\DEV\KEIL\C51\LIB\C51S.LIB (?C?LNEG)
+  D:\DEV\KEIL\C51\LIB\C51S.LIB (?C?SLCMP)
+  D:\DEV\KEIL\C51\LIB\C51S.LIB (?C?ULDIV)
+
+
+LINK MAP OF MODULE:  ..\Outputs\SM_XYControl (MAIN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     000BH     UNIT         _DATA_GROUP_
+            DATA    0013H     0004H     UNIT         ?DT?TIMER
+            DATA    0017H     0001H     UNIT         ?DT?_SM_STOP?SM
+            IDATA   0018H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0006H     UNIT         ?PR?_SET_X_SPEED?SM
+                    0009H     0002H                  *** GAP ***
+            CODE    000BH     0003H     ABSOLUTE     
+            CODE    000EH     000CH     UNIT         ?C_C51STARTUP
+                    001AH     0001H                  *** GAP ***
+            CODE    001BH     0003H     ABSOLUTE     
+            CODE    001EH     0357H     UNIT         ?C?LIB_CODE
+            CODE    0375H     004FH     UNIT         ?PR?_TIMER0_SET_TIME?TIMER
+            CODE    03C4H     004FH     UNIT         ?PR?_TIMER1_SET_TIME?TIMER
+            CODE    0413H     0044H     UNIT         ?C?LDIV
+            CODE    0457H     0043H     UNIT         ?PR?_GET_TIME_US?SM
+            CODE    049AH     0041H     UNIT         ?PR?TIMER0_INT?TIMER
+            CODE    04DBH     0041H     UNIT         ?PR?TIMER1_INT?TIMER
+            CODE    051CH     0034H     UNIT         ?PR?_GET_CORRECT_TIME?SM
+            CODE    0550H     002EH     UNIT         ?PR?MAIN?MAIN
+            CODE    057EH     001EH     UNIT         ?PR?_SM_SPEED?SM
+            CODE    059CH     0013H     UNIT         ?PR?_SM_DIR?SM
+            CODE    05AFH     0012H     UNIT         ?PR?_SET_X_DIR?SM
+            CODE    05C1H     0012H     UNIT         ?PR?_SET_Y_DIR?SM
+BL51 BANKED LINKER/LOCATER V6.22                                                      03/12/2018  21:42:21  PAGE 2
+
+
+            CODE    05D3H     0012H     UNIT         ?PR?_SM_START?SM
+            CODE    05E5H     0012H     UNIT         ?PR?_SM_STOP?SM
+            CODE    05F7H     000AH     UNIT         ?PR?_SM_X_INIT?SM
+            CODE    0601H     000AH     UNIT         ?PR?_SM_Y_INIT?SM
+            CODE    060BH     000AH     UNIT         ?PR?TIMER_INIT?TIMER
+            CODE    0615H     0006H     UNIT         ?PR?_SET_Y_SPEED?SM
+            CODE    061BH     0005H     UNIT         ?PR?START_X?SM
+            CODE    0620H     0005H     UNIT         ?PR?START_Y?SM
+            CODE    0625H     0005H     UNIT         ?PR?STOP_X?SM
+            CODE    062AH     0005H     UNIT         ?PR?STOP_Y?SM
+            CODE    062FH     0003H     UNIT         ?PR?SM_INIT?SM
+            CODE    0632H     0003H     UNIT         ?PR?TIMER0_TIMEOUT?SM
+            CODE    0635H     0003H     UNIT         ?PR?TIMER1_TIMEOUT?SM
+            CODE    0638H     0003H     UNIT         ?PR?TIMER0_START?TIMER
+            CODE    063BH     0003H     UNIT         ?PR?TIMER1_START?TIMER
+            CODE    063EH     0003H     UNIT         ?PR?TIMER0_STOP?TIMER
+            CODE    0641H     0003H     UNIT         ?PR?TIMER1_STOP?TIMER
+
+
+
+OVERLAY MAP OF MODULE:   ..\Outputs\SM_XYControl (MAIN)
+
+
+SEGMENT                              DATA_GROUP 
+  +--> CALLED SEGMENT              START    LENGTH
+--------------------------------------------------
+?PR?TIMER0_INT?TIMER               -----    -----
+  +--> ?PR?TIMER0_TIMEOUT?SM
+
+*** NEW ROOT ***************************************************
+
+?PR?TIMER1_INT?TIMER               -----    -----
+  +--> ?PR?TIMER1_TIMEOUT?SM
+
+*** NEW ROOT ***************************************************
+
+?C_C51STARTUP                      -----    -----
+  +--> ?PR?MAIN?MAIN
+
+?PR?MAIN?MAIN                      -----    -----
+  +--> ?PR?SM_INIT?SM
+  +--> ?PR?_SM_DIR?SM
+  +--> ?PR?_SM_SPEED?SM
+  +--> ?PR?_SM_START?SM
+
+?PR?SM_INIT?SM                     -----    -----
+  +--> ?PR?TIMER_INIT?TIMER
+
+?PR?_SM_DIR?SM                     -----    -----
+  +--> ?PR?_SET_X_DIR?SM
+  +--> ?PR?_SET_Y_DIR?SM
+
+?PR?_SM_SPEED?SM                   0008H    0003H
+  +--> ?PR?_SET_X_SPEED?SM
+  +--> ?PR?_SET_Y_SPEED?SM
+
+?PR?_SET_X_SPEED?SM                -----    -----
+BL51 BANKED LINKER/LOCATER V6.22                                                      03/12/2018  21:42:21  PAGE 3
+
+
+  +--> ?PR?_GET_CORRECT_TIME?SM
+  +--> ?PR?_TIMER0_SET_TIME?TIMER
+
+?PR?_GET_CORRECT_TIME?SM           000BH    0004H
+  +--> ?PR?_GET_TIME_US?SM
+
+?PR?_GET_TIME_US?SM                000FH    0004H
+
+?PR?_TIMER0_SET_TIME?TIMER         000BH    0002H
+
+?PR?_SET_Y_SPEED?SM                -----    -----
+  +--> ?PR?_GET_CORRECT_TIME?SM
+  +--> ?PR?_TIMER1_SET_TIME?TIMER
+
+?PR?_TIMER1_SET_TIME?TIMER         000BH    0002H
+
+?PR?_SM_START?SM                   0008H    0001H
+  +--> ?PR?START_X?SM
+  +--> ?PR?START_Y?SM
+
+?PR?START_X?SM                     -----    -----
+  +--> ?PR?TIMER0_START?TIMER
+
+?PR?START_Y?SM                     -----    -----
+  +--> ?PR?TIMER1_START?TIMER
+
+
+
+SYMBOL TABLE OF MODULE:  ..\Outputs\SM_XYControl (MAIN)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        MAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:0550H         PUBLIC        main
+  -------         PROC          MAIN
+  C:0550H         LINE#         4
+  C:0550H         LINE#         5
+  C:0553H         LINE#         6
+  C:0559H         LINE#         7
+  C:0560H         LINE#         10
+  C:0569H         LINE#         11
+  C:0572H         LINE#         12
+  C:0577H         LINE#         13
+  C:057CH         LINE#         15
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        MAIN
+
+  -------         MODULE        SM
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  C:059CH         PUBLIC        _sm_dir
+  C:061BH         SYMBOL        start_x
+  C:05E5H         PUBLIC        _sm_stop
+  C:0620H         SYMBOL        start_y
+  C:0003H         SYMBOL        _set_x_speed
+BL51 BANKED LINKER/LOCATER V6.22                                                      03/12/2018  21:42:21  PAGE 4
+
+
+  C:0615H         SYMBOL        _set_y_speed
+  C:0457H         SYMBOL        _get_time_us
+  C:0625H         SYMBOL        stop_x
+  C:062AH         SYMBOL        stop_y
+  C:051CH         SYMBOL        _get_correct_time
+  C:0632H         PUBLIC        timer0_timeout
+  C:0635H         PUBLIC        timer1_timeout
+  C:05AFH         SYMBOL        _set_x_dir
+  C:05C1H         SYMBOL        _set_y_dir
+  B:0090H.0       PUBLIC        x_sm_ena
+  C:05F7H         SYMBOL        _sm_x_init
+  B:0090H.3       PUBLIC        y_sm_ena
+  C:0601H         SYMBOL        _sm_y_init
+  C:057EH         PUBLIC        _sm_speed
+  B:0090H.1       PUBLIC        x_sm_dir
+  B:0090H.4       PUBLIC        y_sm_dir
+  B:0090H.2       PUBLIC        x_sm_pul
+  B:0090H.5       PUBLIC        y_sm_pul
+  C:05D3H         PUBLIC        _sm_start
+  C:062FH         PUBLIC        sm_init
+  -------         PROC          _GET_TIME_US
+  D:0006H         SYMBOL        speed
+  -------         DO            
+  D:000FH         SYMBOL        ms
+  -------         ENDDO         
+  C:0457H         LINE#         15
+  C:0457H         LINE#         16
+  C:0484H         LINE#         17
+  C:0499H         LINE#         18
+  -------         ENDPROC       _GET_TIME_US
+  -------         PROC          _GET_CORRECT_TIME
+  D:0006H         SYMBOL        speed
+  -------         DO            
+  D:000BH         SYMBOL        us
+  -------         ENDDO         
+  C:051CH         LINE#         23
+  C:051CH         LINE#         24
+  C:0527H         LINE#         25
+  C:053CH         LINE#         26
+  C:054BH         LINE#         27
+  C:054BH         LINE#         28
+  C:054FH         LINE#         29
+  -------         ENDPROC       _GET_CORRECT_TIME
+  -------         PROC          _SET_X_DIR
+  D:0007H         SYMBOL        dir
+  C:05AFH         LINE#         34
+  C:05AFH         LINE#         35
+  C:05B2H         LINE#         36
+  C:05B4H         LINE#         37
+  C:05B8H         LINE#         38
+  C:05BAH         LINE#         39
+  C:05BEH         LINE#         40
+  C:05C0H         LINE#         41
+  C:05C0H         LINE#         43
+  C:05C0H         LINE#         44
+  -------         ENDPROC       _SET_X_DIR
+  -------         PROC          _SET_Y_DIR
+BL51 BANKED LINKER/LOCATER V6.22                                                      03/12/2018  21:42:21  PAGE 5
+
+
+  D:0007H         SYMBOL        dir
+  C:05C1H         LINE#         49
+  C:05C1H         LINE#         50
+  C:05C4H         LINE#         51
+  C:05C6H         LINE#         52
+  C:05CAH         LINE#         53
+  C:05CCH         LINE#         54
+  C:05D0H         LINE#         55
+  C:05D2H         LINE#         56
+  C:05D2H         LINE#         58
+  C:05D2H         LINE#         59
+  -------         ENDPROC       _SET_Y_DIR
+  -------         PROC          _SET_X_SPEED
+  D:0006H         SYMBOL        speed
+  -------         DO            
+  D:0006H         SYMBOL        us
+  -------         ENDDO         
+  C:0003H         LINE#         64
+  C:0003H         LINE#         65
+  C:0006H         LINE#         67
+  -------         ENDPROC       _SET_X_SPEED
+  -------         PROC          _SET_Y_SPEED
+  D:0006H         SYMBOL        speed
+  -------         DO            
+  D:0006H         SYMBOL        us
+  -------         ENDDO         
+  C:0615H         LINE#         73
+  C:0615H         LINE#         74
+  C:0618H         LINE#         76
+  -------         ENDPROC       _SET_Y_SPEED
+  -------         PROC          _SM_X_INIT
+  D:0007H         SYMBOL        dir
+  D:0004H         SYMBOL        speed
+  C:05F7H         LINE#         82
+  C:05F7H         LINE#         83
+  C:05FAH         LINE#         84
+  -------         ENDPROC       _SM_X_INIT
+  -------         PROC          _SM_Y_INIT
+  D:0007H         SYMBOL        dir
+  D:0004H         SYMBOL        speed
+  C:0601H         LINE#         90
+  C:0601H         LINE#         91
+  C:0604H         LINE#         92
+  -------         ENDPROC       _SM_Y_INIT
+  -------         PROC          START_X
+  C:061BH         LINE#         98
+  C:061BH         LINE#         99
+  C:061DH         LINE#         100
+  -------         ENDPROC       START_X
+  -------         PROC          START_Y
+  C:0620H         LINE#         106
+  C:0620H         LINE#         107
+  C:0622H         LINE#         108
+  -------         ENDPROC       START_Y
+  -------         PROC          STOP_X
+  C:0625H         LINE#         114
+  C:0625H         LINE#         115
+BL51 BANKED LINKER/LOCATER V6.22                                                      03/12/2018  21:42:21  PAGE 6
+
+
+  C:0627H         LINE#         116
+  -------         ENDPROC       STOP_X
+  -------         PROC          STOP_Y
+  C:062AH         LINE#         122
+  C:062AH         LINE#         123
+  C:062CH         LINE#         124
+  -------         ENDPROC       STOP_Y
+  -------         PROC          SM_INIT
+  C:062FH         LINE#         132
+  C:062FH         LINE#         134
+  -------         ENDPROC       SM_INIT
+  -------         PROC          _SM_DIR
+  D:0007H         SYMBOL        sm
+  D:0006H         SYMBOL        dir
+  C:059CH         LINE#         140
+  C:059EH         LINE#         141
+  C:05A1H         LINE#         142
+  C:05A6H         LINE#         143
+  C:05A9H         LINE#         144
+  C:05AEH         LINE#         145
+  C:05AEH         LINE#         147
+  C:05AEH         LINE#         148
+  -------         ENDPROC       _SM_DIR
+  -------         PROC          _SM_SPEED
+  D:0008H         SYMBOL        sm
+  D:0009H         SYMBOL        speed
+  C:057EH         LINE#         153
+  C:0584H         LINE#         154
+  C:0588H         LINE#         155
+  C:058FH         LINE#         156
+  C:0594H         LINE#         157
+  C:059BH         LINE#         158
+  C:059BH         LINE#         160
+  C:059BH         LINE#         161
+  -------         ENDPROC       _SM_SPEED
+  -------         PROC          _SM_START
+  D:0008H         SYMBOL        sm
+  C:05D3H         LINE#         166
+  C:05D5H         LINE#         167
+  C:05D9H         LINE#         168
+  C:05DCH         LINE#         169
+  C:05E1H         LINE#         170
+  C:05E4H         LINE#         171
+  C:05E4H         LINE#         173
+  C:05E4H         LINE#         174
+  -------         ENDPROC       _SM_START
+  -------         PROC          _SM_STOP
+  D:0017H         SYMBOL        sm
+  C:05E5H         LINE#         179
+  C:05E7H         LINE#         180
+  C:05EBH         LINE#         181
+  C:05EEH         LINE#         182
+  C:05F3H         LINE#         183
+  C:05F6H         LINE#         184
+  C:05F6H         LINE#         186
+  C:05F6H         LINE#         187
+  -------         ENDPROC       _SM_STOP
+BL51 BANKED LINKER/LOCATER V6.22                                                      03/12/2018  21:42:21  PAGE 7
+
+
+  -------         PROC          TIMER0_TIMEOUT
+  C:0632H         LINE#         194
+  C:0632H         LINE#         195
+  C:0634H         LINE#         196
+  -------         ENDPROC       TIMER0_TIMEOUT
+  -------         PROC          TIMER1_TIMEOUT
+  C:0635H         LINE#         201
+  C:0635H         LINE#         202
+  C:0637H         LINE#         203
+  -------         ENDPROC       TIMER1_TIMEOUT
+  -------         ENDMOD        SM
+
+  -------         MODULE        TIMER
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:0641H         PUBLIC        timer1_stop
+  C:049AH         PUBLIC        timer0_int
+  C:04DBH         PUBLIC        timer1_int
+  B:00A8H.7       PUBLIC        EA
+  D:0013H         SYMBOL        th0
+  D:0014H         SYMBOL        th1
+  D:0015H         SYMBOL        tl0
+  D:0016H         SYMBOL        tl1
+  C:0375H         PUBLIC        _timer0_set_time
+  C:03C4H         PUBLIC        _timer1_set_time
+  D:0089H         PUBLIC        TMOD
+  C:060BH         PUBLIC        timer_init
+  B:00A8H.1       PUBLIC        ET0
+  B:00A8H.3       PUBLIC        ET1
+  D:008CH         PUBLIC        TH0
+  D:008DH         PUBLIC        TH1
+  D:008AH         PUBLIC        TL0
+  D:008BH         PUBLIC        TL1
+  B:0088H.4       PUBLIC        TR0
+  B:0088H.6       PUBLIC        TR1
+  C:0638H         PUBLIC        timer0_start
+  C:063BH         PUBLIC        timer1_start
+  C:063EH         PUBLIC        timer0_stop
+  -------         PROC          TIMER_INIT
+  C:060BH         LINE#         9
+  C:060BH         LINE#         10
+  C:060EH         LINE#         12
+  C:0610H         LINE#         13
+  C:0612H         LINE#         14
+  C:0614H         LINE#         15
+  -------         ENDPROC       TIMER_INIT
+  -------         PROC          _TIMER0_SET_TIME
+  D:000BH         SYMBOL        us
+  C:0375H         LINE#         20
+  C:0379H         LINE#         21
+  C:0398H         LINE#         22
+  C:03BDH         LINE#         23
+  C:03C0H         LINE#         24
+  C:03C3H         LINE#         25
+  -------         ENDPROC       _TIMER0_SET_TIME
+  -------         PROC          _TIMER1_SET_TIME
+  D:000BH         SYMBOL        us
+  C:03C4H         LINE#         30
+BL51 BANKED LINKER/LOCATER V6.22                                                      03/12/2018  21:42:21  PAGE 8
+
+
+  C:03C8H         LINE#         31
+  C:03E7H         LINE#         32
+  C:040CH         LINE#         33
+  C:040FH         LINE#         34
+  C:0412H         LINE#         35
+  -------         ENDPROC       _TIMER1_SET_TIME
+  -------         PROC          TIMER0_START
+  C:0638H         LINE#         40
+  C:0638H         LINE#         41
+  C:063AH         LINE#         42
+  -------         ENDPROC       TIMER0_START
+  -------         PROC          TIMER1_START
+  C:063BH         LINE#         47
+  C:063BH         LINE#         48
+  C:063DH         LINE#         49
+  -------         ENDPROC       TIMER1_START
+  -------         PROC          TIMER0_STOP
+  C:063EH         LINE#         54
+  C:063EH         LINE#         55
+  C:0640H         LINE#         56
+  -------         ENDPROC       TIMER0_STOP
+  -------         PROC          TIMER1_STOP
+  C:0641H         LINE#         61
+  C:0641H         LINE#         62
+  C:0643H         LINE#         63
+  -------         ENDPROC       TIMER1_STOP
+  -------         PROC          TIMER0_INT
+  C:049AH         LINE#         68
+  C:04B7H         LINE#         69
+  C:04BAH         LINE#         70
+  C:04BDH         LINE#         71
+  C:04C0H         LINE#         72
+  -------         ENDPROC       TIMER0_INT
+  -------         PROC          TIMER1_INT
+  C:04DBH         LINE#         77
+  C:04F8H         LINE#         78
+  C:04FBH         LINE#         79
+  C:04FEH         LINE#         80
+  C:0501H         LINE#         81
+  -------         ENDPROC       TIMER1_INT
+  -------         ENDMOD        TIMER
+
+  -------         MODULE        ?C?FPMUL
+  C:001EH         PUBLIC        ?C?FPMUL
+  -------         ENDMOD        ?C?FPMUL
+
+  -------         MODULE        ?C?FPDIV
+  C:0127H         PUBLIC        ?C?FPDIV
+  -------         ENDMOD        ?C?FPDIV
+
+  -------         MODULE        ?C?FCAST
+  C:01CEH         PUBLIC        ?C?FCASTC
+  C:01C9H         PUBLIC        ?C?FCASTI
+  C:01C4H         PUBLIC        ?C?FCASTL
+  -------         ENDMOD        ?C?FCAST
+
+  -------         MODULE        ?C?CASTF
+BL51 BANKED LINKER/LOCATER V6.22                                                      03/12/2018  21:42:21  PAGE 9
+
+
+  C:0202H         PUBLIC        ?C?CASTF
+  -------         ENDMOD        ?C?CASTF
+
+  -------         MODULE        ?C?SLDIV
+  C:0413H         PUBLIC        ?C?SLDIV
+  -------         ENDMOD        ?C?SLDIV
+
+  -------         MODULE        ?C?LNEG
+  C:0283H         PUBLIC        ?C?LNEG
+  -------         ENDMOD        ?C?LNEG
+
+  -------         MODULE        ?C?SLCMP
+  C:0291H         PUBLIC        ?C?SLCMP
+  -------         ENDMOD        ?C?SLCMP
+
+  -------         MODULE        ?C?ULDIV
+  C:02E3H         PUBLIC        ?C?ULDIV
+  -------         ENDMOD        ?C?ULDIV
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SM_X_INIT?SM
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SM_Y_INIT?SM
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SM_STOP?SM
+
+Program Size: data=25.0 xdata=0 code=1601
+LINK/LOCATE RUN COMPLETE.  3 WARNING(S),  0 ERROR(S)

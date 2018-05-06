@@ -1,0 +1,6 @@
+"..\Outputs\main.obj",
+"..\Outputs\lcd12864.obj",
+"..\Outputs\signal_generator.obj",
+"..\Outputs\uart.obj" 
+TO "..\Outputs\SignalGenerator" 
+PRINT(".\SignalGenerator.m51")

@@ -1,0 +1,254 @@
+C51 COMPILER V9.01   MAIN                                                                  03/17/2018 17:52:25 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN ..\Outputs\main.obj
+COMPILER INVOKED BY: D:\Dev\Keil\C51\BIN\C51.EXE ..\User\main.c BROWSE INCDIR(..\Hardware;..\User) DEBUG OBJECTEXTEND PR
+                    -INT(.\main.lst) OBJECT(..\Outputs\main.obj)
+
+line level    source
+
+   1          #include "reg51.h"
+   2          #include "tck_max6675.h"
+   3          #include "lcd1602.h"
+   4          #include "timer.h"
+   5          #include "stdio.h"
+   6          #include "uart.h"
+   7          
+   8          #define uchar unsigned char
+   9          #define uint unsigned int
+  10          #define DEBUG 0
+  11          
+  12          void delay(uchar t);
+  13          char* get_str(int val);
+  14          void display();
+  15          
+  16          //设置相关
+  17          sbit key_set = P0^5;
+  18          sbit key_up = P0^6;
+  19          sbit key_down = P0^7;
+  20          bit is_setting = 0;
+  21          bit is_read = 1;                        //是否读取温度值
+  22          uchar set_road;                         //当前设置报警温度的路
+  23          
+  24          //参数
+  25          uint t1, t2;
+  26          uint t1max = 80, t2max = 75;
+  27          
+  28          //报警相关
+  29          sbit buz = P3^6;
+  30          
+  31          //锅炉升温/降温 反馈
+  32          sbit oven = P2^6;
+  33          
+  34          //MAIN
+  35          void main(){
+  36   1              uint temp1, temp2;
+  37   1              lcd_simple_init();
+  38   1              uart_init();
+  39   1              timer_init();
+  40   1              
+  41   1      
+  42   1              //为防止第一次读到的误差，先读取一次温度
+  43   1              tck_read_temp1();
+  44   1              tck_read_temp2();
+  45   1      
+  46   1              while(1){
+  47   2      
+  48   2                      //打印调试信息
+  49   2                      if(DEBUG){
+  50   3                              printf("--------------------DEBUG--------------------\n");
+  51   3                              printf("T1: %d \n", (int)t1);
+  52   3                              printf("T2: %d \n", (int)t2);
+  53   3                              printf("T1 Max: %d \n", (int)t1max);
+  54   3                              printf("T2 Max: %d \n", (int)t2max);
+C51 COMPILER V9.01   MAIN                                                                  03/17/2018 17:52:25 PAGE 2   
+
+  55   3                              printf("--------------------DEBUG--------------------\n\n");
+  56   3                              delay(100);
+  57   3                      }
+  58   2      
+  59   2                      /***************** set/confirm set START ********************/
+  60   2                      //设置/应用设置
+  61   2                      if(!key_set){
+  62   3                              //当正在设置状态时，再次按下设置按钮，设置结束
+  63   3                              if(is_setting){
+  64   4                                      is_setting = 0;
+  65   4                                      is_read = 1;
+  66   4                                      display();      
+  67   4                              }else{
+  68   4                                      //进入设置模式，不读温度
+  69   4                                      is_setting = 1;
+  70   4                                      is_read = 0;
+  71   4                                      //显示设置信息
+  72   4                                      lcd_clear();
+  73   4                                      lcd_display_string(1, 1, "SETTING..");
+  74   4                                      if(set_road == 0){
+  75   5                                              lcd_display_string(2, 1, "!T1 = ");
+  76   5                                              lcd_display_string(2, 7, get_str(t1max));
+  77   5                                      }else{
+  78   5                                              lcd_display_string(2, 1, "!T2 = ");
+  79   5                                              lcd_display_string(2, 7, get_str(t2max));
+  80   5                                      }       
+  81   4                              }
+  82   3      
+  83   3                              while(!key_set);                //等待按键松开
+  84   3                              if(!is_setting){
+  85   4                                      set_road = !set_road;   //下次设置时，设置另一路        
+  86   4                              }                       
+  87   3                      }
+  88   2                      /***************** set/confirm set END ********************/
+  89   2      
+  90   2                      //增大/减小报警温度
+  91   2                      /***************** up/down START ********************/
+  92   2                      if(is_setting){
+  93   3                              if(!(!key_up && !key_down)){
+  94   4                                      //增大报警温度
+  95   4                                      if(!key_up){
+  96   5                                              //可连续调整，必须消抖
+  97   5                                              delay(255);
+  98   5                                              if(!key_up){
+  99   6                                                      if(set_road == 0){
+ 100   7                                                              t1max++;
+ 101   7                                                              lcd_display_string(2, 1, "!T1 = ");
+ 102   7                                                              lcd_display_string(2, 7, get_str(t1max));
+ 103   7                                                      }else{
+ 104   7                                                              t2max++;
+ 105   7                                                              lcd_display_string(2, 1, "!T2 = ");
+ 106   7                                                              lcd_display_string(2, 7, get_str(t2max));
+ 107   7                                                      }
+ 108   6                                              }       
+ 109   5                                      }
+ 110   4      
+ 111   4                                      //减小报警温度
+ 112   4                                      if(!key_down){
+ 113   5                                              delay(255);
+ 114   5                                              if(!key_down){
+ 115   6                                                      if(set_road == 0){
+ 116   7                                                              t1max--;
+C51 COMPILER V9.01   MAIN                                                                  03/17/2018 17:52:25 PAGE 3   
+
+ 117   7                                                              lcd_display_string(2, 1, "!T1 = ");
+ 118   7                                                              lcd_display_string(2, 7, get_str(t1max));
+ 119   7                                                      }else{
+ 120   7                                                              t2max--;
+ 121   7                                                              lcd_display_string(2, 1, "!T2 = ");
+ 122   7                                                              lcd_display_string(2, 7, get_str(t2max));
+ 123   7                                                      }
+ 124   6                                              }
+ 125   5                                      }
+ 126   4                              }       
+ 127   3                      }
+ 128   2                      /***************** up/down END ********************/    
+ 129   2      
+ 130   2      
+ 131   2                      /***************** read/display START ********************/
+ 132   2                      if(is_read){
+ 133   3                              temp1 = tck_read_temp1();               
+ 134   3                              temp2 = tck_read_temp2();
+ 135   3                      }
+ 136   2      
+ 137   2                      //当温度值发生改变时，才重新显示
+ 138   2                      if(temp1 != t1 || temp2 != t2){
+ 139   3                              t1 = temp1;
+ 140   3                              t2 = temp2;
+ 141   3                              display();
+ 142   3                      }
+ 143   2                      /***************** read/display END ********************/
+ 144   2      
+ 145   2                      /****************** warning START ******************/
+ 146   2                      //两路温度，有一路超了则报警（忽略设置过程动态调节报警值）
+ 147   2                      if(!is_setting){
+ 148   3                              if(t1 > t1max || t2 > t2max){
+ 149   4                                      buz = 0;
+ 150   4                                      timer_stop();
+ 151   4                                      oven = 0;
+ 152   4                              }else{
+ 153   4                                      buz = 1;
+ 154   4                                      timer_start();
+ 155   4                              }       
+ 156   3                      }       
+ 157   2                      
+ 158   2      
+ 159   2                      /****************** warning END ******************/
+ 160   2      
+ 161   2              }
+ 162   1                              
+ 163   1      }
+ 164          
+ 165          //给oven脉冲
+ 166          void timer_timeout(){
+ 167   1              oven = ~oven;
+ 168   1      }
+ 169          
+ 170          //显示1路温度、2路温度、1路报警值、2路报警值
+ 171          void display(){
+ 172   1              char t1str[8], t2str[8], t1maxstr[8], t2maxstr[8];
+ 173   1              lcd_clear();
+ 174   1      
+ 175   1              //显示温度值
+ 176   1              sprintf(t1str, "T1: %d", (int)t1);
+ 177   1              sprintf(t2str, "T2: %d", (int)t2);
+ 178   1              lcd_display_string(1, 1, t1str);
+C51 COMPILER V9.01   MAIN                                                                  03/17/2018 17:52:25 PAGE 4   
+
+ 179   1              lcd_display_string(1, 9, t2str);
+ 180   1              
+ 181   1              //显示报警温度值
+ 182   1              sprintf(t1maxstr, "!T1: %d", (int)t1max);
+ 183   1              sprintf(t2maxstr, "!T2: %d", (int)t2max);
+ 184   1              lcd_display_string(2, 1, t1maxstr);
+ 185   1              lcd_display_string(2, 9, t2maxstr);
+ 186   1      }
+ 187          
+ 188          //将数字转换为字符串
+ 189          char* get_str(int val){
+ 190   1              char *str;
+ 191   1              if(val <= 9){
+ 192   2                      char arr[1];
+ 193   2                      str = arr;
+ 194   2              }else if(val <= 99){
+ 195   2                      char arr[2];
+ 196   2                      str = arr;
+ 197   2              }else if(val <= 999){
+ 198   2                      char arr[3];
+ 199   2                      str = arr;
+ 200   2              }else if(val <= 9999){
+ 201   2                      char arr[4];
+ 202   2                      str = arr;
+ 203   2              }else if(val <= 99999){
+ 204   2                      char arr[5];
+ 205   2                      str = arr;
+ 206   2              }
+ 207   1              sprintf(str, "%d", val);
+ 208   1              return str;
+ 209   1      }
+ 210          
+ 211          //短暂延时
+ 212          void delay(uchar t){
+ 213   1              uchar i, j;
+ 214   1              for(i=0;i<t;i++)
+ 215   1                      for(j=0;j<110;j++);
+ 216   1      }
+ 217          
+ 218          //printf重定向
+ 219          char putchar (char ch){
+ 220   1              uart_send(ch);
+ 221   1              return ch;
+ 222   1      }
+ 223          
+ 224          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    691    ----
+   CONSTANT SIZE    =    196    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      9      45
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =      2    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

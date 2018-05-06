@@ -1,0 +1,5 @@
+"..\Outputs\main.obj",
+"..\Outputs\adc.obj",
+"..\Outputs\lcd1602.obj" 
+TO "..\Outputs\Infrared" 
+PRINT(".\Infrared.m51")

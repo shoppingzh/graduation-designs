@@ -1,0 +1,5 @@
+"..\Outputs\uart.obj",
+"..\Outputs\uart_support.obj",
+"..\Outputs\main.obj" 
+TO "..\Outputs\uart_packet_analyse" 
+PRINT(".\uart_packet_analyse.m51") RAMSIZE(256) 

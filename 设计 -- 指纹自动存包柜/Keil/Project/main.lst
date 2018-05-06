@@ -1,0 +1,266 @@
+C51 COMPILER V9.01   MAIN                                                                  04/21/2018 14:40:03 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN ..\Outputs\main.obj
+COMPILER INVOKED BY: D:\Dev\Keil\C51\BIN\C51.EXE ..\User\main.c BROWSE INCDIR(..\User,..\Hardware) DEBUG OBJECTEXTEND PR
+                    -INT(.\main.lst) OBJECT(..\Outputs\main.obj)
+
+line level    source
+
+   1          #include "reg52.h"
+   2          #include "fpm10a.h"
+   3          #include "lcd12864.h"
+   4          #include "intrins.h"
+   5          
+   6          #define MAX_NUM 20
+   7          
+   8          sbit key_store = P2^0;
+   9          sbit key_take = P2^1;
+  10          sbit key_close = P2^2;
+  11          sbit relay = P2^3;
+  12          
+  13          idata uchar map[MAX_NUM];
+  14          
+  15          void boot();
+  16          void home();
+  17          uchar get_unuse();
+  18          void wait_finger();
+  19          void store();
+  20          void take();
+  21          void do_store();
+  22          void do_take();
+  23          
+  24          //普通延时 ms
+  25          static void delayms(uint t){
+  26   1              uint i, j;
+  27   1              for(i=0;i<t;i++)
+  28   1                      for(j=0;j<110;j++);
+  29   1      }
+  30          
+  31          //界面等待延时
+  32          static void delay2s(){
+  33   1          uchar a,b,c;
+  34   1          for(c=127;c>0;c--)
+  35   1              for(b=235;b>0;b--)
+  36   1                  for(a=32;a>0;a--);
+  37   1          _nop_();
+  38   1      }
+  39          
+  40          void main(){
+  41   1      
+  42   1              lcd_init();
+  43   1              fpm_init();
+  44   1              home();
+  45   1      
+  46   1              while(1){
+  47   2                       if(!key_store){
+  48   3                              store();
+  49   3                              while(!key_store);
+  50   3                       }
+  51   2                       if(!key_take){
+  52   3                              take();
+  53   3                              while(!key_take);
+  54   3                       }
+C51 COMPILER V9.01   MAIN                                                                  04/21/2018 14:40:03 PAGE 2   
+
+  55   2                       if(!key_close){
+  56   3                              //关门
+  57   3                              relay = 1;
+  58   3                              while(!key_close);
+  59   3                       }
+  60   2                      
+  61   2                              
+  62   2              }
+  63   1      }
+  64          
+  65          
+  66          
+  67          /**
+  68          * 获取当前存包柜的映射，映射关系：当前柜号 = 是否使用
+  69          * 1为使用中，0为未使用
+  70          */
+  71          static void get_map(){
+  72   1              uchar i, *table, idx = 0;
+  73   1              //读取索引页0的索引表
+  74   1              table = fpm_read_index_table(0);
+  75   1              for(i=0;i<32;i++){
+  76   2                      //获取索引表中有指纹模板的索引，存入应用映射表中
+  77   2                      uchar j;
+  78   2                      if(idx >= MAX_NUM)
+  79   2                              break;
+  80   2      
+  81   2                      for(j=0;j<8;j++){
+  82   3                              if(idx >= MAX_NUM)
+  83   3                                      break;
+  84   3                              if(table[i] & 0x01){
+  85   4                                      map[idx] = 1;
+  86   4                              }else{
+  87   4                                      map[idx] = 0;
+  88   4                              }
+  89   3                              table[i] >>= 1;
+  90   3                              idx++;
+  91   3                      }                       
+  92   2              }               
+  93   1      }
+  94          
+  95          /**
+  96          * 获取未使用柜数
+  97          */
+  98          uchar get_unuse(){
+  99   1              uchar i, cnt;
+ 100   1              get_map();
+ 101   1              for(i=0;i<MAX_NUM;i++){
+ 102   2                      if(map[i] == 0)
+ 103   2                              cnt++;  
+ 104   2              }
+ 105   1              
+ 106   1              return cnt;     
+ 107   1      }
+ 108          
+ 109          //等待用户放手指
+ 110          void wait_finger(){
+ 111   1              //while(fpm_genimg() != 0x00);
+ 112   1              while(1){
+ 113   2                      if(fpm_genimg() == 0x00)
+ 114   2                              break;
+ 115   2                      delayms(50);
+ 116   2              }
+C51 COMPILER V9.01   MAIN                                                                  04/21/2018 14:40:03 PAGE 3   
+
+ 117   1      }
+ 118          
+ 119          /**
+ 120          * 获取存储索引：在N个空柜中找最索引号最小的柜子
+ 121          */
+ 122          static uchar get_store_index(){
+ 123   1              uchar i;
+ 124   1              get_map();
+ 125   1              for(i=0;i<MAX_NUM;i++){
+ 126   2                      if(map[i] == 0){
+ 127   3                              return i;
+ 128   3                      }               
+ 129   2              }
+ 130   1              return 0;       
+ 131   1      }
+ 132          
+ 133          //开机
+ 134          void boot(){
+ 135   1      //      uchar i;
+ 136   1      //      for(i=0;i<2;i++){
+ 137   1      //              lcd_clear();
+ 138   1      //              lcd_display_string(2, 3, "初始化");
+ 139   1      //              lcd_display_ascii(2, 6, '.', ' ');
+ 140   1      //              delayms(400);
+ 141   1      //              lcd_display_string(2, 3, "初始化");
+ 142   1      //              lcd_display_ascii(2, 6, '.', '.');
+ 143   1      //              delayms(400);
+ 144   1      //              lcd_display_string(2, 3, "初始化");
+ 145   1      //              lcd_display_ascii(2, 6, '.', '.');
+ 146   1      //              lcd_display_ascii(2, 7, '.', ' ');
+ 147   1      //              delayms(400);
+ 148   1      //      }
+ 149   1      }
+ 150          
+ 151          //主界面                
+ 152          void home(){
+ 153   1              delayms(10);
+ 154   1              lcd_clear();
+ 155   1              lcd_display_string(1, 3, "欢迎使用");
+ 156   1              lcd_display_string(2, 1, "指纹自动存包柜！");
+ 157   1              lcd_display_string(4, 2, "当前空柜：");
+ 158   1              lcd_display_digit(4, 7, get_unuse());   
+ 159   1      }
+ 160          
+ 161          //存包
+ 162          static void do_store(){
+ 163   1              uchar temp, index;
+ 164   1              temp = fpm_add_template((index = get_store_index()));
+ 165   1              lcd_clear();
+ 166   1              if(temp == 0x00){
+ 167   2                      relay = 0;
+ 168   2                      lcd_display_digit(2, 2, index+1);
+ 169   2                      lcd_display_string(2, 3, "号门已打开！");
+ 170   2                      lcd_display_string(3, 3, "欢迎使用！");
+ 171   2              }else if(temp == 0x02){
+ 172   2                      lcd_display_string(2, 3, "您没有");
+ 173   2                      lcd_display_string(3, 2, "按下手指哦！");
+ 174   2              }else if(temp == 0x24){
+ 175   2                      lcd_display_string(2, 2, "您已经存包了！");
+ 176   2              }
+ 177   1              delay2s();
+ 178   1              home();
+C51 COMPILER V9.01   MAIN                                                                  04/21/2018 14:40:03 PAGE 4   
+
+ 179   1      }
+ 180          
+ 181          //取包
+ 182          static void do_take(){
+ 183   1              int index = fpm_auto_search(0, MAX_NUM-1);
+ 184   1      
+ 185   1              lcd_clear();
+ 186   1              if(index == -1){
+ 187   2                      lcd_display_string(2, 2, "您没有存包！");       
+ 188   2              }else{
+ 189   2                      relay = 0;
+ 190   2                      lcd_display_digit(2, 2, index+1);
+ 191   2                      lcd_display_string(2, 3, "号门已打开！");
+ 192   2                      lcd_display_string(3, 1, "请取走您的物件！");
+ 193   2                      fpm_delete_template(index);     
+ 194   2              }
+ 195   1      
+ 196   1              delay2s();
+ 197   1              home();
+ 198   1      }
+ 199          
+ 200          //存包
+ 201          void store(){
+ 202   1              //判断是否有空柜
+ 203   1              if(get_unuse() <= 0){
+ 204   2                      lcd_clear();
+ 205   2                      lcd_display_string(2, 2, "当前没有空柜");
+ 206   2                      lcd_display_string(3, 3, "请稍作等候！");
+ 207   2                      //等待2s，回主界面
+ 208   2                      delay2s();
+ 209   2                      home();
+ 210   2                      return;
+ 211   2              }
+ 212   1      
+ 213   1              lcd_clear();
+ 214   1              lcd_display_string(1, 4, "存包");
+ 215   1              lcd_display_string(3, 1, "请放入您的手指");
+ 216   1              lcd_display_ascii(3, 8, '.', '.');
+ 217   1      
+ 218   1              //等待用户按下手指
+ 219   1              wait_finger();
+ 220   1              do_store();     
+ 221   1      }
+ 222          
+ 223          //取包
+ 224          void take(){
+ 225   1              lcd_clear();
+ 226   1              lcd_display_string(1, 4, "取包");
+ 227   1              lcd_display_string(3, 1, "请放入您的手指");
+ 228   1              lcd_display_ascii(3, 8, '.', '.');
+ 229   1      
+ 230   1              //等待用户按手指
+ 231   1              wait_finger();
+ 232   1              do_take();
+ 233   1      }
+ 234          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    652    ----
+   CONSTANT SIZE    =    177    ----
+   XDATA SIZE       =   ----    ----
+C51 COMPILER V9.01   MAIN                                                                  04/21/2018 14:40:03 PAGE 5   
+
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----      10
+   IDATA SIZE       =     20    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

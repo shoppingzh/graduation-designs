@@ -1,0 +1,226 @@
+<html>
+<body>
+<pre>
+<h1>µVision3 Build Log</h1>
+<h2>Project:</h2>
+F:\LCD\×Ö¿âLCD12864Òº¾§\Òº¾§.uv2
+Project File Date:  08/09/2011
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling 7920_580b.c...
+linking...
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  PIC2
+    MODULE:  7920_580b.obj (7920_580B)
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  PIC3
+    MODULE:  7920_580b.obj (7920_580B)
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _DISPLAYGRAPHIC
+    MODULE:  7920_580b.obj (7920_580B)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  PIC2
+    MODULE:  7920_580b.obj (7920_580B)
+    ADDRESS: 014FH
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  PIC2
+    MODULE:  7920_580b.obj (7920_580B)
+    ADDRESS: 0151H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _DISPLAYGRAPHIC
+    MODULE:  7920_580b.obj (7920_580B)
+    ADDRESS: 0153H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  PIC3
+    MODULE:  7920_580b.obj (7920_580B)
+    ADDRESS: 015DH
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  PIC3
+    MODULE:  7920_580b.obj (7920_580B)
+    ADDRESS: 015FH
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _DISPLAYGRAPHIC
+    MODULE:  7920_580b.obj (7920_580B)
+    ADDRESS: 0161H
+Program Size: data=13.1 xdata=0 code=598
+creating hex file from "Òº¾§"...
+"Òº¾§" - 0 Error(s), 9 Warning(s).
+Build target 'Target 1'
+compiling 7920_580b.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?INITINA2?7920_580B
+Program Size: data=13.1 xdata=0 code=633
+creating hex file from "Òº¾§"...
+"Òº¾§" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling 7920_580b.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?INITINA2?7920_580B
+Program Size: data=13.1 xdata=0 code=633
+creating hex file from "Òº¾§"...
+"Òº¾§" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling 7920_580b.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?INITINA2?7920_580B
+Program Size: data=13.1 xdata=0 code=633
+creating hex file from "Òº¾§"...
+"Òº¾§" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling 7920_580b.c...
+linking...
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  PIC2
+    MODULE:  7920_580b.obj (7920_580B)
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _DISPLAYGRAPHIC
+    MODULE:  7920_580b.obj (7920_580B)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  PIC2
+    MODULE:  7920_580b.obj (7920_580B)
+    ADDRESS: 01DFH
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  PIC2
+    MODULE:  7920_580b.obj (7920_580B)
+    ADDRESS: 01E1H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _DISPLAYGRAPHIC
+    MODULE:  7920_580b.obj (7920_580B)
+    ADDRESS: 01E3H
+Program Size: data=13.1 xdata=0 code=657
+creating hex file from "Òº¾§"...
+"Òº¾§" - 0 Error(s), 5 Warning(s).
+Build target 'Target 1'
+compiling 7920_580b.c...
+linking...
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  PIC2
+    MODULE:  7920_580b.obj (7920_580B)
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _DISPLAYGRAPHIC
+    MODULE:  7920_580b.obj (7920_580B)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  PIC2
+    MODULE:  7920_580b.obj (7920_580B)
+    ADDRESS: 01DFH
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  PIC2
+    MODULE:  7920_580b.obj (7920_580B)
+    ADDRESS: 01E1H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _DISPLAYGRAPHIC
+    MODULE:  7920_580b.obj (7920_580B)
+    ADDRESS: 01E3H
+Program Size: data=13.1 xdata=0 code=657
+creating hex file from "Òº¾§"...
+"Òº¾§" - 0 Error(s), 5 Warning(s).
+Build target 'Target 1'
+compiling 7920_580b.c...
+7920_580B.C(260): error C202: 'pic2': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling 7920_580b.c...
+linking...
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _DISPLAYGRAPHIC
+    MODULE:  7920_580b.obj (7920_580B)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _DISPLAYGRAPHIC
+    MODULE:  7920_580b.obj (7920_580B)
+    ADDRESS: 09E3H
+Program Size: data=13.1 xdata=0 code=2705
+creating hex file from "Òº¾§"...
+"Òº¾§" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling 7920_580b.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?INITINA2?7920_580B
+Program Size: data=13.1 xdata=0 code=2681
+creating hex file from "Òº¾§"...
+"Òº¾§" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling 7920_580b.c...
+linking...
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _DISPLAYGRAPHIC
+    MODULE:  7920_580b.obj (7920_580B)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _DISPLAYGRAPHIC
+    MODULE:  7920_580b.obj (7920_580B)
+    ADDRESS: 09E3H
+Program Size: data=13.1 xdata=0 code=2705
+creating hex file from "Òº¾§"...
+"Òº¾§" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling 7920_580b.c...
+7920_580B.C(329): error C202: 'RS': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling 7920_580b.c...
+linking...
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _DISPLAYGRAPHIC
+    MODULE:  7920_580b.obj (7920_580B)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _DISPLAYGRAPHIC
+    MODULE:  7920_580b.obj (7920_580B)
+    ADDRESS: 09E3H
+Program Size: data=13.1 xdata=0 code=2705
+creating hex file from "Òº¾§"...
+"Òº¾§" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling 7920_580b.c...
+linking...
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _DISPLAYGRAPHIC
+    MODULE:  7920_580b.obj (7920_580B)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _DISPLAYGRAPHIC
+    MODULE:  7920_580b.obj (7920_580B)
+    ADDRESS: 09E3H
+Program Size: data=13.1 xdata=0 code=2705
+creating hex file from "Òº¾§"...
+"Òº¾§" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling 7920_580b.c...
+linking...
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _DISPLAYGRAPHIC
+    MODULE:  7920_580b.obj (7920_580B)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _DISPLAYGRAPHIC
+    MODULE:  7920_580b.obj (7920_580B)
+    ADDRESS: 09E3H
+Program Size: data=13.1 xdata=0 code=2705
+creating hex file from "Òº¾§"...
+"Òº¾§" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling 7920_580b.c...
+7920_580B.C(193): error C202: 'Photo2': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling 7920_580b.c...
+linking...
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _DISPLAYGRAPHIC
+    MODULE:  7920_580b.obj (7920_580B)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _DISPLAYGRAPHIC
+    MODULE:  7920_580b.obj (7920_580B)
+    ADDRESS: 05E3H
+Program Size: data=13.1 xdata=0 code=1681
+creating hex file from "Òº¾§"...
+"Òº¾§" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling 7920_580b.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?INITINA2?7920_580B
+Program Size: data=13.1 xdata=0 code=1657
+creating hex file from "Òº¾§"...
+"Òº¾§" - 0 Error(s), 1 Warning(s).

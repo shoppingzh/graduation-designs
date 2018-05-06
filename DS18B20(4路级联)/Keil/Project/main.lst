@@ -1,0 +1,71 @@
+C51 COMPILER V9.01   MAIN                                                                  03/12/2018 11:16:38 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN ..\Outputs\main.obj
+COMPILER INVOKED BY: D:\Dev\Keil\C51\BIN\C51.EXE ..\User\main.c BROWSE INCDIR(..\User;..\Hardware) DEBUG OBJECTEXTEND PR
+                    -INT(.\main.lst) OBJECT(..\Outputs\main.obj)
+
+line level    source
+
+   1          #include <reg51.h>
+   2          #include "ds18b20.h"
+   3          #include "uart.h"
+   4          
+   5          uchar num = 0;          //DS18B20的数量
+   6          uchar xdata ids[MAX_NUM][8];
+   7          
+   8          void delay(){
+   9   1              uchar i, j, k;
+  10   1              for(i=0;i<10;i++)
+  11   1                      for(j=0;j<100;j++)
+  12   1                              for(k=0;k<200;k++);
+  13   1      }
+  14          
+  15          void main(){
+  16   1      
+  17   1              uchar i, j;
+  18   1              //uchar* rom;   
+  19   1      
+  20   1              uart_init();
+  21   1      
+  22   1              //读取ROM
+  23   1              //rom = ds18b20_read_rom();
+  24   1              //for(i=0;i<8;i++){
+  25   1              //      uart_send(rom[i]);      
+  26   1              //}
+  27   1              //uart_send(num);
+  28   1      
+  29   1              //搜索ROM
+  30   1              delay();
+  31   1              ds18b20_search_rom(ids, &num);
+  32   1              delay();
+  33   1              uart_send(num);
+  34   1      
+  35   1              for(i=0;i<num;i++){
+  36   2                      for(j=0;j<8;j++){
+  37   3                              uart_send(ids[i][j]);
+  38   3                      }       
+  39   2              }
+  40   1              
+  41   1              while(1){
+  42   2                      //uart_send(ds18b20_read_temp1());
+  43   2                      //delay();
+  44   2              }               
+  45   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    110    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =     32    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      1       2
+   IDATA SIZE       =   ----    ----
+C51 COMPILER V9.01   MAIN                                                                  03/12/2018 11:16:38 PAGE 2   
+
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,6 @@
+"..\Outputs\main.obj",
+"..\Outputs\adc.obj",
+"..\Outputs\uart.obj",
+"..\Outputs\lcd1602.obj" 
+TO "..\Outputs\DigitalVoltmeter" 
+PRINT(".\DigitalVoltmeter.m51")

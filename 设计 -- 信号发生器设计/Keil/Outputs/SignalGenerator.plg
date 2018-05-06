@@ -1,0 +1,150 @@
+<html>
+<body>
+<pre>
+<h1>礦ision Build Log</h1>
+<h2>Project:</h2>
+E:\毕业设计相关\设计 -- 信号发生器设计\Keil\Project\SignalGenerator.uvproj
+Project File Date:  03/17/2018
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling main.c...
+..\USER\MAIN.C(25): warning C280: 'i': unreferenced local variable
+compiling lcd12864.c...
+compiling signal_generator.c...
+compiling uart.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCD_GRAPHICS_CLEAR?LCD12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY?SIGNAL_GENERATOR
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?DRAW_COORDINATE_SYSTEM?SIGNAL_GENERATOR
+    CALLER1: ?PR?UART_INT?UART
+    CALLER2: ?C_C51STARTUP
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?_LCD_DRAW_POINT?LCD12864
+    CALLER1: ?PR?UART_INT?UART
+    CALLER2: ?C_C51STARTUP
+Program Size: data=31.0 xdata=0 code=1626
+creating hex file from "..\Outputs\SignalGenerator"...
+"..\Outputs\SignalGenerator" - 0 Error(s), 5 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+..\USER\MAIN.C(19): warning C206: 'lcd_display_chinese': missing function-prototype
+..\USER\MAIN.C(19): error C267: 'lcd_display_chinese': requires ANSI-style prototype
+compiling lcd12864.c...
+compiling signal_generator.c...
+compiling uart.c...
+Target not created
+Build target 'Target 1'
+compiling main.c...
+..\USER\MAIN.C(27): warning C206: 'lcd_display_chinese': missing function-prototype
+..\USER\MAIN.C(27): error C267: 'lcd_display_chinese': requires ANSI-style prototype
+compiling lcd12864.c...
+compiling signal_generator.c...
+compiling uart.c...
+Target not created
+Build target 'Target 1'
+compiling main.c...
+..\USER\MAIN.C(25): warning C280: 'i': unreferenced local variable
+compiling lcd12864.c...
+compiling signal_generator.c...
+compiling uart.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCD_GRAPHICS_CLEAR?LCD12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY?SIGNAL_GENERATOR
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?DRAW_COORDINATE_SYSTEM?SIGNAL_GENERATOR
+    CALLER1: ?PR?UART_INT?UART
+    CALLER2: ?C_C51STARTUP
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?_LCD_DRAW_POINT?LCD12864
+    CALLER1: ?PR?UART_INT?UART
+    CALLER2: ?C_C51STARTUP
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?_LCD_DISPLAY_STRING?LCD12864
+    CALLER1: ?PR?UART_INT?UART
+    CALLER2: ?C_C51STARTUP
+Program Size: data=31.0 xdata=0 code=1644
+creating hex file from "..\Outputs\SignalGenerator"...
+"..\Outputs\SignalGenerator" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling lcd12864.c...
+compiling signal_generator.c...
+compiling uart.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCD_GRAPHICS_CLEAR?LCD12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY?SIGNAL_GENERATOR
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?DRAW_COORDINATE_SYSTEM?SIGNAL_GENERATOR
+    CALLER1: ?PR?UART_INT?UART
+    CALLER2: ?C_C51STARTUP
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?_LCD_DRAW_POINT?LCD12864
+    CALLER1: ?PR?UART_INT?UART
+    CALLER2: ?C_C51STARTUP
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?_LCD_DISPLAY_STRING?LCD12864
+    CALLER1: ?PR?UART_INT?UART
+    CALLER2: ?C_C51STARTUP
+Program Size: data=31.0 xdata=0 code=1644
+creating hex file from "..\Outputs\SignalGenerator"...
+"..\Outputs\SignalGenerator" - 0 Error(s), 5 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling lcd12864.c...
+compiling signal_generator.c...
+compiling uart.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCD_GRAPHICS_CLEAR?LCD12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY?SIGNAL_GENERATOR
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?UART_INIT?UART
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?DRAW_COORDINATE_SYSTEM?SIGNAL_GENERATOR
+    CALLER1: ?PR?UART_INT?UART
+    CALLER2: ?C_C51STARTUP
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?_LCD_DRAW_POINT?LCD12864
+    CALLER1: ?PR?UART_INT?UART
+    CALLER2: ?C_C51STARTUP
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?_LCD_DISPLAY_STRING?LCD12864
+    CALLER1: ?PR?UART_INT?UART
+    CALLER2: ?C_C51STARTUP
+Program Size: data=31.0 xdata=0 code=1641
+creating hex file from "..\Outputs\SignalGenerator"...
+"..\Outputs\SignalGenerator" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling lcd12864.c...
+compiling signal_generator.c...
+compiling uart.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCD_GRAPHICS_CLEAR?LCD12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY?SIGNAL_GENERATOR
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?DRAW_COORDINATE_SYSTEM?SIGNAL_GENERATOR
+    CALLER1: ?PR?UART_INT?UART
+    CALLER2: ?C_C51STARTUP
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?_LCD_DRAW_POINT?LCD12864
+    CALLER1: ?PR?UART_INT?UART
+    CALLER2: ?C_C51STARTUP
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?_LCD_DISPLAY_STRING?LCD12864
+    CALLER1: ?PR?UART_INT?UART
+    CALLER2: ?C_C51STARTUP
+Program Size: data=31.0 xdata=0 code=1644
+creating hex file from "..\Outputs\SignalGenerator"...
+"..\Outputs\SignalGenerator" - 0 Error(s), 5 Warning(s).

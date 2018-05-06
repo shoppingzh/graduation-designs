@@ -1,0 +1,55 @@
+C51 COMPILER V9.01   UART_SUPPORT                                                          10/02/2017 15:34:27 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE UART_SUPPORT
+OBJECT MODULE PLACED IN ..\Outputs\uart_support.obj
+COMPILER INVOKED BY: D:\Dev\Keil\C51\BIN\C51.EXE ..\HARDWARE\uart_support.c BROWSE INCDIR(..\HARDWARE;..\USER) DEBUG OBJ
+                    -ECTEXTEND PRINT(.\uart_support.lst) OBJECT(..\Outputs\uart_support.obj)
+
+line level    source
+
+   1          #include "uart_support.h"
+   2          
+   3          uchar pos = 0;
+   4          uchar packet[PACKET_SIZE];
+   5          
+   6          static void save(uchar dat){
+   7   1              packet[pos++] = dat;
+   8   1      }
+   9          
+  10          void receive_byte(uchar rec_data){
+  11   1              if(pos == 0 && rec_data == 0x55){
+  12   2                      save(rec_data);
+  13   2              }else if(pos == 1 && rec_data == 0xaa){
+  14   2                      save(rec_data);
+  15   2              }else if(pos == 2){
+  16   2                      save(rec_data);
+  17   2              }else if(pos == 3){
+  18   2                      save(rec_data);
+  19   2              }else if(pos == 4 && rec_data == 0xaa){
+  20   2                      save(rec_data);
+  21   2              }else if(pos == 5 && rec_data == 0x55){
+  22   2                      uchar copy_packet[PACKET_SIZE];
+  23   2                      save(rec_data);
+  24   2                      memcpy(copy_packet, packet, PACKET_SIZE);
+  25   2                      receive_packet(copy_packet, PACKET_SIZE);
+  26   2                      pos = 0;
+  27   2              }else{
+  28   2                      pos = 0;        
+  29   2              }
+  30   1              
+  31   1      }                                        
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    105    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      7       6
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

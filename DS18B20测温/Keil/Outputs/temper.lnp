@@ -1,0 +1,6 @@
+"..\Outputs\main.obj",
+"..\Outputs\ds18b20.obj",
+"..\Outputs\uart.obj",
+"..\Outputs\lcd1602.obj" 
+TO "..\Outputs\temper" 
+PRINT(".\temper.m51")

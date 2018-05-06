@@ -1,0 +1,287 @@
+<html>
+<body>
+<pre>
+<h1>礦ision Build Log</h1>
+<h2>Project:</h2>
+E:\毕业设计相关\步进电机xy轴控制\Project\SM_XYControl.uvproj
+Project File Date:  03/10/2018
+
+<h2>Output:</h2>
+Build target 'SM_XYControl'
+compiling main.c...
+linking...
+*** WARNING L10: CANNOT DETERMINE ROOT SEGMENT
+Program Size: data=0.0 xdata=0 code=0
+creating hex file from "..\Outputs\SM_XYControl"...
+"..\Outputs\SM_XYControl" - 0 Error(s), 1 Warning(s).
+Build target 'SM_XYControl'
+compiling main.c...
+..\User\main.c(2): warning C318: can't open file 'sm.h'
+compiling sm.c...
+..\HARDWARE\SM.C(11): warning C280: 'sm': unreferenced local variable
+..\HARDWARE\SM.C(11): warning C280: 'dir': unreferenced local variable
+..\HARDWARE\SM.C(11): warning C280: 'speed': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SM_INIT?SM
+Program Size: data=13.1 xdata=0 code=21
+creating hex file from "..\Outputs\SM_XYControl"...
+"..\Outputs\SM_XYControl" - 0 Error(s), 5 Warning(s).
+Build target 'SM_XYControl'
+compiling main.c...
+..\User\main.c(2): warning C318: can't open file 'sm.h'
+compiling sm.c...
+..\HARDWARE\SM.C(34): error C202: 'SM_DIR_REVERSE': undefined identifier
+Target not created
+Build target 'SM_XYControl'
+compiling main.c...
+..\User\main.c(2): warning C318: can't open file 'sm.h'
+compiling sm.c...
+..\HARDWARE\SM.C(44): warning C280: 'speed': unreferenced local variable
+..\HARDWARE\SM.C(63): warning C280: 'sm': unreferenced local variable
+..\HARDWARE\SM.C(63): warning C280: 'dir': unreferenced local variable
+..\HARDWARE\SM.C(63): warning C280: 'speed': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_GET_TRUTH_TIME?SM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SM_X_INIT?SM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SM_INIT?SM
+Program Size: data=19.0 xdata=0 code=804
+creating hex file from "..\Outputs\SM_XYControl"...
+"..\Outputs\SM_XYControl" - 0 Error(s), 8 Warning(s).
+Build target 'SM_XYControl'
+compiling main.c...
+..\User\main.c(2): warning C318: can't open file 'sm.h'
+compiling sm.c...
+..\HARDWARE\SM.C(91): error C237: '_sm_x_init': function already has a body
+Target not created
+Build target 'SM_XYControl'
+compiling main.c...
+..\User\main.c(2): warning C318: can't open file 'sm.h'
+compiling sm.c...
+..\HARDWARE\SM.C(98): warning C280: 'sm': unreferenced local variable
+..\HARDWARE\SM.C(98): warning C280: 'dir': unreferenced local variable
+..\HARDWARE\SM.C(98): warning C280: 'speed': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SM_X_INIT?SM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SM_Y_INIT?SM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SM_INIT?SM
+Program Size: data=21.0 xdata=0 code=839
+creating hex file from "..\Outputs\SM_XYControl"...
+"..\Outputs\SM_XYControl" - 0 Error(s), 7 Warning(s).
+Build target 'SM_XYControl'
+compiling main.c...
+..\User\main.c(2): warning C318: can't open file 'sm.h'
+compiling sm.c...
+..\HARDWARE\SM.C(101): warning C209: '_sm_x_init': too few actual parameters
+..\HARDWARE\SM.C(104): warning C209: '_sm_y_init': too few actual parameters
+..\HARDWARE\SM.C(98): warning C280: 'dir': unreferenced local variable
+..\HARDWARE\SM.C(98): warning C280: 'speed': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SM_INIT?SM
+Program Size: data=20.0 xdata=0 code=850
+creating hex file from "..\Outputs\SM_XYControl"...
+"..\Outputs\SM_XYControl" - 0 Error(s), 6 Warning(s).
+Build target 'SM_XYControl'
+compiling main.c...
+..\User\main.c(2): warning C318: can't open file 'sm.h'
+compiling sm.c...
+..\HARDWARE\SM.C(101): warning C209: '_sm_x_init': too few actual parameters
+..\HARDWARE\SM.C(104): warning C209: '_sm_y_init': too few actual parameters
+..\HARDWARE\SM.C(98): warning C280: 'dir': unreferenced local variable
+..\HARDWARE\SM.C(98): warning C280: 'speed': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SM_INIT?SM
+Program Size: data=20.0 xdata=0 code=850
+creating hex file from "..\Outputs\SM_XYControl"...
+"..\Outputs\SM_XYControl" - 0 Error(s), 6 Warning(s).
+Build target 'SM_XYControl'
+compiling main.c...
+..\User\main.c(2): warning C318: can't open file 'sm.h'
+compiling sm.c...
+..\HARDWARE\SM.C(104): warning C209: '_sm_x_init': too few actual parameters
+..\HARDWARE\SM.C(107): warning C209: '_sm_y_init': too few actual parameters
+..\HARDWARE\SM.C(99): warning C280: 'dir': unreferenced local variable
+..\HARDWARE\SM.C(99): warning C280: 'speed': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SM_INIT?SM
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  TIMER_INIT
+    MODULE:  ..\Outputs\sm.obj (SM)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  TIMER_INIT
+    MODULE:  ..\Outputs\sm.obj (SM)
+    ADDRESS: 02F2H
+Program Size: data=21.0 xdata=0 code=856
+creating hex file from "..\Outputs\SM_XYControl"...
+"..\Outputs\SM_XYControl" - 0 Error(s), 8 Warning(s).
+Build target 'SM_XYControl'
+compiling main.c...
+..\User\main.c(1): warning C318: can't open file 'sm.h'
+compiling sm.c...
+..\HARDWARE\SM.C(136): warning C209: '_sm_x_init': too few actual parameters
+..\HARDWARE\SM.C(139): warning C209: '_sm_y_init': too few actual parameters
+..\HARDWARE\SM.C(131): warning C280: 'dir': unreferenced local variable
+..\HARDWARE\SM.C(131): warning C280: 'speed': unreferenced local variable
+..\HARDWARE\SM.C(178): error C202: 'speed': undefined identifier
+..\HARDWARE\SM.C(180): error C202: 'speed': undefined identifier
+..\HARDWARE\SM.C(191): error C202: 'speed': undefined identifier
+..\HARDWARE\SM.C(193): error C202: 'speed': undefined identifier
+compiling timer.c...
+..\HARDWARE\TIMER.H(7): error C141: syntax error near 'us', expected ')'
+..\HARDWARE\TIMER.H(8): error C141: syntax error near 'us', expected ')'
+..\HARDWARE\TIMER.C(9): error C202: 'TMOD': undefined identifier
+..\HARDWARE\TIMER.C(11): error C202: 'EA': undefined identifier
+..\HARDWARE\TIMER.C(12): error C202: 'ET0': undefined identifier
+..\HARDWARE\TIMER.C(13): error C202: 'ET1': undefined identifier
+..\HARDWARE\TIMER.C(19): error C141: syntax error near 'us', expected ')'
+..\HARDWARE\TIMER.C(20): error C202: 'us': undefined identifier
+..\HARDWARE\TIMER.C(21): error C202: 'us': undefined identifier
+..\HARDWARE\TIMER.C(22): error C202: 'TH0': undefined identifier
+..\HARDWARE\TIMER.C(23): error C202: 'TL0': undefined identifier
+..\HARDWARE\TIMER.C(29): error C141: syntax error near 'us', expected ')'
+..\HARDWARE\TIMER.C(30): error C202: 'us': undefined identifier
+..\HARDWARE\TIMER.C(31): error C202: 'us': undefined identifier
+..\HARDWARE\TIMER.C(32): error C202: 'TH1': undefined identifier
+..\HARDWARE\TIMER.C(33): error C202: 'TL1': undefined identifier
+..\HARDWARE\TIMER.C(34): error C237: '_timer0_set_time': function already has a body
+..\HARDWARE\TIMER.C(40): error C202: 'TR0': undefined identifier
+..\HARDWARE\TIMER.C(47): error C202: 'TR1': undefined identifier
+..\HARDWARE\TIMER.C(54): error C202: 'TR0': undefined identifier
+..\HARDWARE\TIMER.C(61): error C202: 'TR1': undefined identifier
+..\HARDWARE\TIMER.C(68): error C202: 'TH0': undefined identifier
+..\HARDWARE\TIMER.C(69): error C202: 'TL0': undefined identifier
+..\HARDWARE\TIMER.C(77): error C202: 'TH1': undefined identifier
+..\HARDWARE\TIMER.C(78): error C202: 'TL1': undefined identifier
+Target not created
+Build target 'SM_XYControl'
+compiling main.c...
+..\User\main.c(1): warning C318: can't open file 'sm.h'
+compiling sm.c...
+..\HARDWARE\SM.C(136): warning C209: '_sm_x_init': too few actual parameters
+..\HARDWARE\SM.C(139): warning C209: '_sm_y_init': too few actual parameters
+..\HARDWARE\SM.C(131): warning C280: 'dir': unreferenced local variable
+..\HARDWARE\SM.C(131): warning C280: 'speed': unreferenced local variable
+..\HARDWARE\SM.C(178): error C202: 'speed': undefined identifier
+..\HARDWARE\SM.C(180): error C202: 'speed': undefined identifier
+..\HARDWARE\SM.C(191): error C202: 'speed': undefined identifier
+..\HARDWARE\SM.C(193): error C202: 'speed': undefined identifier
+compiling timer.c...
+..\HARDWARE\TIMER.H(7): error C141: syntax error near 'us', expected ')'
+..\HARDWARE\TIMER.H(8): error C141: syntax error near 'us', expected ')'
+..\HARDWARE\TIMER.C(20): error C141: syntax error near 'us', expected ')'
+..\HARDWARE\TIMER.C(21): error C202: 'us': undefined identifier
+..\HARDWARE\TIMER.C(22): error C202: 'us': undefined identifier
+..\HARDWARE\TIMER.C(30): error C141: syntax error near 'us', expected ')'
+..\HARDWARE\TIMER.C(31): error C202: 'us': undefined identifier
+..\HARDWARE\TIMER.C(32): error C202: 'us': undefined identifier
+..\HARDWARE\TIMER.C(35): error C237: '_timer0_set_time': function already has a body
+Target not created
+Build target 'SM_XYControl'
+compiling main.c...
+compiling sm.c...
+..\HARDWARE\SM.C(136): warning C209: '_sm_x_init': too few actual parameters
+..\HARDWARE\SM.C(139): warning C209: '_sm_y_init': too few actual parameters
+..\HARDWARE\SM.C(131): warning C280: 'dir': unreferenced local variable
+..\HARDWARE\SM.C(131): warning C280: 'speed': unreferenced local variable
+..\HARDWARE\SM.C(178): error C202: 'speed': undefined identifier
+..\HARDWARE\SM.C(180): error C202: 'speed': undefined identifier
+..\HARDWARE\SM.C(191): error C202: 'speed': undefined identifier
+..\HARDWARE\SM.C(193): error C202: 'speed': undefined identifier
+compiling timer.c...
+..\HARDWARE\TIMER.H(7): error C141: syntax error near 'us', expected ')'
+..\HARDWARE\TIMER.H(8): error C141: syntax error near 'us', expected ')'
+..\HARDWARE\TIMER.C(20): error C141: syntax error near 'us', expected ')'
+..\HARDWARE\TIMER.C(21): error C202: 'us': undefined identifier
+..\HARDWARE\TIMER.C(22): error C202: 'us': undefined identifier
+..\HARDWARE\TIMER.C(30): error C141: syntax error near 'us', expected ')'
+..\HARDWARE\TIMER.C(31): error C202: 'us': undefined identifier
+..\HARDWARE\TIMER.C(32): error C202: 'us': undefined identifier
+..\HARDWARE\TIMER.C(35): error C237: '_timer0_set_time': function already has a body
+Target not created
+Build target 'SM_XYControl'
+compiling main.c...
+compiling sm.c...
+..\HARDWARE\SM.C(178): error C202: 'speed': undefined identifier
+..\HARDWARE\SM.C(180): error C202: 'speed': undefined identifier
+..\HARDWARE\SM.C(191): error C202: 'speed': undefined identifier
+..\HARDWARE\SM.C(193): error C202: 'speed': undefined identifier
+compiling timer.c...
+..\HARDWARE\TIMER.H(7): error C141: syntax error near 'us', expected ')'
+..\HARDWARE\TIMER.H(8): error C141: syntax error near 'us', expected ')'
+..\HARDWARE\TIMER.C(20): error C141: syntax error near 'us', expected ')'
+..\HARDWARE\TIMER.C(21): error C202: 'us': undefined identifier
+..\HARDWARE\TIMER.C(22): error C202: 'us': undefined identifier
+..\HARDWARE\TIMER.C(30): error C141: syntax error near 'us', expected ')'
+..\HARDWARE\TIMER.C(31): error C202: 'us': undefined identifier
+..\HARDWARE\TIMER.C(32): error C202: 'us': undefined identifier
+..\HARDWARE\TIMER.C(35): error C237: '_timer0_set_time': function already has a body
+Target not created
+Build target 'SM_XYControl'
+compiling main.c...
+compiling sm.c...
+compiling timer.c...
+..\HARDWARE\TIMER.H(7): error C141: syntax error near 'us', expected ')'
+..\HARDWARE\TIMER.H(8): error C141: syntax error near 'us', expected ')'
+..\HARDWARE\TIMER.C(20): error C141: syntax error near 'us', expected ')'
+..\HARDWARE\TIMER.C(21): error C202: 'us': undefined identifier
+..\HARDWARE\TIMER.C(22): error C202: 'us': undefined identifier
+..\HARDWARE\TIMER.C(30): error C141: syntax error near 'us', expected ')'
+..\HARDWARE\TIMER.C(31): error C202: 'us': undefined identifier
+..\HARDWARE\TIMER.C(32): error C202: 'us': undefined identifier
+..\HARDWARE\TIMER.C(35): error C237: '_timer0_set_time': function already has a body
+Target not created
+Build target 'SM_XYControl'
+compiling main.c...
+compiling sm.c...
+compiling timer.c...
+..\HARDWARE\TIMER.C(35): error C237: '_timer0_set_time': function already has a body
+Target not created
+Build target 'SM_XYControl'
+compiling main.c...
+compiling sm.c...
+compiling timer.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SM_INIT?SM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SM_DIR?SM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SM_SPEED?SM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SM_START?SM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SM_STOP?SM
+Program Size: data=29.0 xdata=0 code=1549
+creating hex file from "..\Outputs\SM_XYControl"...
+"..\Outputs\SM_XYControl" - 0 Error(s), 5 Warning(s).
+Build target 'SM_XYControl'
+compiling main.c...
+..\User\main.c(1): warning C318: can't open file 'sm.h'
+..\USER\MAIN.C(4): error C202: 'SM_X': undefined identifier
+..\USER\MAIN.C(5): error C202: 'SM_Y': undefined identifier
+compiling sm.c...
+compiling timer.c...
+Target not created
+Build target 'SM_XYControl'
+compiling main.c...
+..\User\main.c(1): warning C318: can't open file 'sm.h'
+..\USER\MAIN.C(4): error C202: 'SM_X': undefined identifier
+..\USER\MAIN.C(5): error C202: 'SM_Y': undefined identifier
+Target not created
+Build target 'SM_XYControl'
+compiling main.c...
+..\User\main.c(1): warning C318: can't open file 'sm.h'
+..\USER\MAIN.C(4): error C202: 'SM_X': undefined identifier
+..\USER\MAIN.C(5): error C202: 'SM_Y': undefined identifier
+compiling sm.c...
+compiling timer.c...
+Target not created

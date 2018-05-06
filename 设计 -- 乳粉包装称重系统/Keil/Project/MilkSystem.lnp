@@ -1,0 +1,3 @@
+".\adc.obj",
+".\lcd12864.obj" 
+TO "MilkSystem" 

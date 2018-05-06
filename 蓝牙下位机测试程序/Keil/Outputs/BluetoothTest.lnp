@@ -1,0 +1,4 @@
+"..\Outputs\main.obj",
+"..\Outputs\uart.obj" 
+TO "..\Outputs\BluetoothTest" 
+PRINT(".\BluetoothTest.m51")

@@ -1,0 +1,6 @@
+"..\Outputs\main.obj",
+"..\Outputs\fpm10a.obj",
+"..\Outputs\lcd1602.obj",
+"..\Outputs\uart.obj" 
+TO "..\Outputs\CheckWork" 
+PRINT(".\CheckWork.m51") RAMSIZE(256) 

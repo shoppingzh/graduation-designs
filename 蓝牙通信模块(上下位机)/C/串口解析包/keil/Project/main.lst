@@ -1,0 +1,50 @@
+C51 COMPILER V9.01   MAIN                                                                  10/02/2017 15:34:27 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN ..\Outputs\main.obj
+COMPILER INVOKED BY: D:\Dev\Keil\C51\BIN\C51.EXE ..\USER\main.c BROWSE INCDIR(..\HARDWARE;..\USER) DEBUG OBJECTEXTEND PR
+                    -INT(.\main.lst) OBJECT(..\Outputs\main.obj)
+
+line level    source
+
+   1          #include <reg52.h>
+   2          #define uchar unsigned char
+   3          #define uint unsigned int
+   4          
+   5          #include "uart.h"
+   6          #include "uart_support.h"
+   7          
+   8          void analyse(uchar packet[], uchar size);
+   9          
+  10          void main(void){
+  11   1              uart_init();
+  12   1              while(1);
+  13   1      }
+  14          
+  15          void receive_packet(uchar packet[], uchar size){
+  16   1              send_string(packet);
+  17   1              analyse(packet, size);  
+  18   1      }
+  19          
+  20          void analyse(uchar packet[], uchar size){
+  21   1              if(packet[2] == 0x01){
+  22   2                      P1 = packet[3];                                                  
+  23   2                      send_string(", CNM...");
+  24   2              }
+  25   1      }
+*** WARNING C280 IN LINE 20 OF ..\USER\MAIN.C: 'size': unreferenced local variable
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     56    ----
+   CONSTANT SIZE    =      9    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       5
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  1 WARNING(S),  0 ERROR(S)

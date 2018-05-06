@@ -1,0 +1,4 @@
+"..\Outputs\main.obj",
+"..\Outputs\adc.obj" 
+TO "..\Outputs\ADC_AIns" 
+PRINT(".\ADC_AIns.m51")

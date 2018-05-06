@@ -1,0 +1,214 @@
+C51 COMPILER V9.01   LCD12864                                                              04/02/2018 15:08:29 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE LCD12864
+OBJECT MODULE PLACED IN ..\Outputs\lcd12864.obj
+COMPILER INVOKED BY: D:\Dev\Keil\C51\BIN\C51.EXE ..\Hardware\lcd12864.c BROWSE INCDIR(..\Hardware;..\User) DEBUG OBJECTE
+                    -XTEND PRINT(.\lcd12864.lst) OBJECT(..\Outputs\lcd12864.obj)
+
+line level    source
+
+   1          #include "lcd12864.h"
+   2          #include "reg51.h"
+   3          #define DB P1
+   4          
+   5          sbit RS = P2^0;
+   6          sbit RW = P2^1;
+   7          sbit EN = P2^2;
+   8          sbit RST = P2^3;
+   9          
+  10          /**
+  11          * 内部延时程序
+  12          */
+  13          static void delay(uchar t){
+  14   1              uchar i, j;
+  15   1              for(i=0;i<t;i++){
+  16   2                      for(j=0;j<10;j++);
+  17   2              }
+  18   1      }
+  19          
+  20          /**
+  21          * LCD12864 等待忙信号
+  22          */
+  23          static void wait_busy(){
+  24   1              uchar t;
+  25   1              DB = 0xff;
+  26   1              RS = 0;
+  27   1              RW = 1;
+  28   1              EN = 1;
+  29   1              for(t=0;t<10;t++){
+  30   2                      if(!(DB & 0x80))
+  31   2                              break;
+  32   2              }
+  33   1              EN = 0;
+  34   1      }
+  35          
+  36          /**
+  37          * LCD12864 初始化，普通模式
+  38          */
+  39          void lcd_init(){
+  40   1              RST = 0;                                //复位
+  41   1              delay(1);
+  42   1              RST = 1;
+  43   1              
+  44   1              lcd_write_com(0x30);    //使用8位MPU接口
+  45   1              delay(1);
+  46   1              lcd_write_com(0x30);    //使用基本指令集
+  47   1              delay(1);
+  48   1              lcd_write_com(0x0c);    //打开显示
+  49   1              delay(1);
+  50   1              lcd_write_com(0x01);    //清屏
+  51   1              delay(1);
+  52   1              lcd_write_com(0x06);    //设定游标移动模式      
+  53   1      }
+  54          
+C51 COMPILER V9.01   LCD12864                                                              04/02/2018 15:08:29 PAGE 2   
+
+  55          /**
+  56          * LCD12864 写指令
+  57          */
+  58          void lcd_write_com(uchar com){
+  59   1              RS = 0;
+  60   1              RW = 0;
+  61   1              EN = 0;
+  62   1              delay(1);
+  63   1              DB = com;
+  64   1              EN = 1;
+  65   1              delay(1);
+  66   1              EN = 0;
+  67   1      }
+  68          
+  69          /**
+  70          * LCD12864 写数据
+  71          */
+  72          void lcd_write_data(uchar dat){
+  73   1              RS = 1;
+  74   1              RW = 0;
+  75   1              EN = 0;
+  76   1              delay(1);
+  77   1              DB = dat;
+  78   1              EN = 1;
+  79   1              delay(1);
+  80   1              EN = 0;
+  81   1      }
+  82          
+  83          /**
+  84          * LCD12864 读数据（测忙）
+  85          */
+  86          uchar lcd_read_data(){
+  87   1              uchar dat;
+  88   1              wait_busy();
+  89   1              RS = 1;
+  90   1              RW = 1;
+  91   1              EN = 0;
+  92   1              delay(1);
+  93   1              EN = 1;
+  94   1              delay(1);
+  95   1              dat = DB;
+  96   1              EN = 0;
+  97   1              delay(1);
+  98   1              return dat;
+  99   1      }
+ 100          
+ 101          /**
+ 102          * LCD12864 在屏幕上绘制点
+ 103          */
+ 104          void lcd_draw_point(uchar x, uchar y){
+ 105   1              uint bt, dat;
+ 106   1              uchar x_adr, y_adr, high, low;          //X、Y地址，写入的高低字节
+ 107   1              lcd_write_com(0x34);
+ 108   1              lcd_write_com(0x34);
+ 109   1      
+ 110   1              //确定显示位置
+ 111   1              y_adr = 0x80 + y % 32;
+ 112   1              if(y > 31)
+ 113   1                      x_adr = 0x88 + x / 16;
+ 114   1              else
+ 115   1                      x_adr = 0x80 + x / 16;
+ 116   1      
+C51 COMPILER V9.01   LCD12864                                                              04/02/2018 15:08:29 PAGE 3   
+
+ 117   1              //读取以前点的信息
+ 118   1              bt = 0x8000 >> (x % 16);
+ 119   1              lcd_write_com(y_adr);   //写入读取位置，读取这个点的数据
+ 120   1              lcd_write_com(x_adr);
+ 121   1              lcd_read_data();                //舍弃第一个字节
+ 122   1              dat = lcd_read_data();
+ 123   1              dat <<= 8;
+ 124   1              dat |= lcd_read_data();
+ 125   1              bt |= dat;                              //将要显示的点或上以前的点
+ 126   1              high = bt >> 8;
+ 127   1              low = bt;
+ 128   1      
+ 129   1              //写入新的信息
+ 130   1              lcd_write_com(y_adr);   
+ 131   1              lcd_write_com(x_adr);
+ 132   1              lcd_write_data(high);
+ 133   1              lcd_write_data(low);
+ 134   1      
+ 135   1              lcd_write_com(0x36);
+ 136   1              lcd_write_com(0x30);
+ 137   1      }
+ 138          
+ 139          /**
+ 140          * LCD12864 清除画图内容
+ 141          */
+ 142          void lcd_graphics_clear(){
+ 143   1              uchar i, j;
+ 144   1              lcd_write_com(0x34);
+ 145   1              lcd_write_com(0x34);
+ 146   1      
+ 147   1              for(i=0;i<32;i++){
+ 148   2                      lcd_write_com(0x80 + i);
+ 149   2                      lcd_write_com(0x80);
+ 150   2                      for(j=0;j<32;j++){
+ 151   3                              lcd_write_data(0x00);
+ 152   3                      }
+ 153   2              }
+ 154   1      
+ 155   1              lcd_write_com(0x36);
+ 156   1              lcd_write_com(0x30);
+ 157   1      }
+ 158          
+ 159          /**
+ 160          * LCD12864 在指定的位置书写中文
+ 161          * @param x              中文字符串的显示行，该值不能大于4
+ 162          * @param y              中文字符串的显示列，该值不能大于8
+ 163          * @param str    中文字符串
+ 164          */
+ 165          void lcd_display_string(uchar row, uchar col, char* str){
+ 166   1              uchar adr;
+ 167   1              if(row < 1 || col < 1 || row > 4 || col > 8)
+ 168   1                      return;
+ 169   1              if(row == 1){
+ 170   2                      adr = 0x80 + col - 1;   
+ 171   2              }else if(row == 2){
+ 172   2                      adr = 0x90 + col - 1;
+ 173   2              }else if(row == 3){
+ 174   2                      adr = 0x88 + col - 1;
+ 175   2              }else if(row == 4){
+ 176   2                      adr = 0x98 + col - 1;
+ 177   2              }
+ 178   1      
+C51 COMPILER V9.01   LCD12864                                                              04/02/2018 15:08:29 PAGE 4   
+
+ 179   1              lcd_write_com(adr);
+ 180   1              while(*str){
+ 181   2                      lcd_write_data(*str);
+ 182   2                      str++;
+ 183   2              }
+ 184   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    410    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       4
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

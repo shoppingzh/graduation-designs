@@ -1,0 +1,233 @@
+C51 COMPILER V9.01   SM                                                                    03/12/2018 21:42:21 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE SM
+OBJECT MODULE PLACED IN ..\Outputs\sm.obj
+COMPILER INVOKED BY: D:\Dev\Keil\C51\BIN\C51.EXE ..\Hardware\sm.c BROWSE INCDIR(..\Hardware;..\User) DEBUG OBJECTEXTEND 
+                    -PRINT(.\sm.lst) OBJECT(..\Outputs\sm.obj)
+
+line level    source
+
+   1          #include "sm.h"
+   2          #include "reg51.h"
+   3          #include "timer.h"
+   4          
+   5          sbit x_sm_ena = P1^0;
+   6          sbit x_sm_dir = P1^1;
+   7          sbit x_sm_pul = P1^2;
+   8          sbit y_sm_ena = P1^3;
+   9          sbit y_sm_dir = P1^4;
+  10          sbit y_sm_pul = P1^5;
+  11          
+  12          /**
+  13          * 根据rpm计算定时时间
+  14          */
+  15          static long get_time_us(uint speed){
+  16   1              float ms = (60.0 * SM_STEP_ANGLE * 1000) / (360.0 * speed);
+  17   1              return ms * 1000ul; 
+  18   1      }
+  19          
+  20          /**
+  21          * 获取正确的定时时间，当定时时间超出最大定时时间时使用默认转速的定时时间
+  22          */
+  23          static uint get_correct_time(uint speed){
+  24   1              long us = get_time_us(speed);
+  25   1              if(us > 65535){
+  26   2                      us = get_time_us(SM_DEFAULT_SPEED);
+  27   2              }
+  28   1              return us;      
+  29   1      }
+  30          
+  31          /**
+  32          * 设置x轴电机的方向
+  33          */
+  34          static void set_x_dir(uchar dir){
+  35   1              if(dir == SM_DIR_FORWARD){
+  36   2                      x_sm_dir = 0;
+  37   2              }else if(dir == SM_DIR_BACKWARD){
+  38   2                      x_sm_dir = 1;
+  39   2              }else if(dir == SM_DIR_REVERSE){
+  40   2                      x_sm_dir = ~x_sm_dir;
+  41   2              }else{
+  42   2                      //do nothing
+  43   2              }
+  44   1      }
+  45          
+  46          /**
+  47          * 设置y轴电机的方向
+  48          */
+  49          static void set_y_dir(uchar dir){
+  50   1              if(dir == SM_DIR_FORWARD){
+  51   2                      y_sm_dir = 0;
+  52   2              }else if(dir == SM_DIR_BACKWARD){
+  53   2                      y_sm_dir = 1;
+  54   2              }else if(dir == SM_DIR_REVERSE){
+C51 COMPILER V9.01   SM                                                                    03/12/2018 21:42:21 PAGE 2   
+
+  55   2                      y_sm_dir = ~y_sm_dir;
+  56   2              }else{
+  57   2                      //do nothing
+  58   2              }
+  59   1      }
+  60          
+  61          /**
+  62          * 设置x轴电机的速度
+  63          */
+  64          static void set_x_speed(uint speed){
+  65   1              uint us = get_correct_time(speed);
+  66   1              //设置定时器0的定时时间
+  67   1              timer0_set_time(us);                    
+  68   1      }
+  69          
+  70          /**
+  71          * 设置y轴电机的速度
+  72          */
+  73          static void set_y_speed(uint speed){
+  74   1              uint us = get_correct_time(speed);
+  75   1              //设置定时器1的定时时间
+  76   1              timer1_set_time(us);                    
+  77   1      }
+  78          
+  79          /**
+  80          * x轴电机初始化
+  81          */
+  82          static void sm_x_init(uchar dir, uint speed){
+  83   1              set_x_dir(dir);
+  84   1              set_x_speed(speed);                     
+  85   1      }
+  86          
+  87          /**
+  88          * y轴电机初始化
+  89          */
+  90          static void sm_y_init(uchar dir, uint speed){
+  91   1              set_y_dir(dir);
+  92   1              set_y_speed(speed);                     
+  93   1      }
+  94          
+  95          /**
+  96          * 启动x轴电机
+  97          */
+  98          static void start_x(){
+  99   1              x_sm_ena = 1;
+ 100   1              timer0_start();
+ 101   1      }
+ 102          
+ 103          /**
+ 104          * 启动y轴电机
+ 105          */
+ 106          static void start_y(){
+ 107   1              y_sm_ena = 1;
+ 108   1              timer1_start();
+ 109   1      }
+ 110          
+ 111          /**
+ 112          * 停止x轴电机
+ 113          */
+ 114          static void stop_x(){
+ 115   1              x_sm_ena = 0;
+ 116   1              timer0_stop();
+C51 COMPILER V9.01   SM                                                                    03/12/2018 21:42:21 PAGE 3   
+
+ 117   1      }
+ 118          
+ 119          /**
+ 120          * 停止y轴电机
+ 121          */
+ 122          static void stop_y(){
+ 123   1              y_sm_ena = 0;
+ 124   1              timer1_stop();  
+ 125   1      }
+ 126          
+ 127          /********************************API***************************************/
+ 128          
+ 129          /**
+ 130          * 电机初始化
+ 131          */
+ 132          void sm_init(){
+ 133   1              //初始化定时器：使用两个定时器及其中断
+ 134   1              timer_init();           
+ 135   1      }
+ 136          
+ 137          /**
+ 138          * 设置电机转向
+ 139          */
+ 140          void sm_dir(uchar sm, uchar dir){
+ 141   1              if(sm == SM_X){
+ 142   2                      set_x_dir(dir);
+ 143   2              }else if(sm == SM_Y){
+ 144   2                      set_y_dir(dir);
+ 145   2              }else{
+ 146   2                      //do nothing
+ 147   2              }
+ 148   1      }
+ 149          
+ 150          /**
+ 151          * 设置电机转速
+ 152          */
+ 153          void sm_speed(uchar sm, uint speed){
+ 154   1              if(sm == SM_X){
+ 155   2                      set_x_speed(speed);
+ 156   2              }else if(sm == SM_Y){
+ 157   2                      set_y_speed(speed);
+ 158   2              }else{
+ 159   2                      //do nothing
+ 160   2              }
+ 161   1      }
+ 162          
+ 163          /**
+ 164          * 启动电机
+ 165          */                                        
+ 166          void sm_start(uchar sm){
+ 167   1              if(sm == SM_X){
+ 168   2                      start_x();
+ 169   2              }else if(sm == SM_Y){
+ 170   2                      start_y();
+ 171   2              }else{
+ 172   2                      //do nothing
+ 173   2              }
+ 174   1      }
+ 175          
+ 176          /**
+ 177          * 停止电机
+ 178          */                                        
+C51 COMPILER V9.01   SM                                                                    03/12/2018 21:42:21 PAGE 4   
+
+ 179          void sm_stop(uchar sm){
+ 180   1              if(sm == SM_X){
+ 181   2                      stop_x();
+ 182   2              }else if(sm == SM_Y){
+ 183   2                      stop_y();
+ 184   2              }else{
+ 185   2                      //do nothing
+ 186   2              }
+ 187   1      }
+ 188          
+ 189          /**************************TIMER**********************************/
+ 190          
+ 191          /**
+ 192          * 定时器0定时时间到：给x轴电机脉冲
+ 193          */
+ 194          void timer0_timeout(){
+ 195   1              x_sm_pul = ~x_sm_pul;
+ 196   1      }
+ 197          
+ 198          /**
+ 199          * 定时器1定时时间到：给y轴电机脉冲
+ 200          */
+ 201          void timer1_timeout(){
+ 202   1              y_sm_pul = ~y_sm_pul;
+ 203   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    301    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----      13
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,4 @@
+"..\Outputs\main.obj",
+"..\Outputs\uart.obj" 
+TO "..\Outputs\MultimachineComm" 
+PRINT(".\MultimachineComm.m51")

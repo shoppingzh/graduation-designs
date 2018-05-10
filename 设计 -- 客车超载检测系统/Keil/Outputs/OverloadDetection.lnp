@@ -1,5 +1,5 @@
 "..\Outputs\main.obj",
-"..\Outputs\adc.obj",
-"..\Outputs\lcd1602.obj" 
+"..\Outputs\lcd12864.obj",
+"..\Outputs\adc.obj" 
 TO "..\Outputs\OverloadDetection" 
-PRINT(".\OverloadDetection.m51")
+PRINT("..\Listings\OverloadDetection.m51") RAMSIZE(256) 

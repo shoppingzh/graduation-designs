@@ -1,4 +1,4 @@
-C51 COMPILER V9.01   FPM10A                                                                04/22/2018 11:38:23 PAGE 1   
+C51 COMPILER V9.01   FPM10A                                                                05/10/2018 11:16:17 PAGE 1   
 
 
 C51 COMPILER V9.01, COMPILATION OF MODULE FPM10A
@@ -62,7 +62,7 @@ line level    source
   52          */
   53          static void send_packhead(){
   54   1              uchar i;
-C51 COMPILER V9.01   FPM10A                                                                04/22/2018 11:38:23 PAGE 2   
+C51 COMPILER V9.01   FPM10A                                                                05/10/2018 11:16:17 PAGE 2   
 
   55   1              for(i=0;i<6;i++){
   56   2                      uart_send(packhead[i]);
@@ -126,7 +126,7 @@ line level    source
  114   1              cmd[6] = num >> 8;
  115   1              cmd[7] = num;
  116   1              //sum
-C51 COMPILER V9.01   FPM10A                                                                04/22/2018 11:38:23 PAGE 3   
+C51 COMPILER V9.01   FPM10A                                                                05/10/2018 11:16:17 PAGE 3   
 
  117   1              sum = 0x01 + 0x07 + 0x0c + index + num;
  118   1              cmd[8] = sum >> 8;
@@ -190,7 +190,7 @@ line level    source
  176          uchar fpm_regmodel(){
  177   1              send_packhead();
  178   1              send_pack(cmd_regmodel, 6);     
-C51 COMPILER V9.01   FPM10A                                                                04/22/2018 11:38:23 PAGE 4   
+C51 COMPILER V9.01   FPM10A                                                                05/10/2018 11:16:17 PAGE 4   
 
  179   1              return recv_cmd_pack();
  180   1      }
@@ -254,7 +254,7 @@ line level    source
  238          /**
  239          * 删除指纹库中的一个指纹模板
  240          * @param index  指定模板的索引位置
-C51 COMPILER V9.01   FPM10A                                                                04/22/2018 11:38:23 PAGE 5   
+C51 COMPILER V9.01   FPM10A                                                                05/10/2018 11:16:17 PAGE 5   
 
  241          * @return 确认码：0x00删除成功，0x01收包有误，0x10删除失败
  242          */
@@ -318,7 +318,7 @@ line level    source
  299   1              idata uchar table[32];
  300   1              idata uint sum;         
  301   1              //设置索引页
-C51 COMPILER V9.01   FPM10A                                                                04/22/2018 11:38:23 PAGE 6   
+C51 COMPILER V9.01   FPM10A                                                                05/10/2018 11:16:17 PAGE 6   
 
  302   1              pack[4] = idxpage;
  303   1              //sum
@@ -382,7 +382,7 @@ MODULE INFORMATION:   STATIC OVERLAYABLE
    DATA SIZE        =   ----      95
    IDATA SIZE       =   ----      78
    BIT SIZE         =   ----    ----
-C51 COMPILER V9.01   FPM10A                                                                04/22/2018 11:38:23 PAGE 7   
+C51 COMPILER V9.01   FPM10A                                                                05/10/2018 11:16:17 PAGE 7   
 
 END OF MODULE INFORMATION.
 

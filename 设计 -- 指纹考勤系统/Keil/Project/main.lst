@@ -1,4 +1,4 @@
-C51 COMPILER V9.01   MAIN                                                                  04/22/2018 11:38:23 PAGE 1   
+C51 COMPILER V9.01   MAIN                                                                  05/10/2018 11:16:17 PAGE 1   
 
 
 C51 COMPILER V9.01, COMPILATION OF MODULE MAIN
@@ -62,7 +62,7 @@ line level    source
   52   1              uart_send(0x55);
   53   1              uart_send(0xaa);
   54   1              uart_send(0x02);
-C51 COMPILER V9.01   MAIN                                                                  04/22/2018 11:38:23 PAGE 2   
+C51 COMPILER V9.01   MAIN                                                                  05/10/2018 11:16:17 PAGE 2   
 
   55   1              uart_send(idx);
   56   1              uart_send(0xaa);
@@ -126,7 +126,7 @@ line level    source
  114   3                      }               
  115   2              }
  116   1              return 0;       
-C51 COMPILER V9.01   MAIN                                                                  04/22/2018 11:38:23 PAGE 3   
+C51 COMPILER V9.01   MAIN                                                                  05/10/2018 11:16:17 PAGE 3   
 
  117   1      }
  118          
@@ -190,7 +190,7 @@ line level    source
  176   2                      delayms(50);
  177   2              }
  178   1      }
-C51 COMPILER V9.01   MAIN                                                                  04/22/2018 11:38:23 PAGE 4   
+C51 COMPILER V9.01   MAIN                                                                  05/10/2018 11:16:17 PAGE 4   
 
  179          
  180          //Ç©µ½

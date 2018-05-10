@@ -1,0 +1,156 @@
+C51 COMPILER V9.52.0.0   LCD12864                                                          06/29/2015 09:59:50 PAGE 1   
+
+
+C51 COMPILER V9.52.0.0, COMPILATION OF MODULE LCD12864
+OBJECT MODULE PLACED IN .\lcd12864.obj
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE ..\HARDWARE\lcd12864.c OMF2 BROWSE INCDIR(..\system;..\HARDWARE;..\USER) DE
+                    -BUG PRINT(.\lcd12864.lst) TABS(2) OBJECT(.\lcd12864.obj)
+
+line level    source
+
+   1          #include "lcd12864.h"
+   2          
+   3          void lcd12864_delay(unsigned int n)
+   4          {
+   5   1        unsigned int i;
+   6   1        for(i=0; i<n; i++) {;}
+   7   1      }
+   8           //串行发送一字节数据 
+   9          void SendByte(unsigned char dat)
+  10          {
+  11   1           unsigned char i;
+  12   1           for(i=0;i<8;i++)
+  13   1                 {
+  14   2                       E_CLK=0;
+  15   2                       if(dat&0x80)RW_SID=1;else RW_SID=0;
+  16   2                       E_CLK=1;
+  17   2                       dat=dat<<1;
+  18   2                  }
+  19   1      }
+  20          //串行接收一字节数据   
+  21          unsigned char ReceieveByte(void)
+  22          {
+  23   1           unsigned char i,d1,d2;
+  24   1           for(i=0;i<8;i++)
+  25   1                 {
+  26   2                       E_CLK=0;lcd12864_delay(100);
+  27   2                       E_CLK=1;
+  28   2                       if(RW_SID)d1++;
+  29   2                       d1=d1<<1;
+  30   2                  }
+  31   1           for(i=0;i<8;i++)
+  32   1                 {
+  33   2                       E_CLK=0;lcd12864_delay(100);
+  34   2                       E_CLK=1;
+  35   2                       if(RW_SID)d2++;
+  36   2                       d2=d2<<1;
+  37   2                  }
+  38   1           return (d1&0xF0+d2&0x0F);
+  39   1      }
+  40          //读取标志位BF
+  41          bit ReadBF(bit bf)
+  42          {
+  43   1           unsigned char dat;
+  44   1           SendByte(0xFA);//11111,01,0 RW=1,RS=0
+  45   1           dat=ReceieveByte();
+  46   1           if(dat>0x7F)bf=1;else bf=0;
+  47   1           return bf;
+  48   1           }
+  49          //写控制命令
+  50          void SendCMD(unsigned char dat)
+  51          {
+  52   1           //while(ReadBF){;}
+  53   1            RS_CS=1;
+  54   1           SendByte(0xF8);//11111,00,0 RW=0,RS=0 同步标志
+C51 COMPILER V9.52.0.0   LCD12864                                                          06/29/2015 09:59:50 PAGE 2   
+
+  55   1           SendByte(dat&0xF0);//高四位
+  56   1           SendByte((dat&0x0F)<<4);//低四位
+  57   1            RS_CS=0;
+  58   1      }
+  59          //写显示数据或单字节字符
+  60          void SendDat(unsigned char dat)
+  61          {
+  62   1            //while(ReadBF){;}
+  63   1            RS_CS=1;
+  64   1           SendByte(0xFA);//11111,01,0 RW=0,RS=1
+  65   1           SendByte(dat&0xF0);//高四位
+  66   1           SendByte((dat&0x0F)<<4);//低四位
+  67   1            RS_CS=0;
+  68   1      }
+  69          /*      写汉字到LCD 指定的位置
+  70               x_add显示RAM的地址
+  71               dat1/dat2显示汉字编码
+  72          */
+  73          void display(unsigned char x_add,unsigned char dat1,unsigned char dat2)
+  74          {
+  75   1           SendCMD(x_add);//1xxx,xxxx 设定DDRAM 7位地址xxx,xxxx到地址计数器AC
+  76   1           SendDat(dat1);
+  77   1           SendDat(dat2);
+  78   1      }
+  79          void displaystring( unsigned char x,unsigned char y ,unsigned char *p)
+  80          {
+  81   1      unsigned char  x_add;
+  82   1      switch(x)
+  83   1      {
+  84   2      case  0:  x_add=0x80;break;
+  85   2      case  1:  x_add=0x90;break;
+  86   2      case  2:  x_add=0x88;break;
+  87   2      case  3:  x_add=0x98;break;
+  88   2      }
+  89   1      
+  90   1      while(*p!='\0')
+  91   1      {   
+  92   2        SendCMD( x_add+y);//1xxx,xxxx 设定DDRAM 7位地址xxx,xxxx到地址计数器AC
+  93   2        SendDat(*p++);   
+  94   2        SendDat(*p++);
+  95   2        y++; 
+  96   2        if(y==8)
+  97   2        {
+  98   3        switch(x_add)
+  99   3          {
+ 100   4            case  0x80: x_add=0x90;break;
+ 101   4            case  0x90: x_add=0x88;break;
+ 102   4            case  0x88: x_add=0x98;break;
+ 103   4            case  0x98: x_add=0x80;break;
+ 104   4          }
+ 105   3         y=0;
+ 106   3        }
+ 107   2       }
+ 108   1      }
+ 109          //初始化 LCM
+ 110          void initlcm(void)
+ 111          {
+ 112   1      //     RST=0;
+ 113   1           RS_CS=0;
+ 114   1      //      PSB=0;//serial mode
+ 115   1          lcd12864_delay(100);
+ 116   1      //     RST=1;
+C51 COMPILER V9.52.0.0   LCD12864                                                          06/29/2015 09:59:50 PAGE 3   
+
+ 117   1           SendCMD(0x30);//功能设置，一次送8位数据，基本指令集
+ 118   1           SendCMD(0x0C);//0000,1100  整体显示，游标off，游标位置off
+ 119   1           SendCMD(0x01);//0000,0001 清DDRAM
+ 120   1           SendCMD(0x02);//0000,0010 DDRAM地址归位
+ 121   1           SendCMD(0x80);//1000,0000 设定DDRAM 7位地址000，0000到地址计数器AC
+ 122   1      //     SendCMD(0x04);//点设定，显示字符/光标从左到右移位，DDRAM地址加 一
+ 123   1      //     SendCMD(0x0F);//显示设定，开显示，显示光标，当前显示位反白闪动
+ 124   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    350    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       5
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----       1
+   EDATA SIZE       =   ----    ----
+   HDATA SIZE       =   ----    ----
+   XDATA CONST SIZE =   ----    ----
+   FAR CONST SIZE   =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

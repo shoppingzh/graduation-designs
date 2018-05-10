@@ -1,0 +1,328 @@
+C51 COMPILER V9.01   MAIN                                                                  05/09/2018 14:16:57 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN ..\Outputs\main.obj
+COMPILER INVOKED BY: D:\Dev\Keil\C51\BIN\C51.EXE ..\User\main.c BROWSE INCDIR(..\User,..\Hardware) DEBUG OBJECTEXTEND PR
+                    -INT(..\Listings\main.lst) OBJECT(..\Outputs\main.obj)
+
+line level    source
+
+   1          #include "reg52.h"
+   2          #include "lcd12864.h"
+   3          #include "intrins.h"
+   4          #include "adc.h"
+   5          
+   6          #define trigger(d) (d < 127)    //是否触发（触发条件为挡住）
+   7          #define DEBUG 0                                 //调试模式
+   8          #define MAX_VALID_PEOPLE 30             //最大限载人数
+   9          
+  10          void delay(uint t);
+  11          void collect();
+  12          void analyse();
+  13          void check();
+  14          
+  15          void home_page();
+  16          void setting_page();
+  17          void set_success_page();
+  18          
+  19          sbit AD_CHANNEL = P3^3;                 //AD通道
+  20          sbit relay = P3^0;                              //继电器
+  21          sbit buzzer = P3^1;                             //蜂鸣器
+  22          sbit key_set = P3^5;                    //设置键
+  23          sbit key_up = P3^6;                             //加键
+  24          sbit key_down = P3^7;                   //减键
+  25          
+  26          volatile uchar o1, o2;                  //两个通道采集到的值
+  27          int people = 0;                                 //车上人数
+  28          uchar flag_in, flag_out;                //进出过程标志
+  29          bit inout = 0;                                  //进出标志位
+  30          int overload_people = 1;                //限载人数
+  31          bit setting = 0;                                //设置状态标志位
+  32          
+  33          /**
+  34          * 主页
+  35          */
+  36          void home_page(){
+  37   1              lcd_display_string(1, 2, "实时监控信息");
+  38   1      
+  39   1              lcd_display_string(2, 1, "车内乘客：");
+  40   1              lcd_display_digit(2, 6, people);
+  41   1              lcd_display_string(2, 7, "人");
+  42   1      
+  43   1              lcd_display_string(3, 1, "限载乘客：");
+  44   1              lcd_display_digit(3, 6, overload_people);
+  45   1              lcd_display_string(3, 7, "人");
+  46   1      }
+  47          
+  48          /**
+  49          * 设置页面
+  50          */
+  51          void setting_page(){
+  52   1              lcd_clear();
+  53   1              lcd_display_string(1, 1, "当前限载乘客：");
+  54   1              lcd_display_digit(1, 8, overload_people);
+C51 COMPILER V9.01   MAIN                                                                  05/09/2018 14:16:57 PAGE 2   
+
+  55   1              lcd_display_string(3, 1, "按下上、下键增大");
+  56   1              lcd_display_string(4, 1, "或减少限载乘客");
+  57   1      }
+  58          
+  59          /**
+  60          * 设置成功界面
+  61          */
+  62          void set_success_page(){
+  63   1              lcd_clear();
+  64   1              lcd_display_string(2, 3, "设置成功！");
+  65   1      }
+  66          
+  67          /////////////////////////////////////////////MAIN
+  68          void main(){
+  69   1      
+  70   1              lcd_init();
+  71   1              adc_init();
+  72   1              home_page();
+  73   1      
+  74   1              while(1){
+  75   2              
+  76   2                      //按键检测
+  77   2                      if(!key_set){
+  78   3                              setting = ~setting;
+  79   3                              if(setting){
+  80   4                                      setting_page();
+  81   4                              }else{
+  82   4                                      set_success_page();     
+  83   4                                      delay(1000);
+  84   4                                      home_page();
+  85   4                              }
+  86   3                              while(!key_set);        
+  87   3                      }
+  88   2      
+  89   2                      if(setting){
+  90   3                              if(!(!key_up && !key_down)){
+  91   4                                      if(!key_up){
+  92   5                                              delay(50);
+  93   5                                              if(!key_up){
+  94   6                                                      if(overload_people < MAX_VALID_PEOPLE){
+  95   7                                                              overload_people++;
+  96   7                                                              setting_page();
+  97   7                                                      }               
+  98   6                                              }
+  99   5                                      }
+ 100   4                                      if(!key_down){
+ 101   5                                              delay(50);
+ 102   5                                              if(!key_down){
+ 103   6                                                      if(overload_people > 1){
+ 104   7                                                              overload_people--;
+ 105   7                                                              setting_page();
+ 106   7                                                      }               
+ 107   6                                              }
+ 108   5                                      }
+ 109   4                              }       
+ 110   3                      }else{
+ 111   3                              collect();
+ 112   3                              analyse();
+ 113   3                              check();
+ 114   3      
+ 115   3                              if(DEBUG){
+ 116   4                                      lcd_clear_line(2);
+C51 COMPILER V9.01   MAIN                                                                  05/09/2018 14:16:57 PAGE 3   
+
+ 117   4                                      lcd_clear_line(3);
+ 118   4              
+ 119   4                                      lcd_display_string(2, 1, "模拟量一：");
+ 120   4                                      lcd_display_digit(2, 6, (int)o1);
+ 121   4                                      lcd_display_string(3, 1, "模拟量二：");
+ 122   4                                      lcd_display_digit(3, 6, (int)o2);
+ 123   4                              }
+ 124   3                      }               
+ 125   2              }
+ 126   1      
+ 127   1      
+ 128   1      }
+ 129          
+ 130          /**
+ 131          * 普通延时（ms）
+ 132          */
+ 133          void delay(uint t){
+ 134   1          uint a,b;
+ 135   1          for(a=0;a<t;a++)
+ 136   1                      for(b=0;b<110;b++);
+ 137   1      }
+ 138          
+ 139          /**
+ 140          * 采集两路数字量
+ 141          */
+ 142          void collect(){
+ 143   1              uchar i;
+ 144   1      
+ 145   1              AD_CHANNEL = 0;
+ 146   1              delay(5);
+ 147   1              for(i=0;i<10;i++){
+ 148   2                      o1 = adc_transform();
+ 149   2              }
+ 150   1      
+ 151   1              AD_CHANNEL = 1;
+ 152   1              delay(5);
+ 153   1              for(i=0;i<10;i++){
+ 154   2                      o2 = adc_transform();   
+ 155   2              }       
+ 156   1      }
+ 157          
+ 158          /**
+ 159          * 打印调试信息
+ 160          */
+ 161          static void debug_msg(char *str){
+ 162   1              lcd_clear_line(4);
+ 163   1              lcd_display_string(4, 1, str);
+ 164   1      }
+ 165          
+ 166          /**
+ 167          * 根据传感器的触发顺序分析上下车情况
+ 168          */
+ 169          void analyse(){
+ 170   1              bit update = 0;
+ 171   1              if(o1 == 0 && o2 == 0)
+ 172   1                      return;
+ 173   1      
+ 174   1              //传感器1的触发
+ 175   1              if(trigger(o1)){
+ 176   2                      if(flag_in == 0 && flag_out == 0){
+ 177   3                              inout = 0;
+ 178   3                      }
+C51 COMPILER V9.01   MAIN                                                                  05/09/2018 14:16:57 PAGE 4   
+
+ 179   2                      if(inout == 0){
+ 180   3                              //从外面到触碰第一个传感器，开始进门
+ 181   3                              if(flag_in == 0){
+ 182   4                                      flag_in = 1;
+ 183   4                                      if(DEBUG){
+ 184   5                                              debug_msg("开始进门");
+ 185   5                                      }       
+ 186   4                              }
+ 187   3                      }else{
+ 188   3                              //从中间触碰到第一个传感器，即将出门
+ 189   3                              if(flag_out == 2){
+ 190   4                                      flag_out = 3;
+ 191   4                                      if(DEBUG){
+ 192   5                                              debug_msg("即将出门");
+ 193   5                                      }
+ 194   4                              }
+ 195   3                      }                                       
+ 196   2              }else{
+ 197   2                      if(inout == 0){
+ 198   3                              //穿过第一个传感器，进到两个传感器中间
+ 199   3                              if(flag_in == 1){
+ 200   4                                      flag_in = 2;
+ 201   4                                      if(DEBUG){
+ 202   5                                              debug_msg("位于中间位置");
+ 203   5                                      }
+ 204   4                              } 
+ 205   3                      }else{
+ 206   3                              //离开第一个传感器，走出门外，人数减1
+ 207   3                              if(flag_out == 3){
+ 208   4                                      flag_out = 0;
+ 209   4                                      if(people > 0){
+ 210   5                                              people--;
+ 211   5                                              update = 1;
+ 212   5                                              if(DEBUG){
+ 213   6                                                      debug_msg("走出门外");
+ 214   6                                              }
+ 215   5                                      }       
+ 216   4                              }       
+ 217   3                      }       
+ 218   2              }
+ 219   1      
+ 220   1              //传感器2的触发
+ 221   1              if(trigger(o2)){
+ 222   2                      if(flag_in == 0 && flag_out == 0){
+ 223   3                              inout = 1;                      
+ 224   3                      }
+ 225   2                      if(inout == 0){
+ 226   3                              //从中间触碰到第二个传感器，即将进门
+ 227   3                              if(flag_in == 2){
+ 228   4                                      flag_in = 3;
+ 229   4                                      if(DEBUG){
+ 230   5                                              debug_msg("即将进门");
+ 231   5                                      }
+ 232   4                              }
+ 233   3                      }else{
+ 234   3                              //从里面触碰到第二个传感器，开始出门
+ 235   3                              if(flag_out == 0){
+ 236   4                                      flag_out = 1;
+ 237   4                                      if(DEBUG){
+ 238   5                                              debug_msg("开始出门");
+ 239   5                                      }
+ 240   4                              }
+C51 COMPILER V9.01   MAIN                                                                  05/09/2018 14:16:57 PAGE 5   
+
+ 241   3                      }                                               
+ 242   2              }else{
+ 243   2                      if(inout == 0){
+ 244   3                              //离开第二个传感器，进入门内，人数加1
+ 245   3                              if(flag_in == 3){
+ 246   4                                      flag_in = 0;
+ 247   4                                      if(people < 255){
+ 248   5                                              people++;
+ 249   5                                              update = 1;
+ 250   5                                              if(DEBUG){
+ 251   6                                                      debug_msg("进入门内");
+ 252   6                                              }
+ 253   5                                      }       
+ 254   4                              }
+ 255   3                      }else{
+ 256   3                              //离开第二个传感器，出到两个传感器中间
+ 257   3                              if(flag_out == 1){
+ 258   4                                      flag_out = 2;
+ 259   4                                      if(DEBUG){
+ 260   5                                              debug_msg("位于中间位置");
+ 261   5                                      }
+ 262   4                              }       
+ 263   3                      }       
+ 264   2              }
+ 265   1      
+ 266   1      
+ 267   1              //根据需要显示人数信息
+ 268   1              if(update){
+ 269   2                      home_page();    
+ 270   2              }
+ 271   1      }
+ 272          
+ 273          /**
+ 274          * 报警
+ 275          */
+ 276          static void warning(){
+ 277   1              uchar i;
+ 278   1              for(i=0;i<100;i++){
+ 279   2                      buzzer = ~buzzer;
+ 280   2                      delay(1);
+ 281   2              }
+ 282   1      }
+ 283          
+ 284          /**
+ 285          * 检查是否超载
+ 286          */
+ 287          void check(){
+ 288   1              if(people > overload_people){
+ 289   2                      warning();
+ 290   2                      relay = 0;                      
+ 291   2              }else{
+ 292   2                      relay = 1;
+ 293   2              }       
+ 294   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    629    ----
+   CONSTANT SIZE    =    185    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      8       4
+C51 COMPILER V9.01   MAIN                                                                  05/09/2018 14:16:57 PAGE 6   
+
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =      2       1
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

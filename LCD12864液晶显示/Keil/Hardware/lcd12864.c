@@ -1,6 +1,6 @@
 #include "lcd12864.h"
 #include "reg51.h"
-#define DB P1
+#define DB P0
 
 sbit RS = P2^0;
 sbit RW = P2^1;
@@ -14,7 +14,7 @@ sbit PSB = P2^4;
 static void delay(uchar t){
 	uchar i, j;
 	for(i=0;i<t;i++){
-		for(j=0;j<10;j++);
+		for(j=0;j<50;j++);
 	}
 }
 
@@ -78,6 +78,7 @@ void lcd_init(){
 * LCD12864 Ð´Ö¸Áî
 */
 void lcd_write_com(uchar com){
+	wait_busy();
 	RS = 0;
 	RW = 0;
 	EN = 0;
@@ -92,6 +93,7 @@ void lcd_write_com(uchar com){
 * LCD12864 Ð´Êý¾Ý
 */
 void lcd_write_data(uchar dat){
+	wait_busy();
 	RS = 1;
 	RW = 0;
 	EN = 0;

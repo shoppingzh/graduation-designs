@@ -3,10 +3,10 @@
 
 #define OUT P1
 
-sbit CLK = P2^0;
-sbit ST = P2^1;
-sbit EOC = P2^2;
-sbit OE = P2^3;
+sbit CLK = P3^2;
+sbit ST = P2^5;
+sbit EOC = P2^6;
+sbit OE = P2^7;
 
 /**
 * ADC0808 初始化
@@ -14,8 +14,8 @@ sbit OE = P2^3;
 */
 void adc_init(){
 	TMOD |= 0x01;
-	TH0 = 0xf1;
-	TL0 = 0x9a;
+	TH0 = 0xff;
+	TL0 = 0xf7;
 	EA = 1;
 	ET0 = 1;
 	TR0 = 1;
@@ -40,7 +40,7 @@ uchar adc_transform(){
 
 //定时器0中断：产生转换时钟
 void timer0_int() interrupt 1{
-	TH0 = 0xf1;
-	TL0 = 0x9a;
+	TH0 = 0xff;
+	TL0 = 0xf7;
 	CLK = ~CLK;
 }

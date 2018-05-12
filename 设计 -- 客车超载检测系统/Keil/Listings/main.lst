@@ -1,4 +1,4 @@
-C51 COMPILER V9.01   MAIN                                                                  05/09/2018 14:16:57 PAGE 1   
+C51 COMPILER V9.01   MAIN                                                                  05/11/2018 13:43:13 PAGE 1   
 
 
 C51 COMPILER V9.01, COMPILATION OF MODULE MAIN
@@ -15,7 +15,7 @@ line level    source
    5          
    6          #define trigger(d) (d < 127)    //是否触发（触发条件为挡住）
    7          #define DEBUG 0                                 //调试模式
-   8          #define MAX_VALID_PEOPLE 30             //最大限载人数
+   8          #define MAX_VALID_PEOPLE 50             //最大限载人数
    9          
   10          void delay(uint t);
   11          void collect();
@@ -37,7 +37,7 @@ line level    source
   27          int people = 0;                                 //车上人数
   28          uchar flag_in, flag_out;                //进出过程标志
   29          bit inout = 0;                                  //进出标志位
-  30          int overload_people = 1;                //限载人数
+  30          int overload_people = 10;               //限载人数
   31          bit setting = 0;                                //设置状态标志位
   32          
   33          /**
@@ -62,7 +62,7 @@ line level    source
   52   1              lcd_clear();
   53   1              lcd_display_string(1, 1, "当前限载乘客：");
   54   1              lcd_display_digit(1, 8, overload_people);
-C51 COMPILER V9.01   MAIN                                                                  05/09/2018 14:16:57 PAGE 2   
+C51 COMPILER V9.01   MAIN                                                                  05/11/2018 13:43:13 PAGE 2   
 
   55   1              lcd_display_string(3, 1, "按下上、下键增大");
   56   1              lcd_display_string(4, 1, "或减少限载乘客");
@@ -126,7 +126,7 @@ line level    source
  114   3      
  115   3                              if(DEBUG){
  116   4                                      lcd_clear_line(2);
-C51 COMPILER V9.01   MAIN                                                                  05/09/2018 14:16:57 PAGE 3   
+C51 COMPILER V9.01   MAIN                                                                  05/11/2018 13:43:13 PAGE 3   
 
  117   4                                      lcd_clear_line(3);
  118   4              
@@ -190,7 +190,7 @@ line level    source
  176   2                      if(flag_in == 0 && flag_out == 0){
  177   3                              inout = 0;
  178   3                      }
-C51 COMPILER V9.01   MAIN                                                                  05/09/2018 14:16:57 PAGE 4   
+C51 COMPILER V9.01   MAIN                                                                  05/11/2018 13:43:13 PAGE 4   
 
  179   2                      if(inout == 0){
  180   3                              //从外面到触碰第一个传感器，开始进门
@@ -254,7 +254,7 @@ line level    source
  238   5                                              debug_msg("开始出门");
  239   5                                      }
  240   4                              }
-C51 COMPILER V9.01   MAIN                                                                  05/09/2018 14:16:57 PAGE 5   
+C51 COMPILER V9.01   MAIN                                                                  05/11/2018 13:43:13 PAGE 5   
 
  241   3                      }                                               
  242   2              }else{
@@ -292,35 +292,34 @@ line level    source
  274          * 报警
  275          */
  276          static void warning(){
- 277   1              uchar i;
- 278   1              for(i=0;i<100;i++){
- 279   2                      buzzer = ~buzzer;
- 280   2                      delay(1);
- 281   2              }
- 282   1      }
- 283          
- 284          /**
- 285          * 检查是否超载
- 286          */
- 287          void check(){
- 288   1              if(people > overload_people){
- 289   2                      warning();
- 290   2                      relay = 0;                      
- 291   2              }else{
- 292   2                      relay = 1;
- 293   2              }       
- 294   1      }
+ 277   1              buzzer = ~buzzer;
+ 278   1              delay(1);
+ 279   1              buzzer = ~buzzer;
+ 280   1              delay(1);
+ 281   1      }
+ 282          
+ 283          /**
+ 284          * 检查是否超载
+ 285          */
+ 286          void check(){
+ 287   1              if(people > overload_people){
+ 288   2                      warning();
+ 289   2                      relay = 0;                      
+ 290   2              }else{
+ 291   2                      relay = 1;
+ 292   2              }       
+ 293   1      }
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    629    ----
+   CODE SIZE        =    627    ----
    CONSTANT SIZE    =    185    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----
    DATA SIZE        =      8       4
-C51 COMPILER V9.01   MAIN                                                                  05/09/2018 14:16:57 PAGE 6   
-
    IDATA SIZE       =   ----    ----
+C51 COMPILER V9.01   MAIN                                                                  05/11/2018 13:43:13 PAGE 6   
+
    BIT SIZE         =      2       1
 END OF MODULE INFORMATION.
 

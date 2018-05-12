@@ -107,6 +107,7 @@ while(*p!='\0')
   }
  }
 }
+
 //初始化 LCM
 void initlcm(void)
 {
@@ -126,7 +127,10 @@ void initlcm(void)
 
 //清屏
 void clear(){
-  	SendDat(0x01);
+  	clearline(0);
+	clearline(1);
+	clearline(2);
+	clearline(3);
 }
 
 //清除一行内容

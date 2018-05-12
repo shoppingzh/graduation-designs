@@ -5,7 +5,7 @@
 
 #define trigger(d) (d < 127)	//是否触发（触发条件为挡住）
 #define DEBUG 0					//调试模式
-#define MAX_VALID_PEOPLE 30		//最大限载人数
+#define MAX_VALID_PEOPLE 50		//最大限载人数
 
 void delay(uint t);
 void collect();
@@ -27,7 +27,7 @@ volatile uchar o1, o2; 			//两个通道采集到的值
 int people = 0;	  				//车上人数
 uchar flag_in, flag_out; 		//进出过程标志
 bit inout = 0;		   			//进出标志位
-int overload_people = 1;   		//限载人数
+int overload_people = 10;   	//限载人数
 bit setting = 0; 				//设置状态标志位
 
 /**
@@ -274,11 +274,10 @@ void analyse(){
 * 报警
 */
 static void warning(){
-	uchar i;
-	for(i=0;i<100;i++){
-		buzzer = ~buzzer;
-		delay(1);
-	}
+	buzzer = ~buzzer;
+	delay(1);
+	buzzer = ~buzzer;
+	delay(1);
 }
 
 /**

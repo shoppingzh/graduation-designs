@@ -1,4 +1,4 @@
-C51 COMPILER V9.01   PYINPUT                                                               05/10/2018 14:41:02 PAGE 1   
+C51 COMPILER V9.01   PYINPUT                                                               05/12/2018 12:37:05 PAGE 1   
 
 
 C51 COMPILER V9.01, COMPILATION OF MODULE PYINPUT
@@ -62,7 +62,7 @@ line level    source
   53          {
   54   1              py_index *bestmatch=0;//×î¼ÑÆ¥Åä
   55   1              u16 pyindex_len=0;
-C51 COMPILER V9.01   PYINPUT                                                               05/10/2018 14:41:02 PAGE 2   
+C51 COMPILER V9.01   PYINPUT                                                               05/12/2018 12:37:05 PAGE 2   
 
   56   1              u16 i=0;
   57   1              u8 temp,mcnt=0,bmcnt=0;
@@ -122,11 +122,11 @@ line level    source
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
    CODE SIZE        =    788    ----
-   CONSTANT SIZE    =    279    ----
+   CONSTANT SIZE    =   1331    ----
    XDATA SIZE       =     33      27
    PDATA SIZE       =   ----    ----
    DATA SIZE        =   ----    ----
-C51 COMPILER V9.01   PYINPUT                                                               05/10/2018 14:41:02 PAGE 3   
+C51 COMPILER V9.01   PYINPUT                                                               05/12/2018 12:37:05 PAGE 3   
 
    IDATA SIZE       =   ----    ----
    BIT SIZE         =   ----    ----

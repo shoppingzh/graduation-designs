@@ -13,6 +13,8 @@ char input_buffer[8];					//输入缓冲区，如："524"
 int input_index = 0;					//当前输入缓冲区的位置
 
 py_index *matchs[10];					//当前输入的拼音所匹配的所有汉字信息
+uchar match_count;					   	//匹配的拼音个数
+uchar match_idx = 0;					//匹配到的拼音索引
 char *opt_words;						//当前所有备选汉字，如"wang"对应"往网王忘汪望旺"
 uchar opt_idx = 0;						//当前备选汉字索引
 char page_words[9]; 					//当前页的备选汉字，1行只显示4个汉字，如"wang"对应"1.往2.网3.王4.忘"
@@ -52,7 +54,8 @@ static void show_letters(){
 	for(i=0;i<17;i++){
 		line[i] = '\0';	
 	}
-	py = matchs[0][0].py;
+
+	py = matchs[match_idx][0].py;
 	for(i=0;i<16;i++){
 		if(! *py)
 			continue;
@@ -61,12 +64,13 @@ static void show_letters(){
 		py++;		
 	}
 	displaystring(2, 0, line);
+	
 }
 
 //显示备选字
 static void show_options(){
 	uchar start = page*8, i, page_content[17], idx = 0;
-	opt_words = matchs[0][0].pymb;
+	opt_words = matchs[match_idx][0].pymb;
 
 	//清空当前页内容
 	clearline(3);
@@ -212,19 +216,21 @@ void main(){
 			input_index = 0;
 			opt_idx = 0;
 			writing = 0;
+			match_idx = 0;
+			match_count = 0;
 
 			clearline(2);				
 			clearline(3);			
 		}else if(key == 1){
-		 	//按下1键，开启或关闭光标
-			if(TR0)
-				TR0 = 0;
-			else{
-				TR0 = 1;
-				displaystring(2, 2, "适用型功能，");
-				displaystring(3, 0, "请谨慎使用！");
-			} 
-				
+		 	//按下1键，显示下一个匹配拼音和所匹配的汉字
+			if(match_idx < match_count){
+				match_idx++;
+			}else{
+				match_idx = 0;
+			}
+			show_letters();
+			show_options();
+	
 		}else if(key == 10){
 			if(!writing){
 				//如果当前不是在书写状态，按下*键删除一个屏幕上的已有汉字
@@ -262,7 +268,7 @@ void main(){
 
 			//正在输入，获取输入的拼音和汉字
 			input_buffer[input_index++] = key + 48;
-			get_matched_pymb(input_buffer, matchs);
+			match_count = get_matched_pymb(input_buffer, matchs);
 
 			//显示输入的拼音字符
 			show_letters();

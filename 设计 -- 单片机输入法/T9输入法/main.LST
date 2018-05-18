@@ -1,4 +1,4 @@
-C51 COMPILER V9.01   MAIN                                                                  05/12/2018 12:37:04 PAGE 1   
+C51 COMPILER V9.01   MAIN                                                                  05/13/2018 15:23:31 PAGE 1   
 
 
 C51 COMPILER V9.01, COMPILATION OF MODULE MAIN
@@ -22,304 +22,310 @@ line level    source
   13          int input_index = 0;                                    //当前输入缓冲区的位置
   14          
   15          py_index *matchs[10];                                   //当前输入的拼音所匹配的所有汉字信息
-  16          char *opt_words;                                                //当前所有备选汉字，如"wang"对应"往网王忘汪望旺"
-  17          uchar opt_idx = 0;                                              //当前备选汉字索引
-  18          char page_words[9];                                     //当前页的备选汉字，1行只显示4个汉字，如"wang"对应"1.往2.网3.王4.忘"
-  19          uchar page = 0;                                                 //页数，拼音匹配的汉字每4个汉字为1页，默认显示第一页
-  20          char words_buffer[65];                                  //屏幕汉字缓冲区
-  21          uchar words_idx = 0;                                    //汉字缓冲区索引，指示当前屏幕汉字的个数
-  22          
-  23          uchar row = 0;                                                  //当前显示的行
-  24          uchar col = 1;                                                  //当前显示的列
-  25          
-  26          bit writing = 0;                                                //是否在书写状态
-  27          bit flag = 1;                                                   //光标状态位
-  28          uchar count = 0;                                                //定时器计数
-  29          
-  30          //普通延时
-  31          static void delay(uchar t){
-  32   1              uchar i,j;
-  33   1              for(i=0;i<t;i++)
-  34   1                      for(j=0;j<110;j++);
-  35   1      }
-  36          
-  37          
-  38          //清除缓冲区
-  39          static void clear_input_buffer(){
-  40   1              uchar i;
-  41   1              for(i=0;i<8;i++){
-  42   2                      input_buffer[i] = 0;
-  43   2              }
-  44   1      }
-  45          
-  46          //显示当前输入的拼音字符
-  47          static void show_letters(){
-  48   1              uchar line[17], i, *py;
-  49   1              //清空拼音显示行
-  50   1              clearline(2);
-  51   1      
-  52   1              for(i=0;i<17;i++){
-  53   2                      line[i] = '\0'; 
-  54   2              }
-  55   1              py = matchs[0][0].py;
-C51 COMPILER V9.01   MAIN                                                                  05/12/2018 12:37:04 PAGE 2   
+  16          uchar match_count;                                              //匹配的拼音个数
+  17          uchar match_idx = 0;                                    //匹配到的拼音索引
+  18          char *opt_words;                                                //当前所有备选汉字，如"wang"对应"往网王忘汪望旺"
+  19          uchar opt_idx = 0;                                              //当前备选汉字索引
+  20          char page_words[9];                                     //当前页的备选汉字，1行只显示4个汉字，如"wang"对应"1.往2.网3.王4.忘"
+  21          uchar page = 0;                                                 //页数，拼音匹配的汉字每4个汉字为1页，默认显示第一页
+  22          char words_buffer[65];                                  //屏幕汉字缓冲区
+  23          uchar words_idx = 0;                                    //汉字缓冲区索引，指示当前屏幕汉字的个数
+  24          
+  25          uchar row = 0;                                                  //当前显示的行
+  26          uchar col = 1;                                                  //当前显示的列
+  27          
+  28          bit writing = 0;                                                //是否在书写状态
+  29          bit flag = 1;                                                   //光标状态位
+  30          uchar count = 0;                                                //定时器计数
+  31          
+  32          //普通延时
+  33          static void delay(uchar t){
+  34   1              uchar i,j;
+  35   1              for(i=0;i<t;i++)
+  36   1                      for(j=0;j<110;j++);
+  37   1      }
+  38          
+  39          
+  40          //清除缓冲区
+  41          static void clear_input_buffer(){
+  42   1              uchar i;
+  43   1              for(i=0;i<8;i++){
+  44   2                      input_buffer[i] = 0;
+  45   2              }
+  46   1      }
+  47          
+  48          //显示当前输入的拼音字符
+  49          static void show_letters(){
+  50   1              uchar line[17], i, *py;
+  51   1              //清空拼音显示行
+  52   1              clearline(2);
+  53   1      
+  54   1              for(i=0;i<17;i++){
+  55   2                      line[i] = '\0'; 
+C51 COMPILER V9.01   MAIN                                                                  05/13/2018 15:23:31 PAGE 2   
 
-  56   1              for(i=0;i<16;i++){
-  57   2                      if(! *py)
-  58   2                              continue;
-  59   2      
-  60   2                      line[i] = *py;
-  61   2                      py++;           
-  62   2              }
-  63   1              displaystring(2, 0, line);
-  64   1      }
-  65          
-  66          //显示备选字
-  67          static void show_options(){
-  68   1              uchar start = page*8, i, page_content[17], idx = 0;
-  69   1              opt_words = matchs[0][0].pymb;
-  70   1      
-  71   1              //清空当前页内容
-  72   1              clearline(3);
-  73   1      
-  74   1              //跳过前面的页数
-  75   1              for(i=0;i<start;i++){
-  76   2                      if(! *opt_words)
-  77   2                              break;
-  78   2                      opt_words++;
-  79   2              }
-  80   1              //获取当前页汉字
-  81   1              strncpy(page_words, opt_words, 8);
-  82   1              page_words[8] = '\0';
-  83   1              //生成当前页内容，如："1.往2.网3.王4.忘"
-  84   1              for(i=0;i<16;i++){
-  85   2                      uchar c = i / 2;
-  86   2                      //序号
-  87   2                      if(c % 2 == 0){
-  88   3                              //数字
-  89   3                              if(i % 2 == 0){
-  90   4                                      uchar order = (i / 4) + 1;
-  91   4                                      //如果当前属于备选，则不显示序号而是显示"*"
-  92   4                                      if(order == opt_idx + 1){
-  93   5                                              page_content[i] =  '*';
-  94   5                                      }else{
-  95   5                                              page_content[i] = order + 48;
-  96   5                                      }       
-  97   4                              }else{
-  98   4                                      //点
-  99   4                                      page_content[i] = '.';
- 100   4                              }               
- 101   3                      }else{
- 102   3                              //汉字
- 103   3                              page_content[i] = page_words[idx++];
- 104   3                      }       
- 105   2              }
- 106   1              page_content[16] = '\0';        
- 107   1      
- 108   1              //显示当前页的内容
- 109   1              displaystring(3, 0, page_content);
- 110   1      }
- 111          
- 112          //上一页
- 113          static void prev_page(){
- 114   1              if(page > 0){
- 115   2                      page--;
- 116   2                      opt_idx = 3;
- 117   2              }               
-C51 COMPILER V9.01   MAIN                                                                  05/12/2018 12:37:04 PAGE 3   
+  56   2              }
+  57   1      
+  58   1              py = matchs[match_idx][0].py;
+  59   1              for(i=0;i<16;i++){
+  60   2                      if(! *py)
+  61   2                              continue;
+  62   2      
+  63   2                      line[i] = *py;
+  64   2                      py++;           
+  65   2              }
+  66   1              displaystring(2, 0, line);
+  67   1              
+  68   1      }
+  69          
+  70          //显示备选字
+  71          static void show_options(){
+  72   1              uchar start = page*8, i, page_content[17], idx = 0;
+  73   1              opt_words = matchs[match_idx][0].pymb;
+  74   1      
+  75   1              //清空当前页内容
+  76   1              clearline(3);
+  77   1      
+  78   1              //跳过前面的页数
+  79   1              for(i=0;i<start;i++){
+  80   2                      if(! *opt_words)
+  81   2                              break;
+  82   2                      opt_words++;
+  83   2              }
+  84   1              //获取当前页汉字
+  85   1              strncpy(page_words, opt_words, 8);
+  86   1              page_words[8] = '\0';
+  87   1              //生成当前页内容，如："1.往2.网3.王4.忘"
+  88   1              for(i=0;i<16;i++){
+  89   2                      uchar c = i / 2;
+  90   2                      //序号
+  91   2                      if(c % 2 == 0){
+  92   3                              //数字
+  93   3                              if(i % 2 == 0){
+  94   4                                      uchar order = (i / 4) + 1;
+  95   4                                      //如果当前属于备选，则不显示序号而是显示"*"
+  96   4                                      if(order == opt_idx + 1){
+  97   5                                              page_content[i] =  '*';
+  98   5                                      }else{
+  99   5                                              page_content[i] = order + 48;
+ 100   5                                      }       
+ 101   4                              }else{
+ 102   4                                      //点
+ 103   4                                      page_content[i] = '.';
+ 104   4                              }               
+ 105   3                      }else{
+ 106   3                              //汉字
+ 107   3                              page_content[i] = page_words[idx++];
+ 108   3                      }       
+ 109   2              }
+ 110   1              page_content[16] = '\0';        
+ 111   1      
+ 112   1              //显示当前页的内容
+ 113   1              displaystring(3, 0, page_content);
+ 114   1      }
+ 115          
+ 116          //上一页
+ 117          static void prev_page(){
+C51 COMPILER V9.01   MAIN                                                                  05/13/2018 15:23:31 PAGE 3   
 
- 118   1      }
- 119          
- 120          //上一页
- 121          static void next_page(){
- 122   1              page++;
- 123   1              opt_idx = 0;
- 124   1      }
- 125          
- 126          //在屏幕上写一个汉字
- 127          static void write_word(uchar *word){
- 128   1              //写到行末
- 129   1              if(col > 7){
- 130   2                      row++;
- 131   2                      col = 0;
- 132   2                      //文本框写满，重新来过
- 133   2                      if(row > 1){
- 134   3                              clearline(0);
- 135   3                              clearline(1);
- 136   3                              row = 0;
- 137   3                              col = 1;
- 138   3                      }
- 139   2              }
- 140   1              
- 141   1              //显示当前汉字
- 142   1              displaystring(row, col++, word);
- 143   1      
- 144   1              //将当前汉字存储到缓冲区
- 145   1      //      if(words_idx < 61){
- 146   1      //              words_buffer[words_idx++] = word[0];
- 147   1      //              words_buffer[words_idx++] = word[1];    
- 148   1      //      }       
- 149   1      }
- 150          
- 151          //在屏幕上显示当前汉字
- 152          static void show_current(){
- 153   1              uchar word[3] = {0, 0, 0}, idx;
- 154   1      
- 155   1              //获取当前汉字
- 156   1              idx = opt_idx * 2;
- 157   1              word[0] = page_words[idx];
- 158   1              word[1] = page_words[idx + 1];
- 159   1      
- 160   1              write_word(word);       
- 161   1      }
- 162          
- 163          //删除一个汉字
- 164          static void delete_word(){
- 165   1              if(row >= 0){
- 166   2                      if(col > 0){
- 167   3                              col--;
- 168   3                      }else{
- 169   3                              if(row > 0){
- 170   4                                      col = 7;
- 171   4                                      row--;
- 172   4                              }
- 173   3                      }
- 174   2              }
- 175   1              displaystring(row, col, "  ");
- 176   1      }
- 177          
- 178          
- 179          //定时器初始化
-C51 COMPILER V9.01   MAIN                                                                  05/12/2018 12:37:04 PAGE 4   
+ 118   1              if(page > 0){
+ 119   2                      page--;
+ 120   2                      opt_idx = 3;
+ 121   2              }               
+ 122   1      }
+ 123          
+ 124          //上一页
+ 125          static void next_page(){
+ 126   1              page++;
+ 127   1              opt_idx = 0;
+ 128   1      }
+ 129          
+ 130          //在屏幕上写一个汉字
+ 131          static void write_word(uchar *word){
+ 132   1              //写到行末
+ 133   1              if(col > 7){
+ 134   2                      row++;
+ 135   2                      col = 0;
+ 136   2                      //文本框写满，重新来过
+ 137   2                      if(row > 1){
+ 138   3                              clearline(0);
+ 139   3                              clearline(1);
+ 140   3                              row = 0;
+ 141   3                              col = 1;
+ 142   3                      }
+ 143   2              }
+ 144   1              
+ 145   1              //显示当前汉字
+ 146   1              displaystring(row, col++, word);
+ 147   1      
+ 148   1              //将当前汉字存储到缓冲区
+ 149   1      //      if(words_idx < 61){
+ 150   1      //              words_buffer[words_idx++] = word[0];
+ 151   1      //              words_buffer[words_idx++] = word[1];    
+ 152   1      //      }       
+ 153   1      }
+ 154          
+ 155          //在屏幕上显示当前汉字
+ 156          static void show_current(){
+ 157   1              uchar word[3] = {0, 0, 0}, idx;
+ 158   1      
+ 159   1              //获取当前汉字
+ 160   1              idx = opt_idx * 2;
+ 161   1              word[0] = page_words[idx];
+ 162   1              word[1] = page_words[idx + 1];
+ 163   1      
+ 164   1              write_word(word);       
+ 165   1      }
+ 166          
+ 167          //删除一个汉字
+ 168          static void delete_word(){
+ 169   1              if(row >= 0){
+ 170   2                      if(col > 0){
+ 171   3                              col--;
+ 172   3                      }else{
+ 173   3                              if(row > 0){
+ 174   4                                      col = 7;
+ 175   4                                      row--;
+ 176   4                              }
+ 177   3                      }
+ 178   2              }
+ 179   1              displaystring(row, col, "  ");
+C51 COMPILER V9.01   MAIN                                                                  05/13/2018 15:23:31 PAGE 4   
 
- 180          static void timer_init(){
- 181   1              TMOD = 0x01;
- 182   1              TH0 = 0x3c;
- 183   1              TL0 = 0xb0;
- 184   1              EA = 1;
- 185   1              ET0 = 1;
- 186   1              //TR0 = 1;
- 187   1      }               
- 188          
- 189          void main(){
- 190   1              initlcm();
- 191   1              displaystring(2, 0, "欢迎使用输入法，");
- 192   1              displaystring(3, 0, "输入内容试试看！");
- 193   1      
- 194   1              timer_init();
- 195   1      
- 196   1              while(1){
- 197   2                      int key = keyscan();
- 198   2      
- 199   2                      if(key == -1){
- 200   3                              //错误
- 201   3                      }else if(key == 0){     
- 202   3                              //不在书写状态按空格则在屏幕上书写一个空格
- 203   3                              if(!writing){
- 204   4                                      write_word("  ");
- 205   4                                      continue;       
- 206   4                              }
- 207   3                              //按下0键，将当前汉字显示到屏幕上
- 208   3                              show_current();                 
- 209   3      
- 210   3                              //清理
- 211   3                              clear_input_buffer();
- 212   3                              input_index = 0;
- 213   3                              opt_idx = 0;
- 214   3                              writing = 0;
- 215   3      
- 216   3                              clearline(2);                           
- 217   3                              clearline(3);                   
- 218   3                      }else if(key == 1){
- 219   3                              //按下1键，开启或关闭光标
- 220   3                              if(TR0)
- 221   3                                      TR0 = 0;
- 222   3                              else{
- 223   4                                      TR0 = 1;
- 224   4                                      displaystring(2, 2, "适用型功能，");
- 225   4                                      displaystring(3, 0, "请谨慎使用！");
- 226   4                              } 
- 227   3                                      
- 228   3                      }else if(key == 10){
- 229   3                              if(!writing){
- 230   4                                      //如果当前不是在书写状态，按下*键删除一个屏幕上的已有汉字
- 231   4                                      delete_word();
- 232   4                                      continue;
- 233   4                              }
- 234   3      
- 235   3                              //备选汉字列表左移一位
- 236   3                              if(opt_idx > 0){
- 237   4                                      opt_idx--;
- 238   4                              }else{
- 239   4                                      prev_page();
- 240   4                              }
- 241   3                              show_options();         
-C51 COMPILER V9.01   MAIN                                                                  05/12/2018 12:37:04 PAGE 5   
+ 180   1      }
+ 181          
+ 182          
+ 183          //定时器初始化
+ 184          static void timer_init(){
+ 185   1              TMOD = 0x01;
+ 186   1              TH0 = 0x3c;
+ 187   1              TL0 = 0xb0;
+ 188   1              EA = 1;
+ 189   1              ET0 = 1;
+ 190   1              //TR0 = 1;
+ 191   1      }               
+ 192          
+ 193          void main(){
+ 194   1              initlcm();
+ 195   1              displaystring(2, 0, "欢迎使用输入法，");
+ 196   1              displaystring(3, 0, "输入内容试试看！");
+ 197   1      
+ 198   1              timer_init();
+ 199   1      
+ 200   1              while(1){
+ 201   2                      int key = keyscan();
+ 202   2      
+ 203   2                      if(key == -1){
+ 204   3                              //错误
+ 205   3                      }else if(key == 0){     
+ 206   3                              //不在书写状态按空格则在屏幕上书写一个空格
+ 207   3                              if(!writing){
+ 208   4                                      write_word("  ");
+ 209   4                                      continue;       
+ 210   4                              }
+ 211   3                              //按下0键，将当前汉字显示到屏幕上
+ 212   3                              show_current();                 
+ 213   3      
+ 214   3                              //清理
+ 215   3                              clear_input_buffer();
+ 216   3                              input_index = 0;
+ 217   3                              opt_idx = 0;
+ 218   3                              writing = 0;
+ 219   3                              match_idx = 0;
+ 220   3                              match_count = 0;
+ 221   3      
+ 222   3                              clearline(2);                           
+ 223   3                              clearline(3);                   
+ 224   3                      }else if(key == 1){
+ 225   3                              //按下1键，显示下一个匹配拼音和所匹配的汉字
+ 226   3                              if(match_idx < match_count){
+ 227   4                                      match_idx++;
+ 228   4                              }else{
+ 229   4                                      match_idx = 0;
+ 230   4                              }
+ 231   3                              show_letters();
+ 232   3                              show_options();
+ 233   3              
+ 234   3                      }else if(key == 10){
+ 235   3                              if(!writing){
+ 236   4                                      //如果当前不是在书写状态，按下*键删除一个屏幕上的已有汉字
+ 237   4                                      delete_word();
+ 238   4                                      continue;
+ 239   4                              }
+ 240   3      
+ 241   3                              //备选汉字列表左移一位
+C51 COMPILER V9.01   MAIN                                                                  05/13/2018 15:23:31 PAGE 5   
 
- 242   3                      }else if(key == 11){
- 243   3                              if(!writing){
- 244   4                                      //全屏显示：显示汉字缓冲区的所有内容
- 245   4                                      //full_screen();
- 246   4                                      continue;       
- 247   4                              }
- 248   3                                      
- 249   3                              //备选汉字列表右移一位
- 250   3                              if(opt_idx < 3){
- 251   4                                      opt_idx++;
- 252   4                              }else{
- 253   4                                      next_page();
- 254   4                              }
- 255   3                              show_options();
- 256   3                      }else{
- 257   3                              if(input_index > 5){
- 258   4                                      continue;
- 259   4                              }
- 260   3                              writing = 1;
- 261   3                              page = 0;
- 262   3      
- 263   3                              //正在输入，获取输入的拼音和汉字
- 264   3                              input_buffer[input_index++] = key + 48;
- 265   3                              get_matched_pymb(input_buffer, matchs);
- 266   3      
- 267   3                              //显示输入的拼音字符
- 268   3                              show_letters();
- 269   3                              
- 270   3                              //显示备选字
- 271   3                              show_options();
- 272   3                      }
- 273   2              }
- 274   1      }
- 275          
- 276          //定时器0中断，用来显示光标
- 277          void timer0_int() interrupt 1{
- 278   1              uchar r, c;
- 279   1              TH0 = 0x3c;
- 280   1              TL0 = 0xb0;
- 281   1              if(count++ < 10)
- 282   1                      return;
- 283   1      
- 284   1              count = 0;
- 285   1      
- 286   1              //复制一份，防止row与col被动态更改
- 287   1              r = row;
- 288   1              c = col;
+ 242   3                              if(opt_idx > 0){
+ 243   4                                      opt_idx--;
+ 244   4                              }else{
+ 245   4                                      prev_page();
+ 246   4                              }
+ 247   3                              show_options();         
+ 248   3                      }else if(key == 11){
+ 249   3                              if(!writing){
+ 250   4                                      //全屏显示：显示汉字缓冲区的所有内容
+ 251   4                                      //full_screen();
+ 252   4                                      continue;       
+ 253   4                              }
+ 254   3                                      
+ 255   3                              //备选汉字列表右移一位
+ 256   3                              if(opt_idx < 3){
+ 257   4                                      opt_idx++;
+ 258   4                              }else{
+ 259   4                                      next_page();
+ 260   4                              }
+ 261   3                              show_options();
+ 262   3                      }else{
+ 263   3                              if(input_index > 5){
+ 264   4                                      continue;
+ 265   4                              }
+ 266   3                              writing = 1;
+ 267   3                              page = 0;
+ 268   3      
+ 269   3                              //正在输入，获取输入的拼音和汉字
+ 270   3                              input_buffer[input_index++] = key + 48;
+ 271   3                              match_count = get_matched_pymb(input_buffer, matchs);
+ 272   3      
+ 273   3                              //显示输入的拼音字符
+ 274   3                              show_letters();
+ 275   3                              
+ 276   3                              //显示备选字
+ 277   3                              show_options();
+ 278   3                      }
+ 279   2              }
+ 280   1      }
+ 281          
+ 282          //定时器0中断，用来显示光标
+ 283          void timer0_int() interrupt 1{
+ 284   1              uchar r, c;
+ 285   1              TH0 = 0x3c;
+ 286   1              TL0 = 0xb0;
+ 287   1              if(count++ < 10)
+ 288   1                      return;
  289   1      
- 290   1              if(flag){
- 291   2                      displaystring(r, c, "_");       
- 292   2              }else{
- 293   2                      displaystring(r, c, "  ");
- 294   2              }
- 295   1              flag = ~flag;
- 296   1              
- 297   1      }
+ 290   1              count = 0;
+ 291   1      
+ 292   1              //复制一份，防止row与col被动态更改
+ 293   1              r = row;
+ 294   1              c = col;
+ 295   1      
+ 296   1              if(flag){
+ 297   2                      displaystring(r, c, "_");       
+ 298   2              }else{
+ 299   2                      displaystring(r, c, "  ");
+ 300   2              }
+ 301   1              flag = ~flag;
+ 302   1              
+ 303   1      }
+C51 COMPILER V9.01   MAIN                                                                  05/13/2018 15:23:31 PAGE 6   
+
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =   1111    ----
-   CONSTANT SIZE    =     68    ----
-   XDATA SIZE       =    123      49
-C51 COMPILER V9.01   MAIN                                                                  05/12/2018 12:37:04 PAGE 6   
-
+   CODE SIZE        =   1143    ----
+   CONSTANT SIZE    =     42    ----
+   XDATA SIZE       =    125      49
    PDATA SIZE       =   ----    ----
    DATA SIZE        =   ----    ----
    IDATA SIZE       =   ----    ----

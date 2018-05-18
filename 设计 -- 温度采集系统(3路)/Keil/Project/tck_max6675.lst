@@ -1,0 +1,60 @@
+C51 COMPILER V9.01   TCK_MAX6675                                                           05/12/2018 17:42:22 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE TCK_MAX6675
+OBJECT MODULE PLACED IN ..\Outputs\tck_max6675.obj
+COMPILER INVOKED BY: D:\Dev\Keil\C51\BIN\C51.EXE ..\Hardware\tck_max6675.c BROWSE INCDIR(..\Hardware;..\User) DEBUG OBJE
+                    -CTEXTEND PRINT(.\tck_max6675.lst) OBJECT(..\Outputs\tck_max6675.obj)
+
+line level    source
+
+   1          #include "tck_max6675.h"
+   2          #include "reg51.h"
+   3          #include "intrins.h"
+   4          
+   5          sbit SO = P1^0;
+   6          sbit SCK = P1^1;
+   7          sbit CS = P1^2;         //低电平有效
+   8          
+   9          /**
+  10          * TCK热电偶 读取温度
+  11          */
+  12          uint tck_read_temp(){
+  13   1              uchar i;
+  14   1              uint temp;
+  15   1      
+  16   1              CS = 1;                 //启动温度转换
+  17   1              _nop_();
+  18   1              _nop_();
+  19   1              CS = 0;                 //停止温度转换，开始读取
+  20   1              _nop_();
+  21   1              _nop_();
+  22   1              for(i=0;i<16;i++){
+  23   2                      temp <<= 1;
+  24   2                      SCK = 1;
+  25   2                      _nop_();
+  26   2                      SCK = 0;        //得到下降沿，短暂延时后读取SO
+  27   2                      _nop_();
+  28   2                      if(SO)
+  29   2                              temp |= 0x01;
+  30   2              }
+  31   1      
+  32   1              temp <<= 1;             //去除第0、1、2、15位
+  33   1              temp >>= 4;
+  34   1      
+  35   1              return (temp >> 2) - COLD_TEMPERATURE + 1;              //将temp转换为正常温度并减去冷端温度
+  36   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     71    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

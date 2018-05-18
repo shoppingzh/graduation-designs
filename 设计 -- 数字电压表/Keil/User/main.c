@@ -33,7 +33,7 @@ void main(){
 				display();
 			}
 			uart_send(vol);
-			delay(10);
+			state = 0;
 		}		
 	}
 
@@ -41,30 +41,27 @@ void main(){
 
 //串口接收回调：接收上位机指令，选择开启的模拟通道（对应不同量程的电压测量）
 void uart_received(uchar cmd){
+	state = 1;
 	if(cmd == 0x01){
 		ADDA = 0;
 		ADDB = 0;
 		ADDC = 0;
 		rode = 1;
-		state = 1;	
 	}else if(cmd == 0x02){
 		ADDA = 1;
 		ADDB = 0;
 		ADDC = 0;
-		rode = 2;
-		state = 1;	
+		rode = 2;	
 	}else if(cmd == 0x03){
 		ADDA = 0;
 		ADDB = 1;
 		ADDC = 0;
 		rode = 3;
-		state = 1;
 	}else if(cmd == 0x04){
 		ADDA = 1;
 		ADDB = 1;
 		ADDC = 0;
 		rode = 4;
-		state = 1;
 	}	
 }
 

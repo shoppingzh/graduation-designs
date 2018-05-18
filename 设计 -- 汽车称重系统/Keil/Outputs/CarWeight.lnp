@@ -1,0 +1,4 @@
+"..\Outputs\lcd1602.obj",
+"..\Outputs\main.obj" 
+TO "..\Outputs\CarWeight" 
+PRINT(".\CarWeight.m51") RAMSIZE(256) 

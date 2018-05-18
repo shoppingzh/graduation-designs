@@ -1,6 +1,0 @@
-"..\Outputs\main.obj",
-"..\Outputs\temper.obj",
-"..\Outputs\uart.obj",
-"..\Outputs\lcd1602.obj" 
-TO "..\Outputs\TemperatureColl" 
-PRINT(".\TemperatureColl.m51")

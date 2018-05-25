@@ -1,0 +1,95 @@
+C51 COMPILER V9.01   TCK_MAX6675                                                           05/19/2018 20:36:03 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE TCK_MAX6675
+OBJECT MODULE PLACED IN ..\Outputs\tck_max6675.obj
+COMPILER INVOKED BY: D:\Dev\Keil\C51\BIN\C51.EXE ..\Hardware\tck_max6675.c BROWSE INCDIR(..\Hardware;..\User) DEBUG OBJE
+                    -CTEXTEND PRINT(.\tck_max6675.lst) OBJECT(..\Outputs\tck_max6675.obj)
+
+line level    source
+
+   1          #include "tck_max6675.h"
+   2          #include "reg51.h"
+   3          #include "intrins.h"
+   4          
+   5          sbit SO1 = P1^0;
+   6          sbit SCK1 = P1^1;
+   7          sbit CS1 = P1^2;
+   8          
+   9          sbit SO2 = P1^3;
+  10          sbit SCK2 = P1^4;
+  11          sbit CS2 = P1^5;
+  12          
+  13          /**
+  14          * TCK热电偶 读取温度
+  15          */
+  16          uint tck_read_temp1(){
+  17   1              uchar i;
+  18   1              uint temp;
+  19   1      
+  20   1              CS1 = 1;                        //启动温度转换
+  21   1              _nop_();
+  22   1              _nop_();
+  23   1              CS1 = 0;                        //停止温度转换，开始读取
+  24   1              _nop_();
+  25   1              _nop_();
+  26   1              for(i=0;i<16;i++){
+  27   2                      temp <<= 1;
+  28   2                      SCK1 = 1;
+  29   2                      _nop_();
+  30   2                      SCK1 = 0;       //得到下降沿，短暂延时后读取SO
+  31   2                      _nop_();
+  32   2                      if(SO1)
+  33   2                              temp |= 0x01;
+  34   2              }
+  35   1      
+  36   1              temp <<= 1;             //去除第0、1、2、15位
+  37   1              temp >>= 4;
+  38   1      
+  39   1              return (temp >> 2) - COLD_TEMPERATURE + 1;              //将temp转换为正常温度并减去冷端温度
+  40   1      }
+  41          
+  42          /**
+  43          * TCK热电偶 读取温度
+  44          */
+  45          uint tck_read_temp2(){
+  46   1              uchar i;
+  47   1              uint temp;
+  48   1      
+  49   1              CS2 = 1;                        //启动温度转换
+  50   1              _nop_();
+  51   1              _nop_();
+  52   1              CS2 = 0;                        //停止温度转换，开始读取
+  53   1              _nop_();
+  54   1              _nop_();
+C51 COMPILER V9.01   TCK_MAX6675                                                           05/19/2018 20:36:03 PAGE 2   
+
+  55   1              for(i=0;i<16;i++){
+  56   2                      temp <<= 1;
+  57   2                      SCK2 = 1;
+  58   2                      _nop_();
+  59   2                      SCK2 = 0;       //得到下降沿，短暂延时后读取SO
+  60   2                      _nop_();
+  61   2                      if(SO2)
+  62   2                              temp |= 0x01;
+  63   2              }
+  64   1      
+  65   1              temp <<= 1;             //去除第0、1、2、15位
+  66   1              temp >>= 4;
+  67   1      
+  68   1              return (temp >> 2) - COLD_TEMPERATURE + 1;              //将temp转换为正常温度并减去冷端温度
+  69   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    142    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

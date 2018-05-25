@@ -1,0 +1,254 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        05/23/2018  15:30:28  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+D:\DEV\KEIL\C51\BIN\BL51.EXE ..\Outputs\main.obj, ..\Outputs\uart.obj TO ..\Outputs\SmartHome PRINT (.\SmartHome.m51) RA
+>> MSIZE (256)
+
+
+MEMORY MODEL: SMALL WITH FLOATING POINT ARITHMETIC
+
+
+INPUT MODULES INCLUDED:
+  ..\Outputs\main.obj (MAIN)
+  ..\Outputs\uart.obj (UART)
+  D:\DEV\KEIL\C51\LIB\C51FPS.LIB (?C?FPMUL)
+  D:\DEV\KEIL\C51\LIB\C51FPS.LIB (?C?FPDIV)
+  D:\DEV\KEIL\C51\LIB\C51FPS.LIB (?C?FPCMP)
+  D:\DEV\KEIL\C51\LIB\C51FPS.LIB (?C?FCAST)
+  D:\DEV\KEIL\C51\LIB\C51FPS.LIB (?C?FPGETOPN)
+  D:\DEV\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+  D:\DEV\KEIL\C51\LIB\C51S.LIB (?C?LNEG)
+  D:\DEV\KEIL\C51\LIB\C51S.LIB (?C_INIT)
+
+
+LINK MAP OF MODULE:  ..\Outputs\SmartHome (MAIN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0006H     UNIT         ?DT?MAIN
+            DATA    000EH     0001H     UNIT         _DATA_GROUP_
+            IDATA   000FH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0008H     UNIT         ?PR?MAIN?MAIN
+            CODE    000BH     0003H     ABSOLUTE     
+            CODE    000EH     0013H     UNIT         ?PR?UART_INIT?UART
+                    0021H     0002H                  *** GAP ***
+            CODE    0023H     0003H     ABSOLUTE     
+            CODE    0026H     02A9H     UNIT         ?C?LIB_CODE
+            CODE    02CFH     008CH     UNIT         ?C_C51STARTUP
+            CODE    035BH     0088H     UNIT         ?PR?TIMER_INT?MAIN
+            CODE    03E3H     0042H     UNIT         ?PR?UART_INT?UART
+            CODE    0425H     0036H     UNIT         ?PR?_UART_RECEIVED?MAIN
+            CODE    045BH     0024H     UNIT         ?PR?_BEDROOM_LED?MAIN
+            CODE    047FH     000EH     UNIT         ?PR?TIMER_INIT?MAIN
+            CODE    048DH     000DH     UNIT         ?C_INITSEG
+            CODE    049AH     0008H     UNIT         ?PR?_UART_SEND?UART
+
+
+
+OVERLAY MAP OF MODULE:   ..\Outputs\SmartHome (MAIN)
+
+
+SEGMENT                           DATA_GROUP 
+  +--> CALLED SEGMENT           START    LENGTH
+-----------------------------------------------
+BL51 BANKED LINKER/LOCATER V6.22                                                      05/23/2018  15:30:28  PAGE 2
+
+
+?PR?UART_INT?UART               -----    -----
+  +--> ?PR?_UART_RECEIVED?MAIN
+
+?PR?_UART_RECEIVED?MAIN         000EH    0001H
+  +--> ?PR?_BEDROOM_LED?MAIN
+
+*** NEW ROOT ***************************************************
+
+?C_C51STARTUP                   -----    -----
+  +--> ?PR?MAIN?MAIN
+  +--> ?C_INITSEG
+
+?PR?MAIN?MAIN                   -----    -----
+  +--> ?PR?UART_INIT?UART
+  +--> ?PR?TIMER_INIT?MAIN
+
+
+
+SYMBOL TABLE OF MODULE:  ..\Outputs\SmartHome (MAIN)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        MAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:0090H         PUBLIC        P1
+  D:00B0H         PUBLIC        P3
+  C:045BH         SYMBOL        _bedroom_led
+  B:0090H.1       PUBLIC        led_bedroom
+  B:00A8H.7       PUBLIC        EA
+  D:00A8H         PUBLIC        IE
+  D:00B8H         PUBLIC        IP
+  C:0003H         PUBLIC        main
+  D:0008H         PUBLIC        count
+  D:0009H         PUBLIC        rate
+  D:0098H         PUBLIC        SCON
+  D:0089H         PUBLIC        TMOD
+  D:0088H         PUBLIC        TCON
+  B:0080H.0       PUBLIC        fan
+  B:0090H.0       PUBLIC        led_hall
+  C:047FH         PUBLIC        timer_init
+  B:00A8H.1       PUBLIC        ET0
+  D:008CH         PUBLIC        TH0
+  D:008AH         PUBLIC        TL0
+  C:035BH         PUBLIC        timer_int
+  D:000DH         PUBLIC        max_count
+  B:0088H.4       PUBLIC        TR0
+  D:00C8H         PUBLIC        T2CON
+  C:0425H         PUBLIC        _uart_received
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          MAIN
+  C:0003H         LINE#         15
+  C:0003H         LINE#         16
+  C:0006H         LINE#         17
+  C:0009H         LINE#         19
+  -------         ENDPROC       MAIN
+BL51 BANKED LINKER/LOCATER V6.22                                                      05/23/2018  15:30:28  PAGE 3
+
+
+  -------         PROC          TIMER_INIT
+  C:047FH         LINE#         25
+  C:047FH         LINE#         26
+  C:0482H         LINE#         27
+  C:0485H         LINE#         28
+  C:0488H         LINE#         29
+  C:048AH         LINE#         30
+  C:048CH         LINE#         31
+  -------         ENDPROC       TIMER_INIT
+  -------         PROC          _BEDROOM_LED
+  D:0007H         SYMBOL        lightness
+  C:045BH         LINE#         33
+  C:045BH         LINE#         34
+  C:045EH         LINE#         35
+  C:0461H         LINE#         37
+  C:0461H         LINE#         39
+  C:0463H         LINE#         40
+  C:047BH         LINE#         41
+  C:047EH         LINE#         42
+  -------         ENDPROC       _BEDROOM_LED
+  -------         PROC          TIMER_INT
+  C:035BH         LINE#         44
+  C:0378H         LINE#         45
+  C:037BH         LINE#         46
+  C:037EH         LINE#         47
+  C:0385H         LINE#         48
+  C:0388H         LINE#         49
+  C:0388H         LINE#         51
+  C:038CH         LINE#         52
+  C:038EH         LINE#         53
+  C:03C4H         LINE#         54
+  C:03C6H         LINE#         55
+  C:03C6H         LINE#         57
+  C:03C8H         LINE#         58
+  -------         ENDPROC       TIMER_INT
+  -------         PROC          _UART_RECEIVED
+  D:000EH         SYMBOL        cmd
+  C:0425H         LINE#         60
+  C:0427H         LINE#         61
+  C:042BH         LINE#         63
+  C:042DH         LINE#         64
+  C:0433H         LINE#         66
+  C:0435H         LINE#         67
+  C:0443H         LINE#         68
+  C:044BH         LINE#         69
+  C:0450H         LINE#         70
+  C:0452H         LINE#         71
+  C:0458H         LINE#         72
+  C:045AH         LINE#         73
+  C:045AH         LINE#         74
+  -------         ENDPROC       _UART_RECEIVED
+  -------         ENDMOD        MAIN
+
+  -------         MODULE        UART
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  B:00A8H.7       PUBLIC        EA
+  B:00A8H.4       PUBLIC        ES
+BL51 BANKED LINKER/LOCATER V6.22                                                      05/23/2018  15:30:28  PAGE 4
+
+
+  B:0098H.0       PUBLIC        RI
+  B:0098H.1       PUBLIC        TI
+  D:0099H         PUBLIC        SBUF
+  D:0098H         PUBLIC        SCON
+  D:0089H         PUBLIC        TMOD
+  C:049AH         PUBLIC        _uart_send
+  D:008DH         PUBLIC        TH1
+  D:008BH         PUBLIC        TL1
+  C:000EH         PUBLIC        uart_init
+  B:0088H.6       PUBLIC        TR1
+  C:03E3H         PUBLIC        uart_int
+  -------         PROC          UART_INIT
+  C:000EH         LINE#         7
+  C:000EH         LINE#         8
+  C:0011H         LINE#         9
+  C:0014H         LINE#         10
+  C:0017H         LINE#         11
+  C:001AH         LINE#         12
+  C:001CH         LINE#         13
+  C:001EH         LINE#         14
+  C:0020H         LINE#         15
+  -------         ENDPROC       UART_INIT
+  -------         PROC          _UART_SEND
+  D:0007H         SYMBOL        dat
+  C:049AH         LINE#         20
+  C:049AH         LINE#         21
+  C:049CH         LINE#         22
+  C:049FH         LINE#         23
+  C:04A1H         LINE#         24
+  -------         ENDPROC       _UART_SEND
+  -------         PROC          UART_INT
+  C:03E3H         LINE#         29
+  C:0400H         LINE#         30
+  C:0403H         LINE#         31
+  C:0405H         LINE#         32
+  C:040AH         LINE#         33
+  -------         ENDPROC       UART_INT
+  -------         ENDMOD        UART
+
+  -------         MODULE        ?C?FPMUL
+  C:0026H         PUBLIC        ?C?FPMUL
+  -------         ENDMOD        ?C?FPMUL
+
+  -------         MODULE        ?C?FPDIV
+  C:012FH         PUBLIC        ?C?FPDIV
+  -------         ENDMOD        ?C?FPDIV
+
+  -------         MODULE        ?C?FPCMP
+  C:01CEH         PUBLIC        ?C?FPCMP
+  C:01CCH         PUBLIC        ?C?FPCMP3
+  -------         ENDMOD        ?C?FPCMP
+
+  -------         MODULE        ?C?FCAST
+  C:0243H         PUBLIC        ?C?FCASTC
+  C:023EH         PUBLIC        ?C?FCASTI
+  C:0239H         PUBLIC        ?C?FCASTL
+  -------         ENDMOD        ?C?FCAST
+BL51 BANKED LINKER/LOCATER V6.22                                                      05/23/2018  15:30:28  PAGE 5
+
+
+
+  -------         MODULE        ?C?LNEG
+  C:02C1H         PUBLIC        ?C?LNEG
+  -------         ENDMOD        ?C?LNEG
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_UART_SEND?UART
+
+Program Size: data=16.0 xdata=0 code=1184
+LINK/LOCATE RUN COMPLETE.  1 WARNING(S),  0 ERROR(S)

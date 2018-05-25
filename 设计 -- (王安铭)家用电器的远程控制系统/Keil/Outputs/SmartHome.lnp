@@ -1,0 +1,4 @@
+"..\Outputs\main.obj",
+"..\Outputs\uart.obj" 
+TO "..\Outputs\SmartHome" 
+PRINT(".\SmartHome.m51") RAMSIZE(256) 

@@ -1,0 +1,202 @@
+C51 COMPILER V9.01   MAIN                                                                  05/25/2018 10:21:40 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN ..\Outputs\main.obj
+COMPILER INVOKED BY: D:\Dev\Keil\C51\BIN\C51.EXE ..\User\main.c BROWSE INCDIR(..\Hardware;..\User) DEBUG OBJECTEXTEND PR
+                    -INT(.\main.lst) OBJECT(..\Outputs\main.obj)
+
+line level    source
+
+   1          #include "reg52.h"
+   2          #include "lcd1602.h"
+   3          #include "adc.h"
+   4          #include "stdio.h"
+   5          #include "intrins.h"
+   6          
+   7          #define DEFAULT_OVER_WEIGHT 80
+   8          #define get_w(v) ((115 - 15) * 1.0f / (243 - 13) * v + 10)
+   9          
+  10          uchar get(uchar channel);
+  11          uchar avg();
+  12          
+  13          sbit ADDA = P3^2;
+  14          sbit ADDB = P3^3;
+  15          sbit ADDC = P3^4;
+  16          sbit key_set = P3^5;
+  17          sbit key_up = P3^6;
+  18          sbit key_down = P3^7;
+  19          sbit ctrl = P3^0;
+  20          sbit warning = P3^1;
+  21          
+  22          uchar weight;
+  23          bit setting = 0;
+  24          uchar over_weight = DEFAULT_OVER_WEIGHT;
+  25          
+  26          //选择模拟通道
+  27          static void choose(uchar channel){
+  28   1              switch(channel){
+  29   2                      case 0:
+  30   2                              ADDA = 0;ADDB = 0;ADDC = 0;
+  31   2                              break;
+  32   2                      case 1:
+  33   2                              ADDA = 1;ADDB = 0;ADDC = 0;
+  34   2                              break;
+  35   2                      case 2:
+  36   2                              ADDA = 0;ADDB = 1;ADDC = 0;
+  37   2                              break;
+  38   2                      case 3:
+  39   2                              ADDA = 1;ADDB = 1;ADDC = 0;
+  40   2                              break;
+  41   2                      case 4:  
+  42   2                              ADDA = 0;ADDB = 0;ADDC = 1;
+  43   2                              break;
+  44   2                      default:
+  45   2                              ADDA = 0;ADDB = 0;ADDC = 0;
+  46   2                              break;
+  47   2              }
+  48   1      }
+  49          
+  50          //普通延时
+  51          static void delay(uint t){
+  52   1              uint i, j;
+  53   1              for(i=0;i<t;i++){
+  54   2                      for(j=0;j<110;j++);
+C51 COMPILER V9.01   MAIN                                                                  05/25/2018 10:21:40 PAGE 2   
+
+  55   2              }
+  56   1      }
+  57          
+  58          //设置界面
+  59          static void setting_page(){
+  60   1              uchar str[16];
+  61   1              lcd_display_string(1, 1, "Set max weight: ");
+  62   1              sprintf(str, "%16d", (int)over_weight);
+  63   1              lcd_display_string(2, 1, str);          
+  64   1      
+  65   1      }
+  66          
+  67          //工作界面 force: 是否强制显示
+  68          static void working_page(uchar force){
+  69   1              uchar str[16], curr;
+  70   1              curr = avg();           
+  71   1              if(curr != weight || force){
+  72   2                      lcd_clear();
+  73   2      
+  74   2                      //显示当前重量
+  75   2                      weight = curr;
+  76   2                      sprintf(str, "Weight: %d", (int)weight);
+  77   2                      lcd_display_string(1, 1, str);
+  78   2      
+  79   2                      //显示超重信息
+  80   2                      if(weight > over_weight){
+  81   3                              lcd_display_string(2, 1, "Overweight: Yes");
+  82   3                      }else{
+  83   3                              lcd_display_string(2, 1, "Overweight: No");
+  84   3                      }
+  85   2              }
+  86   1      }
+  87          
+  88          
+  89          void main(){
+  90   1              lcd_simple_init();
+  91   1              ctrl = 0;
+  92   1      
+  93   1              while(1){
+  94   2      
+  95   2                      if(!key_set){
+  96   3                              if(setting){
+  97   4                                      //确认设置
+  98   4                                      lcd_clear();
+  99   4                                      setting = 0;
+ 100   4                                      working_page(1);
+ 101   4                              }else{
+ 102   4                                      //进入设置
+ 103   4                                      lcd_clear();
+ 104   4                                      setting = 1;
+ 105   4                                      setting_page();
+ 106   4                              }
+ 107   3      
+ 108   3                              while(!key_set);
+ 109   3                      }
+ 110   2                      
+ 111   2                      if(setting){
+ 112   3                              if(!key_up){
+ 113   4                                      delay(100);
+ 114   4                                      if(!key_up){
+ 115   5                                              if(over_weight < 115){
+ 116   6                                                      over_weight++;
+C51 COMPILER V9.01   MAIN                                                                  05/25/2018 10:21:40 PAGE 3   
+
+ 117   6                                                      setting_page();
+ 118   6                                              }               
+ 119   5                                      }
+ 120   4                              }
+ 121   3                              if(!key_down){
+ 122   4                                      delay(100);
+ 123   4                                      if(!key_down){
+ 124   5                                              if(over_weight > 0){
+ 125   6                                                      over_weight--;
+ 126   6                                                      setting_page();
+ 127   6                                              }       
+ 128   5                                      }
+ 129   4                              }                       
+ 130   3                      }else{
+ 131   3                              working_page(0);
+ 132   3                              if(weight > over_weight){
+ 133   4                                      warning = 0;
+ 134   4                                      ctrl = 1;       
+ 135   4                              }else{
+ 136   4                                      warning = 1;
+ 137   4                                      ctrl = 0;
+ 138   4                              }       
+ 139   3                      }
+ 140   2              }
+ 141   1      }
+ 142          
+ 143          /**
+ 144          * 获取某路的重量
+ 145          */
+ 146          uchar get(uchar channel){
+ 147   1              uchar i;
+ 148   1              choose(channel);
+ 149   1              delay(5);
+ 150   1              for(i=0;i<10;i++){
+ 151   2                      adc_transform();
+ 152   2              }       
+ 153   1      
+ 154   1              return get_w(adc_transform());
+ 155   1      }
+ 156          
+ 157          /**
+ 158          * 获取5路重量值的平均值
+ 159          */
+ 160          uchar avg(){
+ 161   1              uchar w0, w1, w2, w3, w4;
+ 162   1              uint sum;
+ 163   1              w0 = get(0);
+ 164   1              w1 = get(1);
+ 165   1              w2 = get(2);
+ 166   1              w3 = get(3);
+ 167   1              w4 = get(4);
+ 168   1              sum = w0 + w1 + w2 + w3 + w4;
+ 169   1      
+ 170   1              return sum / 5;
+ 171   1      }
+ 172          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    461    ----
+   CONSTANT SIZE    =     64    ----
+   XDATA SIZE       =   ----    ----
+C51 COMPILER V9.01   MAIN                                                                  05/25/2018 10:21:40 PAGE 4   
+
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      2      39
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =      1    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

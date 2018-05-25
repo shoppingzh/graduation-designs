@@ -172,7 +172,7 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>15</ColumnNumber>
+      <ColumnNumber>14</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
       <TopLine>3</TopLine>
       <CurrentLine>12</CurrentLine>
@@ -1554,7 +1554,7 @@
         </Doc>
         <Doc>
           <Name>..\User\main.c</Name>
-          <ColumnNumber>15</ColumnNumber>
+          <ColumnNumber>14</ColumnNumber>
           <TopLine>3</TopLine>
           <CurrentLine>12</CurrentLine>
         </Doc>

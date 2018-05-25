@@ -1,8 +1,0 @@
-"..\Outputs\main.obj",
-"..\Outputs\uart.obj",
-"..\Outputs\lcd1602.obj",
-"..\Outputs\tck_max6675.obj",
-"..\Outputs\adc.obj",
-"..\Outputs\ds18b20.obj" 
-TO "..\Outputs\TemperatureColl" 
-PRINT(".\TemperatureColl.m51") RAMSIZE(256) 

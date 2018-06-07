@@ -6,12 +6,21 @@
 
 #define uchar unsigned char
 #define uint unsigned int
+#define get_w(v) ((115 - 15) * 1.0f / (243 - 13) * v + 10)
 
 char idx = 0;
 code uchar cs[] = {0xfc, 0xf9, 0xf3, 0xf6};
 
 sbit led_add = P3^6;
 sbit led_addend = P3^7;
+
+//普通延时
+static void delay(uint t){
+	uint i, j;
+	for(i=0;i<t;i++){
+		for(j=0;j<110;j++);
+	}
+}
 
 //转动
 void roll(){
@@ -46,7 +55,7 @@ void main(){
 	while(1){
 
 		char t;
-		uchar weight;
+		uint weight;
 		char str[5];
 
 		led_add = 1;
@@ -89,13 +98,14 @@ void main(){
 			adc_transform();
 			adc_transform();
 
-			weight = adc_transform();
+			weight = get_w(adc_transform());
 			lcd_display_string(2, 1, "weight: ");
-			sprintf(str, "%3d", (int)weight);
+			sprintf(str, "%3d", weight);
 			lcd_display_string(2, 9, str);
 	
 			//重量达标
-			if(weight == 163){
+			if(weight == 80){
+				delay(500);
 				lcd_clear();
 				lcd_display_string(2, 1, "--Putting End--");
 				led_add = 1;

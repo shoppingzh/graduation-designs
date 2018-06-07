@@ -172,10 +172,10 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>14</ColumnNumber>
+      <ColumnNumber>12</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>161</TopLine>
-      <CurrentLine>168</CurrentLine>
+      <TopLine>215</TopLine>
+      <CurrentLine>215</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>..\User\main.c</PathWithFileName>
       <FilenameWithoutPath>main.c</FilenameWithoutPath>
@@ -207,10 +207,10 @@
       <FileType>1</FileType>
       <tvExp>1</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>5</ColumnNumber>
+      <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>218</TopLine>
-      <CurrentLine>218</CurrentLine>
+      <TopLine>10</TopLine>
+      <CurrentLine>20</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>..\Hardware\lcd12864.c</PathWithFileName>
       <FilenameWithoutPath>lcd12864.c</FilenameWithoutPath>
@@ -1572,13 +1572,13 @@
     <ActiveMDIGroup>0</ActiveMDIGroup>
     <MDIGroup>
       <Size>100</Size>
-      <ActiveTab>2</ActiveTab>
+      <ActiveTab>0</ActiveTab>
       <Documents>
         <Doc>
           <Name>..\User\main.c</Name>
-          <ColumnNumber>14</ColumnNumber>
-          <TopLine>161</TopLine>
-          <CurrentLine>168</CurrentLine>
+          <ColumnNumber>12</ColumnNumber>
+          <TopLine>215</TopLine>
+          <CurrentLine>215</CurrentLine>
         </Doc>
         <Doc>
           <Name>..\Hardware\fpm10a.c</Name>
@@ -1588,9 +1588,9 @@
         </Doc>
         <Doc>
           <Name>..\Hardware\lcd12864.c</Name>
-          <ColumnNumber>5</ColumnNumber>
-          <TopLine>218</TopLine>
-          <CurrentLine>218</CurrentLine>
+          <ColumnNumber>0</ColumnNumber>
+          <TopLine>10</TopLine>
+          <CurrentLine>20</CurrentLine>
         </Doc>
       </Documents>
     </MDIGroup>
